@@ -1,0 +1,536 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+    <H1> {{ Title }} </H1>
+
+    <div style="text-align: justify;">
+        <b>Impuls Kroneckera</b><br/>
+        Sygnał nazwany impulsem Kroneckera jest funkcją dwuargumentową, która przyjmuje dwie wartości: 1 lub 0. Wzór
+        opisujący impuls Kroneckera można zapisać w następujący sposób:<br/>
+    </div>
+    <div style="text-align: center;">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>&#x3B4;</mi>
+            <mo>&#xA0;</mo>
+            <mo stretchy="false">(</mo>
+            <mi>t</mi>
+            <mo stretchy="false">)</mo>
+            <mo>=</mo>
+            <mfenced open="{" close="">
+                <mtable>
+                    <mtr>
+                        <mtd>
+                            <mn>0</mn>
+                            <mspace width="0.5cm"/>
+                            <mi>dla</mi>
+                            <mspace width="0.2cm"/>
+                            <mi mathvariant="normal">t</mi>
+                            <mo>&#xA0;</mo>
+                            <mo>&#x2260;</mo>
+                            <mo>&#xA0;</mo>
+                            <mi mathvariant="normal">i</mi>
+                        </mtd>
+                    </mtr>
+                    <mtr>
+                        <mtd>
+                            <mn>1</mn>
+                            <mspace width="0.5cm"/>
+                            <mi>dla</mi>
+                            <mspace width="0.2cm"/>
+                            <mi>t</mi>
+                            <mo>&#xA0;</mo>
+                            <mo>=</mo>
+                            <mo>&#xA0;</mo>
+                            <mi>i</mi>
+                        </mtd>
+                    </mtr>
+                </mtable>
+            </mfenced>
+        </math>
+    </div>
+
+
+    <div class="panel-group" id="kronecker">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#kronecker" href="#collapseOne">
+                        Impuls Kroneckera - sygnał ciągły
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse">
+                <div class="panel-body">
+                    tu wykres sygnału ciągłego
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#kronecker" href="#collapseTwo">
+                        Impuls Kroneckera - sygnał dyskretny
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    tu wykres sygnału dyskretnego
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: justify;">
+        <br/></div>
+    <div style="text-align: justify;">
+        <b>Skok jednostkowy</b></div>
+    <div style="text-align: justify;">
+        Sygnał nazywany skokiem jednostkowym jest odpowiedzią układu na wymuszenie w postaci skoku jednostkowego przy
+        zerowych warunkach początkowych. Można go zdefiniować wzorem:
+    </div>
+    <div style="text-align: justify;">
+        <br/></div>
+    <div style="text-align: justify;">
+        Charakterystyka skokowa, odpowiedź skokowa – w teorii sterowania, jedna z charakterystyk czasowych, która wraz z
+        charakterystyką impulsową oraz charakterystykami częstotliwościowymi stanowi podstawowy opis działania układu
+        regulacji. Charakterystyka skokowa to odpowiedź układu na wymuszenie w postaci skoku jednostkowego przy zerowych
+        warunkach początkowych. Dla wymuszenia w postaci skoku jednostkowego:
+    </div>
+    <div style="text-align: center;">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mn>1</mn>
+            <mo stretchy="false">(</mo>
+            <mi>t</mi>
+            <mo stretchy="false">)</mo>
+            <mo>=</mo>
+            <mfenced close="" open="{">
+                <mtable>
+                    <mtr>
+                        <mtd>
+                            <mn>0</mn>
+                            <mspace width="0.5cm">
+                                <mi>dla</mi>
+                                <mspace width="0.2cm">
+                                    <mi mathvariant="normal">t</mi>
+                                    <mo>&lt;</mo>
+                                    <mn>0</mn>
+                                </mspace>
+                            </mspace>
+                        </mtd>
+                    </mtr>
+                    <mtr>
+                        <mtd>
+                            <mn>1</mn>
+                            <mspace width="0.5cm">
+                                <mi>dla</mi>
+                                <mspace width="0.2cm">
+                                    <mi>t</mi>
+                                    <mo>≥</mo>
+                                    <mn>0</mn>
+                                </mspace>
+                            </mspace>
+                        </mtd>
+                    </mtr>
+                </mtable>
+            </mfenced>
+        </math>
+    </div>
+    <div class="panel-group" id="impulse">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#impulse" href="#collapseOneImpulse">
+                        Impuls jednostkowy - sygnał ciągły
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseOneImpulse" class="panel-collapse collapse">
+                <div class="panel-body">
+                    tu wykres sygnału ciągłego
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#impulse" href="#collapseTwoImpulse">
+                        Impuls jednostkowy - sygnał dyskretny
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseTwoImpulse" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    tu wykres sygnału dyskretnego
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <b>Impuls prostokątny</b><br/>
+    <div style="text-align: justify;">
+        Sygnałem prostokątnym jest symetrycznym impulsem prostokątnym o jednostkowym czasie trwania i
+        jednostkowej amplitudzie. Sygnał ten definiuje się wzorem:<br/>
+
+        <div style="text-align: center;">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <mi>Π</mi>
+                <mo stretchy="false">(</mo>
+                <mi>t</mi>
+                <mo stretchy="false">)</mo>
+                <mo>=</mo>
+                <mfenced close="" open="{">
+                    <mtable>
+                        <mtr>
+                            <mtd>
+                                <mn>0</mn>
+                                <mspace width="0.5cm">
+                                    <mi>dla</mi>
+                                    <mspace width="0.2cm">
+                                        <mo>|</mo>
+                                        <mi>t</mi>
+                                        <mo>|</mo>
+                                        <mo>&gt;</mo>
+                                        <mfrac>
+                                            <mn>1</mn>
+                                            <mn>2</mn>
+                                        </mfrac>
+                                    </mspace>
+                                </mspace>
+                            </mtd>
+                        </mtr>
+                        <mtr>
+                            <mtd>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <mn>2</mn>
+                                </mfrac>
+                                <mspace width="0.5cm">
+                                    <mrow>
+                                        <mi mathvariant="normal">d</mi>
+                                        <mi mathvariant="normal">l</mi>
+                                        <mi mathvariant="normal">a</mi>
+                                        <mspace width="0.2cm">
+                                            <mo>|</mo>
+                                            <mi mathvariant="normal">t</mi>
+                                            <mo>|</mo>
+                                            <mo>=</mo>
+                                            <mfrac>
+                                                <mn>1</mn>
+                                                <mn>2</mn>
+                                            </mfrac>
+                                        </mspace>
+                                    </mrow>
+                                </mspace>
+                            </mtd>
+                        </mtr>
+                        <mtr>
+                            <mtd>
+                                <mn>1</mn>
+                                <mspace width="0.5cm">
+                                    <mi>dla</mi>
+                                    <mspace width="0.2cm">
+                                        <mo>|</mo>
+                                        <mi>t</mi>
+                                        <mo>|</mo>
+                                        <mo>&lt;</mo>
+                                        <mfrac>
+                                            <mn>1</mn>
+                                            <mn>2</mn>
+                                        </mfrac>
+                                    </mspace>
+                                </mspace>
+                            </mtd>
+                        </mtr>
+                    </mtable>
+                </mfenced>
+            </math>
+        </div>
+        <br/></div>
+
+        <div class="panel-group" id="rectangle">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#rectangle" href="#collapseOneRectangle">
+                        Impuls Kroneckera - sygnał ciągły
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseOneRectangle" class="panel-collapse collapse">
+                <div class="panel-body">
+                    tu wykres sygnału ciągłego
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#rectangle" href="#collapseTwoRectangle">
+                        Impuls Kroneckera - sygnał dyskretny
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseTwoRectangle" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    tu wykres sygnału dyskretnego
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <b>Impuls trójkątny</b><br/>
+    <div style="text-align: justify;">
+        Sygnał nazywany impulsem trójkątnym definiuje się wzorem:&nbsp;
+    </div>
+    <div style="text-align: center;">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mo>∧</mo>
+            <mo stretchy="false">(</mo>
+            <mi>t</mi>
+            <mo stretchy="false">)</mo>
+            <mo>=</mo>
+            <mfenced close="" open="{">
+                <mtable>
+                    <mtr>
+                        <mtd>
+                            <mn>0</mn>
+                            <mo>&nbsp;</mo>
+                            <mo>&nbsp;</mo>
+                            <mo>&nbsp;</mo>
+                            <mo>&nbsp;</mo>
+                            <mo>&nbsp;</mo>
+                            <mo>&nbsp;</mo>
+                            <mo>&nbsp;</mo>
+                            <mo>&nbsp;</mo>
+                            <mo>&nbsp;</mo>
+                            <mo>&nbsp;</mo>
+                            <mo>&nbsp;</mo>
+                            <mo>&nbsp;</mo>
+                            <mo>&nbsp;</mo>
+                            <mo>&nbsp;</mo>
+                            <mo>&nbsp;</mo>
+                            <mo>&nbsp;</mo>
+                            <mo>&nbsp;</mo>
+                            <mo>&nbsp;</mo>
+                            <mo>&nbsp;</mo>
+                            <mi>dla</mi>
+                            <mo>&nbsp;</mo>
+                            <mo>|</mo>
+                            <mi>t</mi>
+                            <mo>|</mo>
+                            <mo>&gt;</mo>
+                            <mi>T</mi>
+                        </mtd>
+                    </mtr>
+                    <mtr>
+                        <mtd>
+                            <mn>1</mn>
+                            <mo>-</mo>
+                            <mfrac>
+                                <mi>t</mi>
+                                <mi>T</mi>
+                            </mfrac>
+                            <mo>&nbsp;</mo>
+                            <mo>&nbsp;</mo>
+                            <mo>&nbsp;</mo>
+                            <mo>&nbsp;</mo>
+                            <mo>&nbsp;</mo>
+                            <mo>&nbsp;</mo>
+                            <mo>&nbsp;</mo>
+                            <mo>&nbsp;</mo>
+                            <mo>&nbsp;</mo>
+                            <mi>dla</mi>
+                            <mo>|</mo>
+                            <mi>t</mi>
+                            <mo>|</mo>
+                            <mo>⩽</mo>
+                            <mi>T</mi>
+                        </mtd>
+                    </mtr>
+                </mtable>
+            </mfenced>
+        </math>
+    </div>
+
+        <div class="panel-group" id="triangle">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#triangle" href="#collapseOneTriangle">
+                        Impuls Kroneckera - sygnał ciągły
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseOneTriangle" class="panel-collapse collapse">
+                <div class="panel-body">
+                    tu wykres sygnału ciągłego
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#triangle" href="#collapseTwoTriangle">
+                        Impuls Kroneckera - sygnał dyskretny
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseTwoTriangle" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    tu wykres sygnału dyskretnego
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div style="text-align: justify;">
+        <b>Sygnał wykładniczy</b></div>
+    <div style="text-align: justify;">
+        Sygnał wykładniczy definiowany jest wzorem:
+    </div>
+    <div style="text-align: center;">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>s</mi>
+            <mo stretchy="false">(</mo>
+            <mi>n</mi>
+            <mo stretchy="false">)</mo>
+            <mo>=</mo>
+            <msup>
+                <mi>a</mi>
+                <mi>n</mi>
+            </msup>
+        </math>
+    </div>
+    <div style="text-align: justify;">
+        W dziedzinie liczb zespolonych również można zdefiniować sygnał wykładniczy:
+    </div>
+    <div style="text-align: center;">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>s</mi>
+            <mo stretchy="false">(</mo>
+            <mi>n</mi>
+            <mo stretchy="false">)</mo>
+            <mo>=</mo>
+            <msup>
+                <mi>e</mi>
+                <mrow>
+                    <mi>j</mi>
+                    <msub>
+                        <mi>ω</mi>
+                        <mn>0</mn>
+                    </msub>
+                    <mi>n</mi>
+                </mrow>
+            </msup>
+        </math>
+    </div>
+
+        <div class="panel-group" id="exp">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#exp" href="#collapseOneExp">
+                        Impuls Kroneckera - sygnał ciągły
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseOneExp" class="panel-collapse collapse">
+                <div class="panel-body">
+                    tu wykres sygnału ciągłego
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#exp" href="#collapseTwoExp">
+                        Impuls Kroneckera - sygnał dyskretny
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseTwoExp" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    tu wykres sygnału dyskretnego
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <b>Sygnał sinusoidalny</b><br/>
+    <div style="text-align: justify;">
+        Sygnał sinusoidalny jest sygnałem zdefiniowanym następująco:
+    </div>
+    <div style="text-align: center;">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>s</mi>
+            <mo>(</mo>
+            <mi>t</mi>
+            <mo>)</mo>
+            <mo>=</mo>
+            <mi>A</mi>
+            <mi>sin</mi>
+            <mo stretchy="false">(</mo>
+            <mi>ω</mi>
+            <mi>t</mi>
+            <mo stretchy="false">)</mo>
+            <mo>=</mo>
+            <mi>A</mi>
+            <mi>sin</mi>
+            <mo stretchy="false">(</mo>
+            <mn>2</mn>
+            <mi>π</mi>
+            <mi>f</mi>
+            <mi>t</mi>
+            <mo stretchy="false">)</mo>
+        </math>
+    </div>
+    <span style="text-align: justify;"><br/></span>
+    <span style="text-align: justify;">Parametrami sygnału sinusoidalnego są:</span><br/>
+    <div style="text-align: justify;">
+    </div>
+    <div>
+        <ol>
+            <li>amplituda</li>
+            <li>wartość międzyszczytowa</li>
+            <li>wartość skuteczna</li>
+            <li>okres sygnału&nbsp;</li>
+        </ol>
+        <br/></div>
+
+        <div class="panel-group" id="sin">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#sin" href="#collapseOneSin">
+                        Impuls Kroneckera - sygnał ciągły
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseOneSin" class="panel-collapse collapse">
+                <div class="panel-body">
+                    tu wykres sygnału ciągłego
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#sin" href="#collapseTwoSin">
+                        Impuls Kroneckera - sygnał dyskretny
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseTwoSin" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    tu wykres sygnału dyskretnego
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

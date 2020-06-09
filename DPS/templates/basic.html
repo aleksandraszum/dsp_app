@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+    <H1> {{ Title }} </H1>
+
+    <div style="text-align: justify;">
+        Sygnałem nazywa się zmienność dowolnej wielkości fizycznej, która może być opisana za pomocą funkcji jednej bądź
+        wielu zmiennych. Sygnałem można nazwać zmianę temperatury czy ciśnienia w funkcji czasu.
+    </div>
+
+    <div style="text-align: justify;">
+        W zastosowaniach praktycznych najczęściej interesujące są sygnały zależne od czasu bądź położenia w przestrzeni.
+    </div>
+
+    <div style="text-align: justify;">
+        Obiekty biologiczne czy techniczne generują sygnały, zawierając, przenosząc bądź zbierając informację.
+    </div>
+
+    <div style="text-align: justify;">
+        Sygnały można podzielić na:
+    </div>
+
+    <div style="text-align: justify;">
+        <ul>
+            <li>funkcje argumentów, np czasu</li>
+            <li>funkcje różnej liczby argumentów - tzw. sygnały wielowymiarowe</li>
+            <li>sygnały zdefiniowane w dziedzinie liczb rzeczywistych lub zespolonych</li>
+            <li>sygnały ciągłe oraz dyskretne</li>
+            <li>sygnały deterministyczne i losowe</li>
+        </ul>
+    </div>
+
+    <div style="text-align: justify;">
+        Sygnały ciągłe są to sygnały, które są ciągłe w czasie i przyjmują dowolne wartości. Sygnałem
+        dyskretnym w czasie nazywa się sygnał nieciągły w czasie. Różni się od sygnału ciągłego tym, że nie jest
+        funkcją, lecz ciągiem liczbowym. Sygnał dyskretny najczęściej otrzymuje się w wyniku próbkowania w równych
+        odstępach czasu sygnału ciągego.
+        Sygnał cyfrowy jest sygnałem dyskretnym z tą różnicą, że przyjmuje tylko określone wartości.
+    </div>
+
+    <div> Sygnał może przyjmować postać sygnału zespolonego - np. w elektrotechnice.
+    </div>
+    <div>
+        W poniższej tabelce dokonano podziału na rodzaj sygnału i jego własności:
+    </div>
+
+    <table class="tg" style="margin: auto">
+        <thead>
+        <tr>
+            <th class="tg-baqh">Rodzaj sygnału</th>
+            <th class="tg-baqh">Przykłady</th>
+            <th class="tg-baqh">Własności</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="tg-baqh">ciągły</td>
+            <td class="tg-0lax">- pole elektryczne pracującego serca,<br/>
+                - nacisk pojazdu na podłoże<br/>
+                - drgania silnika
+            </td>
+            <td class="tg-0lax">- mierzona wielkość jest zdefiniowana w dowolnym momencie czasu<br/>
+                - posiadany plik wyników reprezentuje niewielki wycinek zjawiska<br/>
+                - wykonywanie pomiarów częściej powoduje lepszą reprezentację zjawiska
+            </td>
+        </tr>
+        <tr>
+            <td class="tg-baqh">dyskretny</td>
+            <td class="tg-0lax">- kursy walut, akcji<br/>
+                - skurczowe ciśnienie krwi<br/>
+                - dobowa wydajność produkcji
+            </td>
+            <td class="tg-0lax">-&nbsp;&nbsp;mierzona wielkość jest zdefiniowana w ściśle określonym momencie
+                czasu,<br/>
+                poza tymi momentami sygnał nie istnieje<br/>
+                - wykonywanie pomiarów częściej nie znajduje logicznego uzasadnienia
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div>
+        Podstawowymi rodzajami cyfrowych sygnałów jednowymiarowymi są:
+    </div>
+
+    <div>
+        <ol>
+            <li>impuls Kroneckera</li>
+            <li>skok jednostkowy</li>
+            <li>impuls prostokątny</li>
+            <li>impuls trójkątny</li>
+            <li>sygnał wykładniczy</li>
+            <li>sygnał okresowy</li>
+        </ol>
+    </div>
+
+{% endblock %}
