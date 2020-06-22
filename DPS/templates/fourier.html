@@ -1,0 +1,404 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+    <H1> {{ Title }} </H1>
+
+    <div>
+        <br/></div>
+    <div style="text-align: justify;">
+        Szeregiem Fouriera nazywa się szereg, który umożliwia rozłożenie funkcji okresowej na sumę funkcji
+        trygonometrycznych. Aby uzyskać szereg Fouriera, należy spełnić warunki Dirichleta.
+    </div>
+    <div style="text-align: justify;">
+        <br/></div>
+    <h4 style="text-align: justify;">
+        <b>Warunki Dirichleta</b></h4>
+    <div style="text-align: justify;">
+        Założenia:
+    </div>
+    <div style="text-align: justify;">
+        <ul>
+            <li>funkcja
+                <math xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mi>f</mi>
+                </math>
+                jest okresowa o okresie równym
+                <math xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mi>T</mi>
+                </math>
+                .
+            </li>
+        </ul>
+    </div>
+    <div style="text-align: justify;">
+        Warunki:
+    </div>
+    <div style="text-align: justify;">
+        <ul>
+            <li>funkcja
+                <math xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mi>f</mi>
+                </math>
+                spełnia warunek:
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                    <msubsup>
+                        <mo>&#x222B;</mo>
+                        <mrow>
+                            <mo>-</mo>
+                            <mfrac>
+                                <mi>T</mi>
+                                <mn>2</mn>
+                            </mfrac>
+                        </mrow>
+                        <mfrac>
+                            <mi>T</mi>
+                            <mn>2</mn>
+                        </mfrac>
+                    </msubsup>
+                    <mo stretchy="false">|</mo>
+                    <mi>f</mi>
+                    <mo stretchy="false">(</mo>
+                    <mi>t</mi>
+                    <mo stretchy="false">)</mo>
+                    <mo stretchy="false">|</mo>
+                    <mi mathvariant="normal">d</mi>
+                    <mi>t</mi>
+                    <mo>&lt;</mo>
+                    <mo>&#x221E;</mo>
+                    <mo>.</mo>
+                </math>
+            </li>
+            <li>funkcja
+                <math xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mi>f</mi>
+                </math>
+                w przedziale jednego okresu posiada skończoną liczbę ekstremów lokalnych.
+            </li>
+            <li>funkcja
+                <math xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mi>f</mi>
+                </math>
+                w przedziale jednego okresu posiada skończoną liczbę punktów nieciągłości pierwszego rodzaju.
+            </li>
+        </ul>
+    </div>
+    <div style="text-align: justify;">
+        <br/></div>
+
+    <div style="text-align: justify;">
+        Wzór funkcji
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>f</mi>
+        </math>
+        po rozwinięciu jej w szereg Fouriera przybiera postać:
+    </div>
+    <div style="text-align: justify;">
+        <div style="text-align: center;">
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                <mi>f</mi>
+                <mo stretchy="false">(</mo>
+                <mi>t</mi>
+                <mo stretchy="false">)</mo>
+                <mo>=</mo>
+                <mfrac>
+                    <msub>
+                        <mi>a</mi>
+                        <mn>0</mn>
+                    </msub>
+                    <mn>2</mn>
+                </mfrac>
+                <mo>+</mo>
+                <munderover>
+                    <mo>∑</mo>
+                    <mrow>
+                        <mi>k</mi>
+                        <mo>=</mo>
+                        <mn>1</mn>
+                    </mrow>
+                    <mo>∞</mo>
+                </munderover>
+                <mo >(</mo>
+                <msub>
+                    <mi>a</mi>
+                    <mi>k</mi>
+                </msub>
+                <mi>cos</mi>
+                <mrow>
+                    <mo>(</mo>
+                    <mfrac>
+                        <mrow>
+                            <mi>k</mi>
+                            <mi>π</mi>
+                            <mi>t</mi>
+                        </mrow>
+                        <mi>T</mi>
+                    </mfrac>
+                    <mo>)</mo>
+                </mrow>
+                <mo>+</mo>
+                <msub>
+                    <mi>b</mi>
+                    <mi>k</mi>
+                </msub>
+                <mi>sin</mi>
+                <mrow>
+                    <mo>(</mo>
+                    <mfrac>
+                        <mrow>
+                            <mi>k</mi>
+                            <mi>π</mi>
+                            <mi>t</mi>
+                        </mrow>
+                        <mi>T</mi>
+                    </mfrac>
+                    <mo>)</mo>
+                </mrow>
+                <mo>)</mo>
+                <mo>,</mo>
+            </math>
+        </div>
+    </div>
+    <div style="text-align: justify;">
+        gdzie
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <msub>
+                <mi>a</mi>
+                <mn>0</mn>
+            </msub>
+            <mo>,</mo>
+            <msub>
+                <mi>a</mi>
+                <mi>k</mi>
+            </msub>
+            <mo>,</mo>
+            <msub>
+                <mi>b</mi>
+                <mi>k</mi>
+            </msub>
+        </math>
+        to stałe zdefiniowane jako:
+    </div>
+    <div style="text-align: justify;">
+    </div>
+
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+        <msub>
+            <mi>a</mi>
+            <mn>0</mn>
+        </msub>
+        <mo>=</mo>
+        <mfrac>
+            <mn>1</mn>
+            <mi>T</mi>
+        </mfrac>
+        <msubsup>
+            <mo>∫</mo>
+            <mrow>
+                <mo>-</mo>
+                <mi>T</mi>
+            </mrow>
+            <mi>T</mi>
+        </msubsup>
+        <mi>f</mi>
+        <mo stretchy="false">(</mo>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
+        <mi mathvariant="normal">d</mi>
+        <mi>t</mi>
+        <mo>,</mo>
+    </math>
+
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+        <msub>
+            <mi>a</mi>
+            <mi>k</mi>
+        </msub>
+        <mo>=</mo>
+        <mfrac>
+            <mn>1</mn>
+            <mi>T</mi>
+        </mfrac>
+        <msubsup>
+            <mo>∫</mo>
+            <mrow>
+                <mo>-</mo>
+                <mi>T</mi>
+            </mrow>
+            <mi>T</mi>
+        </msubsup>
+        <mi>f</mi>
+        <mo stretchy="false">(</mo>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
+        <mi>cos</mi>
+        <mrow>
+            <mo>(</mo>
+            <mfrac>
+                <mrow>
+                    <mi>k</mi>
+                    <mi>π</mi>
+                    <mi>t</mi>
+                </mrow>
+                <mi>T</mi>
+            </mfrac>
+            <mo>)</mo>
+        </mrow>
+        <mi mathvariant="normal">d</mi>
+        <mi>t</mi>
+        <mo>,</mo>
+    </math>
+
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+        <msub>
+            <mi>b</mi>
+            <mi>k</mi>
+        </msub>
+        <mo>=</mo>
+        <mfrac>
+            <mn>1</mn>
+            <mi>T</mi>
+        </mfrac>
+        <msubsup>
+            <mo>∫</mo>
+            <mrow>
+                <mo>-</mo>
+                <mi>T</mi>
+            </mrow>
+            <mi>T</mi>
+        </msubsup>
+        <mi>f</mi>
+        <mo stretchy="false">(</mo>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
+        <mi>sin</mi>
+        <mrow>
+            <mo>(</mo>
+            <mfrac>
+                <mrow>
+                    <mi>k</mi>
+                    <mi>π</mi>
+                    <mi>t</mi>
+                </mrow>
+                <mi>T</mi>
+            </mfrac>
+            <mo>)</mo>
+        </mrow>
+        <mi mathvariant="normal">d</mi>
+        <mi>t</mi>
+        <mo>.</mo>
+    </math>
+
+    <div>
+        <div style="text-align: justify;">
+            Funkcję
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <mi>f</mi>
+            </math>
+            można także rozwinąć w zespolony szereg Fouriera:
+        </div>
+    </div>
+    <div>
+        <div style="text-align: center;">
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                <mi>f</mi>
+                <mo stretchy="false">(</mo>
+                <mi>t</mi>
+                <mo stretchy="false">)</mo>
+                <mo>=</mo>
+                <munderover>
+                    <mo>∑</mo>
+                    <mrow>
+                        <mi>k</mi>
+                        <mo>=</mo>
+                        <mo>-</mo>
+                        <mo>∞</mo>
+                    </mrow>
+                    <mo>∞</mo>
+                </munderover>
+                <msub>
+                    <mi>c</mi>
+                    <mi>k</mi>
+                </msub>
+                <mi>exp</mi>
+                <mrow>
+                    <mo>(</mo>
+                    <mi>j</mi>
+                    <mi>k</mi>
+                    <mfrac>
+                        <mrow>
+                            <mi>π</mi>
+                            <mi>t</mi>
+                        </mrow>
+                        <mi>T</mi>
+                    </mfrac>
+                    <mo>)</mo>
+                </mrow>
+            </math>
+        </div>
+    </div>
+    <div>
+        <div style="text-align: justify;">
+            gdzie
+            <math xmlns="http://www.w3.org/1998/Math/MathML" >
+                <mi>j</mi>
+            </math>
+            to jednostka urojona, natomiast
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <msub>
+                    <mi>c</mi>
+                    <mi>k</mi>
+                </msub>
+            </math>
+            to współczynnik zdefiniowany następująco:
+        </div>
+        <div style="text-align: center;">
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                <msub>
+                    <mi>c</mi>
+                    <mi>k</mi>
+                </msub>
+                <mo>=</mo>
+                <mfrac>
+                    <mn>1</mn>
+                    <mrow>
+                        <mn>2</mn>
+                        <mi>T</mi>
+                    </mrow>
+                </mfrac>
+                <msubsup>
+                    <mo>&#x222B;</mo>
+                    <mrow>
+                        <mo>-</mo>
+                        <mi>T</mi>
+                    </mrow>
+                    <mi>T</mi>
+                </msubsup>
+                <mi>f</mi>
+                <mo stretchy="false">(</mo>
+                <mi>t</mi>
+                <mo stretchy="false">)</mo>
+                <mi>exp</mi>
+                <mrow>
+                    <mo>(</mo>
+                    <mo>-</mo>
+                    <mi>j</mi>
+                    <mi>k</mi>
+                    <mfrac>
+                        <mrow>
+                            <mi>&#x3C0;</mi>
+                            <mi>t</mi>
+                        </mrow>
+                        <mi>T</mi>
+                    </mfrac>
+                    <mo>)</mo>
+                </mrow>
+                <mi mathvariant="normal">d</mi>
+                <mi>t</mi>
+            </math>
+        </div>
+    </div>
+
+{% endblock %}

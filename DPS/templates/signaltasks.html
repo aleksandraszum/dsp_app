@@ -1,0 +1,307 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+    <H1> {{ Title }} </H1>
+
+    <div style="text-align: justify;">
+        <h4>
+            <b>Zadanie 1.</b></h4></div>
+    <div>
+        a) Napisz funkcję cosinus, która na wejście będzie przyjmowała następujące argumenty: amplitudę sygnału,
+        częstotliwość sygnału, czas trwania sygnału, częstotliwość próbkowania oraz fazę.&nbsp;
+    </div>
+    <div>
+        b) Za pomocą napisanej funkcji wygeneruj sygnał, który:
+    </div>
+    <div>
+        <ul>
+            <li>trwa 1 s,</li>
+            <li>jego częstotliwość wynosi 10 Hz,</li>
+            <li>jego częstotliwość próbkowania wynosi 256 Hz,</li>
+            <li>jego amplituda wynosi 2,</li>
+            <li>przesunięcie sygnału to pi/4.&nbsp;</li>
+        </ul>
+    </div>
+    <div>
+        <h3>
+            <b>Rozwiązanie</b></h3>
+    </div>
+
+    <div class="panel-group" id="task1">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#task1" href="#collapseOneA">
+                        a) Omówienie problemu
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseOneA" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div style="text-align: justify;">
+                        Wzór na funkcję cosinus prezentuje się następująco:
+                    </div>
+                    <div>
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                            <mi>y</mi>
+                            <mo>(</mo>
+                            <mi>t</mi>
+                            <mo>)</mo>
+                            <mo>=</mo>
+                            <mi>cos</mi>
+                            <mo>(</mo>
+                            <mn>2</mn>
+                            <mi>&#x3C0;</mi>
+                            <mi>f</mi>
+                            <mi>t</mi>
+                            <mo>+</mo>
+                            <mi>&#x3D5;</mi>
+                            <mo>)</mo>
+                        </math>
+                    </div>
+                    <div>
+                        gdzie:
+                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mi>t</mi>
+                        </math>
+                        jest czasem,
+                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mi>f</mi>
+                        </math>
+                        częstotliwością, a
+                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mi>ϕ</mi>
+                        </math>
+                        przesunięciem sygnału.
+                    </div>
+                    <div style="text-align: justify;">
+                        Aby wygenerować sygnał, należy zdefiniować wektor czasu. Aby wygenerować wektor czasu, potrzebna
+                        jest znajomość czasu trwania sygnału oraz częstotliwość próbkowania. Częstotliwość próbkowania
+                        mówi o tym, ile próbek pobieranych jest w ciągu sekundy trwania sygnału. W związku z tym należy
+                        wygenerować wektor, którego pierwszym elementem jest wartość
+                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <msub>
+                                <mi>t</mi>
+                                <mi>p</mi>
+                            </msub>
+                        </math>
+                        , ostatnim argumentem wartość
+                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <msub>
+                                <mi>t</mi>
+                                <mi>k</mi>
+                            </msub>
+                        </math>
+                        , natomiast pomiędzy nimi są próbki, których odległość względem siebie wynosi
+                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mfrac>
+                                <mn>1</mn>
+                                <msub>
+                                    <mi>f</mi>
+                                    <mi>p</mi>
+                                </msub>
+                            </mfrac>
+                        </math>
+                        . Można tego dokonać wykorzystując metodę arange znajdującą się w pakiecie Numpy.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#task1" href="#collapseOneA2">
+                        a) Kod źródłowy Python
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseOneA2" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div style="text-align: justify;">
+    <textarea id="signalTask1a" name="signalTask1a">
+    def cosinus(A, f, tp, tk, fp, phi):
+        """
+        Ta funkcja zwraca dwa wektory - wektor czasu oraz wektor sygnału
+
+        Dane wejściowe:
+        A - amplituda sygnału
+        f - częstotliwość sygnału
+        tp - czas początkowy sygnału
+        tk - czas końcowy sygnału
+        fp - częstotliwość próbkowania sygnału
+        phi - przesunięcie sygnału
+
+        Dane wyjściowe:
+        x - wektor czasu
+        y - sygnał
+        """
+
+        x = np.arange(tp, tk, 1/fp)
+        y = [cos(2*pi*f*T+phi) for T in x]
+        return x, y
+    </textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#task1" href="#collapseOneB">
+                        b) Omówienie problemu
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseOneB" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div style="text-align: justify;">
+                        <div>
+                            Aby wygenerować funkcję o zadanych parametrach, należy wywołać napisaną funkcję cosinus
+                            podając na wejście wartości argumentów zadanych w poleceniu. Następnie mając wektor czasu
+                            oraz wektor próbek sygnału, wykorzystując pakiet do wizualizacji matplotlib.plotly, należy
+                            wygenerować sygnał.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#task1" href="#collapseOneB2">
+                        b) Kod źródłowy Python
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseOneB2" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div style="text-align: justify;">
+    <textarea id="signalTask1b" name="signalTask1b">
+    x, y = cosinus(2, 10, 0, 1, 256, pi/4)
+
+    plt.plot(x, y)
+    </textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h3>
+            <b>Zadanie 2.</b></h3>
+    </div>
+    <div>
+        <div style="text-align: justify;">
+            Dla uzyskanego wyżej sygnału policz wartość średnią oraz energię sygnału na przedziale
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <mi>t</mi>
+                <mo>∈</mo>
+                <mo>&lt;</mo>
+                <mfrac>
+                    <mi>π</mi>
+                    <mn>12</mn>
+                </mfrac>
+                <mo>,</mo>
+                <mfrac>
+                    <mi>π</mi>
+                    <mn>6</mn>
+                </mfrac>
+                <mo>&gt;</mo>
+            </math>
+            .
+        </div>
+        <br/>
+        <h4>
+            <b>Rozwiązanie</b></h4></div>
+
+    <div class="panel-group" id="task2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#task2" href="#collapseTwo1">
+                        Omówienie problemu
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseTwo1" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div style="text-align: justify;">
+                        Wzory na wartość średnią oraz energię&nbsp; podane zostały w sekcji <i><a
+                            href="http://127.0.0.1:5000/parametry-sygnalow" target="_blank">Parametry sygnału</a></i>.&nbsp;
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#task2" href="#collapseTwo2">
+                        Kod źródłowy Python
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseTwo2" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div style="text-align: justify;">
+                        <div>
+    <textarea id="signalTask2" name="signalTask2">
+        # wartość średnia sygnału
+        x, y = cosinus(2, 10, pi/12, pi/6, 256, pi/100)
+        _x = sum(y) * 1/(len(y))
+        print(_x)
+
+        # energia sygnału
+        E_x = sum([Y**2 for Y in y])
+        print(E_x)
+    </textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById("signalTask1a"), {
+            mode: {
+                name: "python",
+                version: 3,
+                singleLineStringErrors: false
+            },
+            lineNumbers: true,
+            indentUnit: 4,
+            matchBrackets: true
+        });
+
+        var editor = CodeMirror.fromTextArea(document.getElementById("signalTask1b"), {
+            mode: {
+                name: "python",
+                version: 3,
+                singleLineStringErrors: false
+            },
+            lineNumbers: true,
+            indentUnit: 4,
+            matchBrackets: true
+        });
+
+
+        var editor = CodeMirror.fromTextArea(document.getElementById("signalTask2"), {
+            mode: {
+                name: "python",
+                version: 3,
+                singleLineStringErrors: false
+            },
+            lineNumbers: true,
+            indentUnit: 4,
+            matchBrackets: true
+        });
+
+    </script>
+{% endblock %}

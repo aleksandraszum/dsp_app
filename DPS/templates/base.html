@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/codemirror.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/mode/python/python.min.js"></script>
+
 </head>
 
 <body>
@@ -44,27 +48,61 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
                     <a class="dropdown-item" href="/sygnal">Czym jest sygnał?</a>
-                    <a class="dropdown-item" href="/sygnaly-podstawowe">Podstawowe rodzaje sygnałów jednowymiarowych</a>
-            </li>
-
-
-            <li class="nav-item">
-                <a class="nav-link" href="#">Jakaś strona</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="/sygnaly-zespolone">Sygnały zespolone</a>
+                    <a class="dropdown-item" href="/sygnaly-podstawowe">Podstawowe sygnały jednowymiarowe</a>
+                    <a class="dropdown-item" href="/parametry-sygnalow">Parametry sygnału </a>
+                    <a class="dropdown-item" href="/probkowanie-aliasing">Próbkowanie i aliasing </a>
+                    <a class="dropdown-item" href="/sygnal-zadania">Python - zadania </a>
+                    <a class="dropdown-item" href="/sygnal-quiz">Quiz </a>
                 </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Analiza częstotliwościowa
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                    <a class="dropdown-item" href="/szereg-fouriera">Rozwinięcie w szereg Fouriera</a>
+                    <a class="dropdown-item" href="/cft">Całkowe przekształcenie Fouriera</a>
+                    <a class="dropdown-item" href="/dft">Dyskretna przekształcenie Fouriera</a>
+                    <a class="dropdown-item" href="/widmo">Widmo sygnału</a>
+                    <a class="dropdown-item" href="/analiza-czestotliwosciowa-zadania">Python - zadania</a>
+                    <a class="dropdown-item" href="/analiza-czestotliwosciowa-quiz">Quiz</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Filtracja sygnałów
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
+                    <a class="dropdown-item" href="/przeksztalcenie-z">Przekształcenie Z</a>
+                    <a class="dropdown-item" href="/filtry-cyfrowe">Filtry cyfrowe</a>
+                    <a class="dropdown-item" href="/fir">Filtry cyfrowe FIR</a>
+                    <a class="dropdown-item" href="/iir">Filtry cyfrowe IIR</a>
+                    <a class="dropdown-item" href="/filtry-zadania">Python - zadania</a>
+                    <a class="dropdown-item" href="/filtry-quiz">Quiz</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown5" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Sygnał EKG
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown5">
+                    <a class="dropdown-item" href="/qrs">Detekcja zespołów QRS</a>
+                    <a class="dropdown-item" href="/qrs-python">Detekcja zespołów QRS - implementacja w Python</a>
+                    <a class="dropdown-item" href="/hrv">Analiza zmienności rytmu serca</a>
+                    <a class="dropdown-item" href="/hrv-python">Analiza zmienności rytmu serca - implementacja w
+                        Python</a>
+                    <a class="dropdown-item" href="/dfa">Beztrendowa analiza fluktuacji</a>
+                    <a class="dropdown-item" href="/dfa-python">Beztrendowa analiza fluktuacji - implementacja w
+                        Python</a>
+                    <a class="dropdown-item" href="/ecg-cft">Quiz</a>
+                </div>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -118,4 +156,5 @@ rghj
         type="text/javascript"></script>
 
 </body>
+
 </html>

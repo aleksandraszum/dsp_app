@@ -1,0 +1,469 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+    <H1> {{ Title }} </H1>
+
+    <div style="text-align: justify;">
+        Aby móc projektować filtry cyfrowe, należy wykorzystać przekształcenie
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mo>Ƶ</mo>
+        </math>
+        .&nbsp;Przekształcenie
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mo>Ƶ</mo>
+        </math>
+        polega na przebadaniu odpowiedzi impulsowej sinusoidami i przebiegami wykładniczymi w celu znalezienia zer i
+        biegunów.<br/>
+        <br/>
+        Transformatą
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mo>Ƶ</mo>
+        </math>&nbsp;sygnału
+        <math amp="" dyskretnego="" gt="" lt="" math="" mo="" sygna="" u="" x1b5=""
+              xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>x</mi>
+            <mo>[</mo>
+            <mi>n</mi>
+            <mo>]</mo>
+        </math>, definiuje się wzorem:
+    </div>
+    <div style="text-align: justify;">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mi>X</mi>
+            <mo stretchy="false">(</mo>
+            <mi>z</mi>
+            <mo stretchy="false">)</mo>
+            <mo>=</mo>
+            <munderover>
+                <mo>∑</mo>
+                <mrow>
+                    <mi>n</mi>
+                    <mo>=</mo>
+                    <mo>-</mo>
+                    <mo>∞</mo>
+                </mrow>
+                <mo>∞</mo>
+            </munderover>
+            <mi>x</mi>
+            <mo stretchy="false">[</mo>
+            <mi>n</mi>
+            <mo stretchy="false">]</mo>
+            <msup>
+                <mi>z</mi>
+                <mrow>
+                    <mo>-</mo>
+                    <mi>n</mi>
+                </mrow>
+            </msup>
+            <mo>,</mo>
+        </math>
+    </div>
+    <div style="text-align: justify;">
+        gdzie
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>z</mi>
+            <mo>∈</mo>
+            <mi mathvariant="normal">ℂ.</mi>
+        </math>
+        <br/>
+        Transformata
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mo>Ƶ</mo>
+        </math>
+        jest odpowiednikiem przekształcenia Laplace'a dla funkcji ciągłych.<br/>
+        Transformata istnieje tylko wówczas, gdy szereg jest zbieżny. Zbieżność zachodzi, kiedy obszar zmienności
+        wartości z analizowanego sygnału wynosi:
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mn>0</mn>
+            <mo>&#xA0;</mo>
+            <mo>&#x2264;</mo>
+            <mo>&#xA0;</mo>
+            <msub>
+                <mi>r</mi>
+                <mo>-</mo>
+            </msub>
+            <mo>&#xA0;</mo>
+            <mo>&lt;</mo>
+            <mo>&#xA0;</mo>
+            <mo>|</mo>
+            <mi>z</mi>
+            <mo>|</mo>
+            <mo>&#xA0;</mo>
+            <mo>&lt;</mo>
+            <msub>
+                <mi>r</mi>
+                <mrow>
+                    <mo>+</mo>
+                    <mo>&#xA0;</mo>
+                </mrow>
+            </msub>
+            <mo>&#x2264;</mo>
+            <mo>&#x221E;</mo>
+            <mo>.</mo>
+        </math>
+        <br/>
+        Poniżej przedstawiono transformaty wybranych sygnałów.<br/>
+        <br/>
+    </div>
+    <div style="text-align: center;">
+        <b>Tabela. Transformata Z wybranych sygnałów.</b>
+    </div>
+    <div style="text-align: center;">
+        <center>
+            <table class="tg">
+                <thead>
+                <tr>
+                    <th class="tg-c3ow" style="text-align: center;">Sygnał</th>
+                    <th class="tg-c3ow">Transformata</th>
+                    <th class="tg-c3ow">Obszar zbieżności</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="tg-c3ow">
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                            <mi>δ</mi>
+                            <mo stretchy="false">(</mo>
+                            <mi>n</mi>
+                            <mo stretchy="false">)</mo>
+                            <mo>=</mo>
+                            <mfenced close="" open="{">
+                                <mtable columnalign="left">
+                                    <mtr>
+                                        <mtd>
+                                            <mn>1</mn>
+                                            <mo>,</mo>
+                                            <mo>&nbsp;</mo>
+                                            <mi>n</mi>
+                                            <mo>&nbsp;</mo>
+                                            <mo>=</mo>
+                                            <mo>&nbsp;</mo>
+                                            <mn>0</mn>
+                                        </mtd>
+                                    </mtr>
+                                    <mtr>
+                                        <mtd>
+                                            <mn>0</mn>
+                                            <mo>,</mo>
+                                            <mo>&nbsp;</mo>
+                                            <mi>n</mi>
+                                            <mo>&nbsp;</mo>
+                                            <mo>≠</mo>
+                                            <mo>&nbsp;</mo>
+                                            <mn>0</mn>
+                                        </mtd>
+                                    </mtr>
+                                </mtable>
+                            </mfenced>
+                        </math>
+                    </td>
+                    <td class="tg-0pky">
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                            <mn>1</mn>
+                        </math>
+                    </td>
+                    <td class="tg-0pky">
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                            <mn>0</mn>
+                            <mo>&nbsp;</mo>
+                            <mo>≤</mo>
+                            <mo>&nbsp;</mo>
+                            <mo>|</mo>
+                            <mi>z</mi>
+                            <mo>|</mo>
+                            <mo>&nbsp;</mo>
+                            <mo>≤</mo>
+                            <mo>&nbsp;</mo>
+                            <mo>∞</mo>
+                        </math>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tg-c3ow">
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                            <mi>δ</mi>
+                            <mo stretchy="false">(</mo>
+                            <mi>n</mi>
+                            <mo>-</mo>
+                            <msub>
+                                <mi>n</mi>
+                                <mn>0</mn>
+                            </msub>
+                            <mo stretchy="false">)</mo>
+                        </math>
+                    </td>
+                    <td class="tg-0pky">
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                            <msup>
+                                <mi>z</mi>
+                                <mrow>
+                                    <mo>-</mo>
+                                    <msub>
+                                        <mi>n</mi>
+                                        <mn>0</mn>
+                                    </msub>
+                                </mrow>
+                            </msup>
+                        </math>
+                    </td>
+                    <td class="tg-0pky">
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                            <mn>0</mn>
+                            <mo>&nbsp;</mo>
+                            <mo>≤</mo>
+                            <mo>&nbsp;</mo>
+                            <mo>|</mo>
+                            <mi>z</mi>
+                            <mo>|</mo>
+                            <mo>&nbsp;</mo>
+                            <mo>≤</mo>
+                            <mo>&nbsp;</mo>
+                            <mo>∞</mo>
+                        </math>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tg-0lax">
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                            <mi>u</mi>
+                            <mo stretchy="false">(</mo>
+                            <mi>n</mi>
+                            <mo stretchy="false">)</mo>
+                            <mo>=</mo>
+                            <mfenced close="" open="{">
+                                <mtable columnalign="left">
+                                    <mtr>
+                                        <mtd>
+                                            <mn>1</mn>
+                                            <mo>,</mo>
+                                            <mo>&nbsp;</mo>
+                                            <mi>n</mi>
+                                            <mo>&nbsp;</mo>
+                                            <mo>≥</mo>
+                                            <mn>0</mn>
+                                        </mtd>
+                                    </mtr>
+                                    <mtr>
+                                        <mtd>
+                                            <mn>0</mn>
+                                            <mo>,</mo>
+                                            <mo>&nbsp;</mo>
+                                            <mi>n</mi>
+                                            <mo>&nbsp;</mo>
+                                            <mo>&lt;</mo>
+                                            <mo>&nbsp;</mo>
+                                            <mn>0</mn>
+                                        </mtd>
+                                    </mtr>
+                                </mtable>
+                            </mfenced>
+                        </math>
+                    </td>
+                    <td class="tg-0lax">
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                            <mfrac>
+                                <mn>1</mn>
+                                <mrow>
+                                    <mn>1</mn>
+                                    <mo>-</mo>
+                                    <msup>
+                                        <mi>z</mi>
+                                        <mrow>
+                                            <mo>-</mo>
+                                            <mn>1</mn>
+                                        </mrow>
+                                    </msup>
+                                </mrow>
+                            </mfrac>
+                        </math>
+                    </td>
+                    <td class="tg-0lax">
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                            <mo>|</mo>
+                            <mi>z</mi>
+                            <mo>|</mo>
+                            <mo>&nbsp;</mo>
+                            <mo>&gt;</mo>
+                            <mo>&nbsp;</mo>
+                            <mn>1</mn>
+                        </math>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tg-0lax">
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                            <mi>n</mi>
+                            <mo>·</mo>
+                            <mi>u</mi>
+                            <mo stretchy="false">(</mo>
+                            <mi>n</mi>
+                            <mo stretchy="false">)</mo>
+                        </math>
+                    </td>
+                    <td class="tg-0lax">
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                            <mfrac>
+                                <msup>
+                                    <mi>z</mi>
+                                    <mrow>
+                                        <mo>-</mo>
+                                        <mn>1</mn>
+                                    </mrow>
+                                </msup>
+                                <mrow>
+                                    <mo stretchy="false">(</mo>
+                                    <mn>1</mn>
+                                    <mo>-</mo>
+                                    <msup>
+                                        <mi>z</mi>
+                                        <mrow>
+                                            <mo>-</mo>
+                                            <mn>1</mn>
+                                        </mrow>
+                                    </msup>
+                                    <msup>
+                                        <mo stretchy="false">)</mo>
+                                        <mn>2</mn>
+                                    </msup>
+                                </mrow>
+                            </mfrac>
+                        </math>
+                    </td>
+                    <td class="tg-0lax">
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                            <mo>|</mo>
+                            <mi>z</mi>
+                            <mo>|</mo>
+                            <mo>&nbsp;</mo>
+                            <mo>&gt;</mo>
+                            <mo>&nbsp;</mo>
+                            <mn>1</mn>
+                        </math>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tg-0lax">
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                            <msup>
+                                <mi>a</mi>
+                                <mi>n</mi>
+                            </msup>
+                            <mo>·</mo>
+                            <mi>u</mi>
+                            <mo stretchy="false">(</mo>
+                            <mi>n</mi>
+                            <mo stretchy="false">)</mo>
+                        </math>
+                    </td>
+                    <td class="tg-0lax">
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                            <mfrac>
+                                <mn>1</mn>
+                                <mrow>
+                                    <mn>1</mn>
+                                    <mo>-</mo>
+                                    <mi>a</mi>
+                                    <msup>
+                                        <mi>z</mi>
+                                        <mrow>
+                                            <mo>-</mo>
+                                            <mn>1</mn>
+                                        </mrow>
+                                    </msup>
+                                </mrow>
+                            </mfrac>
+                        </math>
+                    </td>
+                    <td class="tg-0lax">
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                            <mo>|</mo>
+                            <mi>z</mi>
+                            <mo>|</mo>
+                            <mo>&gt;</mo>
+                            <mo>|</mo>
+                            <mi>a</mi>
+                            <mo>|</mo>
+                        </math>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </center>
+    </div>
+    <h4>
+        </br><b>Transmitancja sygnału</b></h4>
+    <div style="text-align: justify;">
+        Transmitancją sygnału
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>H</mi>
+            <mo stretchy="false">(</mo>
+            <mi>z</mi>
+            <mo stretchy="false">)</mo>
+        </math>, czyli funkcją przenoszenia systemu, nazywa się stosunek transformaty sygnału wyjściowego
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>Y</mi>
+            <mo stretchy="false">(</mo>
+            <mi>z</mi>
+            <mo stretchy="false">)</mo>
+        </math>
+        do transformaty sygnału wejściowego
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>X</mi>
+            <mo stretchy="false">(</mo>
+            <mi>z</mi>
+            <mo>),</mo>
+        </math>
+        czyli:
+    </div>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+        <mi>H</mi>
+        <mo stretchy="false">(</mo>
+        <mi>z</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mfrac>
+            <mrow>
+                <mi>Y</mi>
+                <mo stretchy="false">(</mo>
+                <mi>z</mi>
+                <mo stretchy="false">)</mo>
+            </mrow>
+            <mrow>
+                <mi>X</mi>
+                <mo stretchy="false">(</mo>
+                <mi>z</mi>
+                <mo stretchy="false">)</mo>
+            </mrow>
+        </mfrac>
+        <mo>.</mo>
+    </math>
+    <div style="text-align: justify;">
+        Z transmitancji sygnału można wyznaczyć zależność:
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>Y</mi>
+            <mo stretchy="false">(</mo>
+            <mi>z</mi>
+            <mo stretchy="false">)</mo>
+            <mo>=</mo>
+            <mi>H</mi>
+            <mo stretchy="false">(</mo>
+            <mi>z</mi>
+            <mo stretchy="false">)</mo>
+            <mi>X</mi>
+            <mo stretchy="false">(</mo>
+            <mi>z</mi>
+            <mo stretchy="false">)</mo>
+        </math>
+        , która opisuje zależność między sygnałem wejściowym, a sygnałem wyjściowym.<br/>
+        <br/></div>
+    <div style="text-align: justify;">
+        Transmitancję sygnału wykorzystuje się do projektowania filtrów cyfrowych.&nbsp;
+    </div>
+
+
+{% endblock %}
+
+

@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+    <H1> {{ Title }} </H1>
+
+    <div style="text-align: justify;">
+        Operacja próbkowania polega na pobieraniu próbek
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>x</mi>
+            <mo>(</mo>
+            <msub>
+                <mi>t</mi>
+                <mi>n</mi>
+            </msub>
+            <mo>)</mo>
+        </math>&nbsp;ciągłego sygnału
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>x</mi>
+            <mo>(</mo>
+            <mi>t</mi>
+            <mo>)</mo>
+        </math>
+        w dyskretnych chwilach
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <msub>
+                <mi>t</mi>
+                <mi>n</mi>
+            </msub>
+        </math>
+        .
+    </div>
+
+    <div style="text-align: justify;">
+        Ważnymi parametrami związanymi z próbkowaniem są okres i częstotliwość próbkowania.&nbsp;
+    </div>
+    <div style="text-align: justify;">
+        Okres próbkowania
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <msub>
+                <mi>T</mi>
+                <mi>s</mi>
+            </msub>
+        </math>
+        jest czasem między pobieraniem obu próbek, zaś częstotliwość próbkowania
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <msub>
+                <mi>f</mi>
+                <mi>s</mi>
+            </msub>
+        </math>
+        jest odwrotnością okresu próbkowania, tj.
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <msub>
+                <mi>f</mi>
+                <mi>s</mi>
+            </msub>
+            <mo>=</mo>
+            <mfrac>
+                <mn>1</mn>
+                <msub>
+                    <mi>T</mi>
+                    <mi>s</mi>
+                </msub>
+            </mfrac>
+        </math>
+        .
+    </div>
+
+
+    <div style="text-align: justify;">
+        <h4>
+            <b>Twierdzenie o próbkowaniu</b></h4>
+    </div>
+    <div style="text-align: justify;">
+        Skutkiem próbkowania jest fakt, że uzyskuje się tylko informacje o wartości sygnału ciągłego wyłącznie w chwili
+        próbkowania. W związku z powyższym czy mając sygnał dyskretny można go odtworzyć na sygnał ciągły? Tak, o ile
+        zastosuje się twierdzenie o próbkowaniu.
+    </div>
+    <div style="text-align: justify;">
+        <br/></div>
+    <div style="text-align: justify;">
+        Twierdzenie o próbkowaniu jest jednym z najważniejszych twierdzeń dotyczących teorii sygnałów. Mówi ono o tym,
+        że sygnał spróbkowany może być odtworzony na sygnał ciągły tylko w jeden sposób. Twierdzenie o próbkowaniu
+        związane jest z widmem sygnału. Widmem sygnału nazywa się przedstawienie sygnału w dziedzinie częstotliwości lub
+        pulsacji, które otrzymuje się&nbsp; przy pomocy transformaty Fouriera.
+    </div>
+    <div style="text-align: justify;">
+        <br/>
+        Twierdzenie o próbkowaniu mówi, że częstotliwość próbkowania musi być co najmniej dwa razy większa niż
+        największa częstotliwość sygnału próbkowanego.&nbsp;
+    </div>
+    <div style="text-align: justify;">
+        <br/></div>
+    <div style="text-align: justify;">
+        Niespełnienie twierdzenia o próbkowaniu powoduje nakładanie się widm czyli tzn. aliasing.
+    </div>
+    <div style="text-align: justify;">
+        <br/></div>
+    <div style="text-align: justify;">
+        <h4>
+            <b>Aliasing</b></h4>
+    </div>
+    <div style="text-align: justify;">
+        Aliasingiem nazywa się nieodwracalne zniekształcenie sygnału spowodowane niespełnieniem twierdzenia o
+        próbkowaniu. W sytuacji, gdy maksymalna częstotliwość sygnału ciągłego jest większa od połowy częstotliwości
+        próbkowania, wówczas kolejne powtarzające się widma nakładają się na siebie. Wskutek nakładania się widm
+        odzyskanie sygnału ciągłego jest niemożliwe.&nbsp;
+    </div>
+    <br/>
+
+    <div style="text-align: center;">
+        <img src="{{ url_for('static', filename=aliasing_svg) }} " height="400" width="600"/>
+    </div>
+    <div style="text-align: center;">
+        <b>Rysunek. Przykład dwóch sinusoid pasujących do tego samego wzoru próbek. Dwie funkcje trygonometryczne:
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <mi>sin</mi>
+                <mo>(</mo>
+                <mi>x</mi>
+                <mo>)</mo>
+            </math>
+            (niebieska krzywa) oraz
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <mi>sin</mi>
+                <mo>(</mo>
+                <mn>5</mn>
+                <mi>x</mi>
+                <mo>)</mo>
+            </math>
+            (pomarańczowa krzywa) próbkowane z częstotliwością
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <mn>256</mn>
+            </math>
+            Hz oraz próbki sygnału
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <mi>sin</mi>
+                <mo>(</mo>
+                <mi>x</mi>
+                <mo>)</mo>
+            </math>
+            próbkowanego z częstotliwością
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <mn>2</mn>
+                <mi>π</mi>
+            </math>
+            .</b></div>
+
+{% endblock %}

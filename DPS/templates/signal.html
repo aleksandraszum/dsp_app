@@ -12,7 +12,7 @@
         opisujący impuls Kroneckera można zapisać w następujący sposób:<br/>
     </div>
     <div style="text-align: center;">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
+       <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
             <mi>&#x3B4;</mi>
             <mo>&#xA0;</mo>
             <mo stretchy="false">(</mo>
@@ -64,7 +64,9 @@
             </div>
             <div id="collapseOne" class="panel-collapse collapse">
                 <div class="panel-body">
-                    tu wykres sygnału ciągłego
+                    <div style="text-align: center;">
+                        <img src="{{ url_for('static', filename=kronecker_c) }} " height="400" width="600"/>
+                    </div>
                 </div>
             </div>
         </div>
@@ -78,7 +80,9 @@
             </div>
             <div id="collapseTwo" class="panel-collapse collapse in">
                 <div class="panel-body">
-                    tu wykres sygnału dyskretnego
+                    <div style="text-align: center;">
+                        <img src="{{ url_for('static', filename=kronecker_d) }} " height="400" width="600"/>
+                    </div>
                 </div>
             </div>
         </div>
@@ -101,7 +105,7 @@
         warunkach początkowych. Dla wymuszenia w postaci skoku jednostkowego:
     </div>
     <div style="text-align: center;">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
+       <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
             <mn>1</mn>
             <mo stretchy="false">(</mo>
             <mi>t</mi>
@@ -150,7 +154,9 @@
             </div>
             <div id="collapseOneImpulse" class="panel-collapse collapse">
                 <div class="panel-body">
-                    tu wykres sygnału ciągłego
+                    <div style="text-align: center;">
+                        <img src="{{ url_for('static', filename=step_c) }} " height="400" width="600"/>
+                    </div>
                 </div>
             </div>
         </div>
@@ -164,7 +170,9 @@
             </div>
             <div id="collapseTwoImpulse" class="panel-collapse collapse in">
                 <div class="panel-body">
-                    tu wykres sygnału dyskretnego
+                    <div style="text-align: center;">
+                        <img src="{{ url_for('static', filename=step_d) }} " height="400" width="600"/>
+                    </div>
                 </div>
             </div>
         </div>
@@ -176,7 +184,7 @@
         jednostkowej amplitudzie. Sygnał ten definiuje się wzorem:<br/>
 
         <div style="text-align: center;">
-            <math xmlns="http://www.w3.org/1998/Math/MathML">
+           <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
                 <mi>Π</mi>
                 <mo stretchy="false">(</mo>
                 <mi>t</mi>
@@ -251,18 +259,20 @@
         </div>
         <br/></div>
 
-        <div class="panel-group" id="rectangle">
+    <div class="panel-group" id="rectangle">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h5 class="panel-title">
                     <a data-toggle="collapse" data-parent="#rectangle" href="#collapseOneRectangle">
-                        Impuls Kroneckera - sygnał ciągły
+                        Impuls Prostokątny - sygnał ciągły
                     </a>
                 </h5>
             </div>
             <div id="collapseOneRectangle" class="panel-collapse collapse">
                 <div class="panel-body">
-                    tu wykres sygnału ciągłego
+                    <div style="text-align: center;">
+                        <img src="{{ url_for('static', filename=rectangle_c) }} " height="400" width="600"/>
+                    </div>
                 </div>
             </div>
         </div>
@@ -270,13 +280,15 @@
             <div class="panel-heading">
                 <h5 class="panel-title">
                     <a data-toggle="collapse" data-parent="#rectangle" href="#collapseTwoRectangle">
-                        Impuls Kroneckera - sygnał dyskretny
+                        Impuls Prostokątny - sygnał dyskretny
                     </a>
                 </h5>
             </div>
             <div id="collapseTwoRectangle" class="panel-collapse collapse in">
                 <div class="panel-body">
-                    tu wykres sygnału dyskretnego
+                    <div style="text-align: center;">
+                        <img src="{{ url_for('static', filename=rectangle_d) }} " height="400" width="600"/>
+                    </div>
                 </div>
             </div>
         </div>
@@ -287,7 +299,7 @@
         Sygnał nazywany impulsem trójkątnym definiuje się wzorem:&nbsp;
     </div>
     <div style="text-align: center;">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
+       <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
             <mo>∧</mo>
             <mo stretchy="false">(</mo>
             <mi>t</mi>
@@ -343,7 +355,9 @@
                             <mo>&nbsp;</mo>
                             <mo>&nbsp;</mo>
                             <mo>&nbsp;</mo>
+                            <mo>&nbsp;</mo>
                             <mi>dla</mi>
+                            <mo>&nbsp;</mo>
                             <mo>|</mo>
                             <mi>t</mi>
                             <mo>|</mo>
@@ -356,18 +370,21 @@
         </math>
     </div>
 
-        <div class="panel-group" id="triangle">
+    <div class="panel-group" id="triangle">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h5 class="panel-title">
                     <a data-toggle="collapse" data-parent="#triangle" href="#collapseOneTriangle">
-                        Impuls Kroneckera - sygnał ciągły
+                        Impuls trójkątny - sygnał ciągły
                     </a>
                 </h5>
             </div>
             <div id="collapseOneTriangle" class="panel-collapse collapse">
                 <div class="panel-body">
-                    tu wykres sygnału ciągłego
+                    <div style="text-align: center;">
+                        <img src="{{ url_for('static', filename=triangle_c) }} " height="400" width="600"/>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -375,13 +392,15 @@
             <div class="panel-heading">
                 <h5 class="panel-title">
                     <a data-toggle="collapse" data-parent="#triangle" href="#collapseTwoTriangle">
-                        Impuls Kroneckera - sygnał dyskretny
+                        Impuls trójkątny - sygnał dyskretny
                     </a>
                 </h5>
             </div>
             <div id="collapseTwoTriangle" class="panel-collapse collapse in">
                 <div class="panel-body">
-                    tu wykres sygnału dyskretnego
+                    <div style="text-align: center;">
+                        <img src="{{ url_for('static', filename=triangle_d) }} " height="400" width="600"/>
+                    </div>
                 </div>
             </div>
         </div>
@@ -394,7 +413,7 @@
         Sygnał wykładniczy definiowany jest wzorem:
     </div>
     <div style="text-align: center;">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
+       <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
             <mi>s</mi>
             <mo stretchy="false">(</mo>
             <mi>n</mi>
@@ -410,7 +429,7 @@
         W dziedzinie liczb zespolonych również można zdefiniować sygnał wykładniczy:
     </div>
     <div style="text-align: center;">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
+       <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
             <mi>s</mi>
             <mo stretchy="false">(</mo>
             <mi>n</mi>
@@ -430,18 +449,20 @@
         </math>
     </div>
 
-        <div class="panel-group" id="exp">
+    <div class="panel-group" id="exp">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h5 class="panel-title">
                     <a data-toggle="collapse" data-parent="#exp" href="#collapseOneExp">
-                        Impuls Kroneckera - sygnał ciągły
+                        Sygnał wykładniczy - sygnał ciągły
                     </a>
                 </h5>
             </div>
             <div id="collapseOneExp" class="panel-collapse collapse">
                 <div class="panel-body">
-                    tu wykres sygnału ciągłego
+                    <div style="text-align: center;">
+                        <img src="{{ url_for('static', filename=exp_c) }} " height="400" width="600"/>
+                    </div>
                 </div>
             </div>
         </div>
@@ -449,13 +470,15 @@
             <div class="panel-heading">
                 <h5 class="panel-title">
                     <a data-toggle="collapse" data-parent="#exp" href="#collapseTwoExp">
-                        Impuls Kroneckera - sygnał dyskretny
+                        Sygnał wykładniczy - sygnał dyskretny
                     </a>
                 </h5>
             </div>
             <div id="collapseTwoExp" class="panel-collapse collapse in">
                 <div class="panel-body">
-                    tu wykres sygnału dyskretnego
+                    <div style="text-align: center;">
+                        <img src="{{ url_for('static', filename=exp_d) }} " height="400" width="600"/>
+                    </div>
                 </div>
             </div>
         </div>
@@ -466,7 +489,7 @@
         Sygnał sinusoidalny jest sygnałem zdefiniowanym następująco:
     </div>
     <div style="text-align: center;">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
+       <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
             <mi>s</mi>
             <mo>(</mo>
             <mi>t</mi>
@@ -502,18 +525,20 @@
         </ol>
         <br/></div>
 
-        <div class="panel-group" id="sin">
+    <div class="panel-group" id="sin">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h5 class="panel-title">
                     <a data-toggle="collapse" data-parent="#sin" href="#collapseOneSin">
-                        Impuls Kroneckera - sygnał ciągły
+                        Sygnał sinusoidalny - sygnał ciągły
                     </a>
                 </h5>
             </div>
             <div id="collapseOneSin" class="panel-collapse collapse">
                 <div class="panel-body">
-                    tu wykres sygnału ciągłego
+                    <div style="text-align: center;">
+                        <img src="{{ url_for('static', filename=sinusoidal_c) }} " height="400" width="600"/>
+                    </div>
                 </div>
             </div>
         </div>
@@ -521,13 +546,15 @@
             <div class="panel-heading">
                 <h5 class="panel-title">
                     <a data-toggle="collapse" data-parent="#sin" href="#collapseTwoSin">
-                        Impuls Kroneckera - sygnał dyskretny
+                        Sygnał sinusoidalny - sygnał dyskretny
                     </a>
                 </h5>
             </div>
             <div id="collapseTwoSin" class="panel-collapse collapse in">
                 <div class="panel-body">
-                    tu wykres sygnału dyskretnego
+                    <div style="text-align: center;">
+                        <img src="{{ url_for('static', filename=sinusoidal_d) }} " height="400" width="600"/>
+                    </div>
                 </div>
             </div>
         </div>

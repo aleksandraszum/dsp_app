@@ -1,0 +1,226 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+    <H1> {{ Title }} </H1>
+
+    <div style="text-align: justify;">
+        Sygnały zespolone są często stosowane w teorii sygnałów.&nbsp;
+    </div>
+    <div style="text-align: justify;">
+        </br>Cechy sygnałów zespolonych:
+    </div>
+    <div style="text-align: justify;">
+    </div>
+    <ul>
+        <li>abstrakcyjny charakter,</li>
+        <li>możliwość znacznego uproszczenia analizy (zwłaszcza w przypadku sygnałów złożonych).</li>
+    </ul>
+    <div>
+        </br>Sygnał zespolony ma postać:
+    </div>
+    <div>
+        <div style="text-align: center;">
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                <mi>z</mi>
+                <mo stretchy="false">(</mo>
+                <mi>t</mi>
+                <mo stretchy="false">)</mo>
+                <mo>=</mo>
+                <mi>x</mi>
+                <mo stretchy="false">(</mo>
+                <mi>t</mi>
+                <mo stretchy="false">)</mo>
+                <mo>+</mo>
+                <mi>j</mi>
+                <mi>y</mi>
+                <mo stretchy="false">(</mo>
+                <mi>t</mi>
+                <mo stretchy="false">)</mo>
+                <mo>,</mo>
+            </math>
+        </div>
+    </div>
+    <div>
+        <div style="text-align: justify;">
+            gdzie
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <mi>x</mi>
+                <mo stretchy="false">(</mo>
+                <mi>t</mi>
+                <mo stretchy="false">)</mo>
+            </math>
+            i
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <mi>y</mi>
+                <mo stretchy="false">(</mo>
+                <mi>t</mi>
+                <mo stretchy="false">)</mo>
+            </math>
+            są sygnałami rzeczywistymi.
+        </div>
+    </div>
+
+    <div style="text-align: justify;">
+        </br>Sygnał zespolony można przedstawić w postaci biegunowej:
+    </div>
+    <div style="text-align: center;">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mi>z</mi>
+            <mo stretchy="false">(</mo>
+            <mi>t</mi>
+            <mo stretchy="false">)</mo>
+            <mo>=</mo>
+            <mo stretchy="false">|</mo>
+            <mi>z</mi>
+            <mo stretchy="false">(</mo>
+            <mi>t</mi>
+            <mo stretchy="false">)</mo>
+            <mo stretchy="false">|</mo>
+            <msup>
+                <mi>e</mi>
+                <mrow>
+                    <mi>i</mi>
+                    <mi>&#x3D5;</mi>
+                    <mo stretchy="false">(</mo>
+                    <mi>t</mi>
+                    <mo stretchy="false">)</mo>
+                </mrow>
+            </msup>
+            <mo>,</mo>
+        </math>
+        </div>
+    gdzie
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mo stretchy="false">|</mo>
+        <mi>z</mi>
+        <mo stretchy="false">(</mo>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">|</mo>
+        <mo>=</mo>
+        <msqrt>
+            <msup>
+                <mi>x</mi>
+                <mn>2</mn>
+            </msup>
+            <mo stretchy="false">(</mo>
+            <mi>t</mi>
+            <mo stretchy="false">)</mo>
+            <mo>+</mo>
+            <msup>
+                <mi>y</mi>
+                <mn>2</mn>
+            </msup>
+            <mo stretchy="false">(</mo>
+            <mi>t</mi>
+            <mo stretchy="false">)</mo>
+        </msqrt>
+    </math> jest modułem,a
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>&#x3D5;</mi>
+        <mo stretchy="false">(</mo>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mi>arctg</mi>
+        <mrow>
+            <mo>[</mo>
+            <mi>y</mi>
+            <mo stretchy="false">(</mo>
+            <mi>t</mi>
+            <mo stretchy="false">)</mo>
+            <mo>/</mo>
+            <mi>x</mi>
+            <mo stretchy="false">(</mo>
+            <mi>t</mi>
+            <mo stretchy="false">)</mo>
+            <mo>]</mo>
+        </mrow>
+    </math> argumentem sygnału.
+
+    <div style="text-align: justify;">
+        </br>Energia sygnału zespolonego definiuje się wzorem:
+    </div>
+    <div style="text-align: center;">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <msub>
+                <mi>E</mi>
+                <mi>x</mi>
+            </msub>
+            <mo>=</mo>
+            <msubsup>
+                <mo>∫</mo>
+                <mrow>
+                    <mo>-</mo>
+                    <mo>∞</mo>
+                </mrow>
+                <mo>∞</mo>
+            </msubsup>
+            <mo stretchy="false">|</mo>
+            <mi>z</mi>
+            <mo stretchy="false">(</mo>
+            <mi>t</mi>
+            <mo stretchy="false">)</mo>
+            <msup>
+                <mo stretchy="false">|</mo>
+                <mn>2</mn>
+            </msup>
+        </math>
+    </div>
+    <div style="text-align: center;">
+        <br/></div>
+    <div style="text-align: justify;">
+        Moc sygnału zespolonego definiuje się wzorem:
+    </div>
+    <div style="text-align: center;">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <msub>
+                <mi>P</mi>
+                <mi>x</mi>
+            </msub>
+            <mo>=</mo>
+            <munder>
+                <mi>lim</mi>
+                <mrow>
+                    <mi>T</mi>
+                    <mo>&#x2192;</mo>
+                    <mo>&#x221E;</mo>
+                </mrow>
+            </munder>
+            <mfrac>
+                <mn>1</mn>
+                <mrow>
+                    <mn>2</mn>
+                    <mi>T</mi>
+                </mrow>
+            </mfrac>
+            <msubsup>
+                <mo>&#x222B;</mo>
+                <mrow>
+                    <mo>-</mo>
+                    <mi>T</mi>
+                </mrow>
+                <mi>T</mi>
+            </msubsup>
+            <mo stretchy="false">|</mo>
+            <mi>z</mi>
+            <mo stretchy="false">(</mo>
+            <mi>t</mi>
+            <mo stretchy="false">)</mo>
+            <msup>
+                <mo stretchy="false">|</mo>
+                <mn>2</mn>
+            </msup>
+            <mi mathvariant="normal">d</mi>
+            <mi>t</mi>
+        </math>
+    </div>
+    <div style="text-align: center;">
+        <img src="{{ url_for('static', filename='complexnumber.svg') }}" alt="signal" width="256" height="256"></div>
+    <div style="text-align: center;">
+        <b>Rysunek. Graficzne przedstawienie liczby zespolonej z.</b>
+    </div>
+{% endblock %}

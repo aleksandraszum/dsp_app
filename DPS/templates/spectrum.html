@@ -1,0 +1,238 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+    <H1> {{ Title }} </H1>
+
+    <div style="text-align: justify;">
+        Transformatę Fouriera sygnału ciągłego
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mover>
+                <mi>s</mi>
+                <mo>^</mo>
+            </mover>
+            <mo stretchy="false">(</mo>
+            <mi>f</mi>
+            <mo stretchy="false">)</mo>
+        </math>
+        bądź sygnału dyskretnego
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>S</mi>
+            <mo stretchy="false">[</mo>
+            <mi>n</mi>
+            <mo stretchy="false">]</mo>
+        </math>
+        nazywa się widmem sygnału lub gęstością widmową. Widmo sygnału ma aspekt czysto matematyczny.<br/>
+        <br/>
+        <h3>
+            <b>Widmo amplitudowe oraz widmo fazowe</b></h3>
+        Widmo amplitudowe oraz widmo fazowe są rzeczywistymi charakterystykami sygnału, które opisują gęstość amplitudy
+        oraz gęstość fazy sygnału.<br/>
+        <br/>
+        <br/>
+        Amplitudę sygnału definiuje się następująco:<br/>
+        <ul>
+            <li>dla całkowej transformaty Fouriera:
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                    <mi>A</mi>
+                    <mo stretchy="false">(</mo>
+                    <mi>f</mi>
+                    <mo stretchy="false">)</mo>
+                    <mo>=</mo>
+                    <mo stretchy="false">|</mo>
+                    <mover>
+                        <mi>s</mi>
+                        <mo>^</mo>
+                    </mover>
+                    <mo stretchy="false">(</mo>
+                    <mi>f</mi>
+                    <mo stretchy="false">)</mo>
+                    <mo stretchy="false">|</mo>
+                    <mo>=</mo>
+                    <msqrt>
+                        <mover>
+                            <msubsup>
+                                <mi>s</mi>
+                                <mrow>
+                                    <mi>r</mi>
+                                    <mi>e</mi>
+                                </mrow>
+                                <mn>2</mn>
+                            </msubsup>
+                            <mo>^</mo>
+                        </mover>
+                        <mo stretchy="false">(</mo>
+                        <mi>f</mi>
+                        <mo stretchy="false">)</mo>
+                        <mo>+</mo>
+                        <mover>
+                            <msubsup>
+                                <mi>s</mi>
+                                <mrow>
+                                    <mi>i</mi>
+                                    <mi>m</mi>
+                                </mrow>
+                                <mn>2</mn>
+                            </msubsup>
+                            <mo>^</mo>
+                        </mover>
+                        <mo stretchy="false">(</mo>
+                        <mi>f</mi>
+                        <mo stretchy="false">)</mo>
+                    </msqrt>
+                </math>
+            </li>
+            <li>dla dyskretnej transformaty Fouriera:
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                    <mi>A</mi>
+                    <mo stretchy="false">[</mo>
+                    <mi>n</mi>
+                    <mo stretchy="false">]</mo>
+                    <mo>=</mo>
+                    <mo stretchy="false">|</mo>
+                    <mover>
+                        <mi>s</mi>
+                        <mo>^</mo>
+                    </mover>
+                    <mo stretchy="false">(</mo>
+                    <mo stretchy="false">[</mo>
+                    <mi>n</mi>
+                    <mo stretchy="false">]</mo>
+                    <mo stretchy="false">|</mo>
+                    <mo>=</mo>
+                    <msqrt>
+                        <mover>
+                            <msubsup>
+                                <mi>s</mi>
+                                <mrow>
+                                    <mi>r</mi>
+                                    <mi>e</mi>
+                                </mrow>
+                                <mn>2</mn>
+                            </msubsup>
+                            <mo>^</mo>
+                        </mover>
+                        <mo stretchy="false">[</mo>
+                        <mi>n</mi>
+                        <mo stretchy="false">]</mo>
+                        <mo>+</mo>
+                        <mover>
+                            <msubsup>
+                                <mi>s</mi>
+                                <mrow>
+                                    <mi>i</mi>
+                                    <mi>m</mi>
+                                </mrow>
+                                <mn>2</mn>
+                            </msubsup>
+                            <mo>^</mo>
+                        </mover>
+                        <mo stretchy="false">[</mo>
+                        <mi>n</mi>
+                        <mo stretchy="false">]</mo>
+                    </msqrt>
+                </math>
+            </li>
+        </ul>
+        <br/>
+        Fazę sygnału definiuje się następująco:<br/>
+        <div>
+            <ul>
+                <li>dla całkowej transformaty Fouriera:&nbsp;<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                    <mi>ϕ</mi>
+                    <mo stretchy="false">(</mo>
+                    <mi>f</mi>
+                    <mo stretchy="false">)</mo>
+                    <mo>=</mo>
+                    <mi>arctan</mi>
+                    <mfrac>
+                        <mrow>
+                            <mover>
+                                <msub>
+                                    <mi>s</mi>
+                                    <mrow>
+                                        <mi>i</mi>
+                                        <mi>m</mi>
+                                    </mrow>
+                                </msub>
+                                <mo>^</mo>
+                            </mover>
+                            <mo stretchy="false">(</mo>
+                            <mi>f</mi>
+                            <mo stretchy="false">)</mo>
+                        </mrow>
+                        <mrow>
+                            <mover>
+                                <msub>
+                                    <mi>s</mi>
+                                    <mrow>
+                                        <mi>r</mi>
+                                        <mi>e</mi>
+                                    </mrow>
+                                </msub>
+                                <mo>^</mo>
+                            </mover>
+                            <mo stretchy="false">(</mo>
+                            <mi>f</mi>
+                            <mo stretchy="false">)</mo>
+                        </mrow>
+                    </mfrac>
+                </math>
+                </li>
+                <li>dla dyskretnej transformaty Fouriera:&nbsp;<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                    <mi>ϕ</mi>
+                    <mo stretchy="false">[</mo>
+                    <mi>n</mi>
+                    <mo stretchy="false">]</mo>
+                    <mo>=</mo>
+                    <mi>arctan</mi>
+                    <mfrac>
+                        <mrow>
+                            <mover>
+                                <msub>
+                                    <mi>s</mi>
+                                    <mrow>
+                                        <mi>i</mi>
+                                        <mi>m</mi>
+                                    </mrow>
+                                </msub>
+                                <mo>^</mo>
+                            </mover>
+                            <mo stretchy="false">[</mo>
+                            <mi>n</mi>
+                            <mo stretchy="false">]</mo>
+                        </mrow>
+                        <mrow>
+                            <mover>
+                                <msub>
+                                    <mi>s</mi>
+                                    <mrow>
+                                        <mi>r</mi>
+                                        <mi>e</mi>
+                                    </mrow>
+                                </msub>
+                                <mo>^</mo>
+                            </mover>
+                            <mo stretchy="false">[</mo>
+                            <mi>n</mi>
+                            <mo stretchy="false">]</mo>
+                        </mrow>
+                    </mfrac>
+                </math>
+                </li>
+            </ul>
+            <br/>
+            <br/></div>
+        <div style="text-align: center;">
+            Rys 1. Sygnał + widmo
+        </div>
+        <div style="text-align: center;">
+            Rys 2. Amplituda sygnału
+        </div>
+        <div style="text-align: center;">
+            Rys 3. Faza sygnału
+        </div>
+    </div>
+{% endblock %}
