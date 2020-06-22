@@ -112,6 +112,14 @@ def create_app(test_config=None):
     @app.route('/iir')
     def iir():
         return render_template('iir.html', Title="Filtr o nieskończonej odpowiedzi impulsowej")
+
+    @app.route('/filtry-zadania')
+    def filtertask():
+        return render_template('filtertask.html', Title="Filtry cyfrowe - zadania w Pythonie")
+
+    @app.route('/iir')
+    def filterquiz():
+        return render_template('filterquiz.html', Title="Filtry cyfrowe - quiz")
     return app
 
 # C:\Users\X\PycharmProjects\DSP_webapp\DPS\templates
