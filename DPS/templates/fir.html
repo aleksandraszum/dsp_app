@@ -6,6 +6,554 @@
 {% block content %}
     <H1> {{ Title }} </H1>
 
+    <div style="text-align: justify;">
+        Filtry FIR są to filtry o skończonej odpowiedzi impulsowej. Związane jest to z faktem, że transmitancja filtrów
+        FIR jest wielomianem zmiennej zespolonej z, wskutek czego odpowiedź impulsowa filtrów FIR jest skończona, a
+        liczba niezerowych próbek odpowiedzi jest równa rzędowi filtru. Filtry FIR nie posiadają biegunów, co powoduje,
+        że filtry FIR są stabilne.
+    </div>
+    <div style="text-align: justify;">
+        <br/></div>
+    <div style="text-align: justify;">
+        Stosunkowo nietrudno jest zaprojektować tak filtr FIR, aby jego charakterystyka fazowa była liniowa. Warunkiem,
+        który zapewni liniową charakterystykę fazową, jest odpowiedź impulsowa postaci:
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mi>h</mi>
+            <mo>(</mo>
+            <mi>n</mi>
+            <mo>)</mo>
+            <mo>=</mo>
+            <mi>h</mi>
+            <mo>(</mo>
+            <mi>N</mi>
+            <mo>-</mo>
+            <mn>1</mn>
+            <mo>-</mo>
+            <mi>n</mi>
+            <mo>)</mo>
+        </math>
+    </div>
+    <div style="text-align: justify;">
+        pamiętając, że transmitancja filtru ma postać:
+    </div>
+    <div style="text-align: justify;">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mi>H</mi>
+            <mo stretchy="false">(</mo>
+            <mi>z</mi>
+            <mo stretchy="false">)</mo>
+            <mo>=</mo>
+            <munderover>
+                <mo>∑</mo>
+                <mrow>
+                    <mi>n</mi>
+                    <mo>=</mo>
+                    <mn>0</mn>
+                </mrow>
+                <mrow>
+                    <mi>N</mi>
+                    <mo>-</mo>
+                    <mn>1</mn>
+                </mrow>
+            </munderover>
+            <mi>h</mi>
+            <mo stretchy="false">(</mo>
+            <mi>n</mi>
+            <mo stretchy="false">)</mo>
+            <msup>
+                <mi>z</mi>
+                <mrow>
+                    <mo>-</mo>
+                    <mi>n</mi>
+                </mrow>
+            </msup>
+        </math>
+    </div>
+    <div style="text-align: justify;">
+        <br/></div>
+    <div style="text-align: justify;">
+        Filtr FIR można zaprojektować wykorzystując metodę okien czasowych. Filtry są okienkowane funkcją sinc. Tego
+        rodzaju filtry wykorzystuje się w celu oddzielenia jednego pasma częstotliwości od drugiego. Cechują się
+        stabilnością oraz osiągnięciem parametrów o wysokim poziomie w dziedzinie częstotliwości kosztem słabego
+        działania w dziedzinie czasu.<br/>
+        <br/>
+        Odpowiedź impulsowa idealnego filtrów dolno-&nbsp;<math xmlns="http://www.w3.org/1998/Math/MathML">
+        <msub>
+            <mi>h</mi>
+            <mi>d</mi>
+        </msub>
+        <mo>(</mo>
+        <mi>t</mi>
+        <mo>)</mo>
+    </math>
+        i górnoprzepustowego
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <msub>
+                <mi>h</mi>
+                <mi>g</mi>
+            </msub>
+            <mo>(</mo>
+            <mi>t</mi>
+            <mo>)</mo>
+        </math>
+        wynoszą:<br/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <msub>
+                <mi>h</mi>
+                <mi>d</mi>
+            </msub>
+            <mo stretchy="false">(</mo>
+            <mi>t</mi>
+            <mo stretchy="false">)</mo>
+            <mo>=</mo>
+            <mfenced close="" open="{">
+                <mtable columnalign="left">
+                    <mtr>
+                        <mtd>
+                            <mfrac>
+                                <mrow>
+                                    <mi>sin</mi>
+                                    <mo>(</mo>
+                                    <mn>2</mn>
+                                    <mi>π</mi>
+                                    <msub>
+                                        <mi>f</mi>
+                                        <mi>c</mi>
+                                    </msub>
+                                    <mi>t</mi>
+                                    <mo>)</mo>
+                                </mrow>
+                                <mrow>
+                                    <mi>π</mi>
+                                    <mi>t</mi>
+                                </mrow>
+                            </mfrac>
+                            <mo>,</mo>
+                            <mo>&nbsp;</mo>
+                            <mi>dla</mi>
+                            <mo>&nbsp;</mo>
+                            <mi>t</mi>
+                            <mo>&nbsp;</mo>
+                            <mo>≠</mo>
+                            <mn>0</mn>
+                            <mo>&nbsp;</mo>
+                        </mtd>
+                    </mtr>
+                    <mtr>
+                        <mtd>
+                            <mn>2</mn>
+                            <msub>
+                                <mi>f</mi>
+                                <mi>c</mi>
+                            </msub>
+                            <mo>,</mo>
+                            <mo>&nbsp;</mo>
+                            <mi>dla</mi>
+                            <mo>&nbsp;</mo>
+                            <mi>t</mi>
+                            <mo>&nbsp;</mo>
+                            <mo>=</mo>
+                            <mo>&nbsp;</mo>
+                            <mn>0</mn>
+                        </mtd>
+                    </mtr>
+                </mtable>
+            </mfenced>
+        </math>
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <msub>
+                <mi>h</mi>
+                <mi>g</mi>
+            </msub>
+            <mo stretchy="false">(</mo>
+            <mi>t</mi>
+            <mo stretchy="false">)</mo>
+            <mo>=</mo>
+            <mfenced close="" open="{">
+                <mtable columnalign="left">
+                    <mtr>
+                        <mtd>
+                            <mo>-</mo>
+                            <mo>&nbsp;</mo>
+                            <mfrac>
+                                <mrow>
+                                    <mi>sin</mi>
+                                    <mo>(</mo>
+                                    <mn>2</mn>
+                                    <mi>π</mi>
+                                    <msub>
+                                        <mi>f</mi>
+                                        <mi>c</mi>
+                                    </msub>
+                                    <mi>t</mi>
+                                    <mo>)</mo>
+                                </mrow>
+                                <mrow>
+                                    <mi>π</mi>
+                                    <mi>t</mi>
+                                </mrow>
+                            </mfrac>
+                            <mo>,</mo>
+                            <mo>&nbsp;</mo>
+                            <mi>dla</mi>
+                            <mo>&nbsp;</mo>
+                            <mi>t</mi>
+                            <mo>&nbsp;</mo>
+                            <mo>≠</mo>
+                            <mn>0</mn>
+                            <mo>&nbsp;</mo>
+                        </mtd>
+                    </mtr>
+                    <mtr>
+                        <mtd>
+                            <mn>1</mn>
+                            <mo>&nbsp;</mo>
+                            <mo>-</mo>
+                            <mo>&nbsp;</mo>
+                            <mn>2</mn>
+                            <msub>
+                                <mi>f</mi>
+                                <mi>c</mi>
+                            </msub>
+                            <mo>,</mo>
+                            <mo>&nbsp;</mo>
+                            <mi>dla</mi>
+                            <mo>&nbsp;</mo>
+                            <mi>t</mi>
+                            <mo>&nbsp;</mo>
+                            <mo>=</mo>
+                            <mo>&nbsp;</mo>
+                            <mn>0</mn>
+                        </mtd>
+                    </mtr>
+                </mtable>
+            </mfenced>
+        </math>
+        <br/>
+        Warto zauważyć, że dla
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>t</mi>
+            <mo>=</mo>
+            <mn>0</mn>
+        </math>
+        jest inny wzór. Związane jest to z faktem, że w przypadku zastosowania drugiego wzoru nastąpiłoby dzielenie
+        przez 0. Dokonanie splotu analizowanego sygnału z jedną z powyższych odpowiedzi impulsowych utworzy filtr dolno-
+        lub górnoprzepustowy.<br/>
+        <br/>
+        Biorąc pod uwagę, że uzyskany filtr jest tylko przybliżeniem filtru idealnego, uzyskana odpowiedź
+        częstotliwościowa również nie jest idealna. Aby poradzić sobie z tą niedogodnością, stosuje się tzn. okna.
+        Polega to na tym, że wymnaża się odpowiedź impulsową przez wybrane przez siebie okno. Działanie to usuwa
+        gwałtowne opadanie na obciętych krańcach odpowiedzi impulsowej i w efekcie końcowym poprawia uzyskaną odpowiedź
+        częstotliwościową.<br/>
+        <br/>
+        W tabeli poniżej scharakteryzowano niektóre okna.<br/>
+        <br/>
+        <div style="text-align: center;">
+            <b>Tabela. Przykłady okien używanych do projektowania filtrów FIR.</b></div>
+        <center>
+            <table class="tg">
+                <thead>
+                <tr>
+                    <th class="tg-amwm">Okno</th>
+                    <th class="tg-amwm">Wzór</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="tg-baqh">prostokątne</td>
+                    <td class="tg-baqh">
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                            <mi>w</mi>
+                            <mo stretchy="false">(</mo>
+                            <mi>n</mi>
+                            <mo stretchy="false">)</mo>
+                            <mo>=</mo>
+                            <mfenced open="{" close="">
+                                <mtable columnalign="left">
+                                    <mtr>
+                                        <mtd>
+                                            <mn>1</mn>
+                                            <mo>,</mo>
+                                            <mo>&#xA0;</mo>
+                                            <mo>&#xA0;</mo>
+                                            <mn>0</mn>
+                                            <mo>&#xA0;</mo>
+                                            <mo>&#x2264;</mo>
+                                            <mo>&#xA0;</mo>
+                                            <mi>n</mi>
+                                            <mo>&#xA0;</mo>
+                                            <mo>&#x2264;</mo>
+                                            <mi>N</mi>
+                                            <mo>-</mo>
+                                            <mn>1</mn>
+                                        </mtd>
+                                    </mtr>
+                                    <mtr>
+                                        <mtd>
+                                            <mn>0</mn>
+                                            <mo>,</mo>
+                                            <mo>&#xA0;</mo>
+                                            <mi>n</mi>
+                                            <mo>&#xA0;</mo>
+                                            <mo>&gt;</mo>
+                                            <mo>&#x2009;</mo>
+                                            <mi>N</mi>
+                                            <mo>-</mo>
+                                            <mn>1</mn>
+                                        </mtd>
+                                    </mtr>
+                                </mtable>
+                            </mfenced>
+                        </math>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tg-baqh">Bartletta</td>
+                    <td class="tg-baqh">
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                            <mi>w</mi>
+                            <mo stretchy="false">(</mo>
+                            <mi>n</mi>
+                            <mo stretchy="false">)</mo>
+                            <mo>=</mo>
+                            <mfenced open="{" close="">
+                                <mtable columnalign="left">
+                                    <mtr>
+                                        <mtd>
+                                            <mfrac>
+                                                <mrow>
+                                                    <mn>2</mn>
+                                                    <mi>n</mi>
+                                                </mrow>
+                                                <mrow>
+                                                    <mi>N</mi>
+                                                    <mo>-</mo>
+                                                    <mn>1</mn>
+                                                </mrow>
+                                            </mfrac>
+                                            <mo>,</mo>
+                                            <mo>&#xA0;</mo>
+                                            <mn>0</mn>
+                                            <mo>&#xA0;</mo>
+                                            <mo>&#x2264;</mo>
+                                            <mi>n</mi>
+                                            <mo>&#xA0;</mo>
+                                            <mo>&#x2264;</mo>
+                                            <mfrac>
+                                                <mrow>
+                                                    <mi>N</mi>
+                                                    <mo>-</mo>
+                                                    <mn>1</mn>
+                                                </mrow>
+                                                <mn>2</mn>
+                                            </mfrac>
+                                        </mtd>
+                                    </mtr>
+                                    <mtr>
+                                        <mtd>
+                                            <mn>2</mn>
+                                            <mo>-</mo>
+                                            <mfrac>
+                                                <mrow>
+                                                    <mn>2</mn>
+                                                    <mi>n</mi>
+                                                </mrow>
+                                                <mrow>
+                                                    <mi>N</mi>
+                                                    <mo>-</mo>
+                                                    <mn>1</mn>
+                                                </mrow>
+                                            </mfrac>
+                                            <mo>,</mo>
+                                            <mo>&#xA0;</mo>
+                                            <mfrac>
+                                                <mrow>
+                                                    <mi>N</mi>
+                                                    <mo>-</mo>
+                                                    <mn>1</mn>
+                                                </mrow>
+                                                <mn>2</mn>
+                                            </mfrac>
+                                            <mo>&#xA0;</mo>
+                                            <mo>&#x2264;</mo>
+                                            <mo>&#xA0;</mo>
+                                            <mi>n</mi>
+                                            <mo>&#xA0;</mo>
+                                            <mo>&#x2264;</mo>
+                                            <mo>&#xA0;</mo>
+                                            <mi>N</mi>
+                                            <mo>-</mo>
+                                            <mn>1</mn>
+                                        </mtd>
+                                    </mtr>
+                                </mtable>
+                            </mfenced>
+                        </math>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tg-baqh">Hanninga</td>
+                    <td class="tg-baqh">
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                            <mi>w</mi>
+                            <mo stretchy="false">(</mo>
+                            <mi>n</mi>
+                            <mo stretchy="false">)</mo>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mn>1</mn>
+                                <mn>2</mn>
+                            </mfrac>
+                            <mo>[</mo>
+                            <mn>1</mn>
+                            <mo>-</mo>
+                            <mi>cos</mi>
+                            <mo>(</mo>
+                            <mfrac>
+                                <mrow>
+                                    <mn>2</mn>
+                                    <mi>&#x3C0;</mi>
+                                    <mi>n</mi>
+                                </mrow>
+                                <mrow>
+                                    <mi>N</mi>
+                                    <mo>-</mo>
+                                    <mn>1</mn>
+                                </mrow>
+                            </mfrac>
+                            <mo>)</mo>
+                            <mo>]</mo>
+                            <mo>,</mo>
+                            <mo>&#xA0;</mo>
+                            <mo>&#xA0;</mo>
+                            <mo>&#xA0;</mo>
+                            <mo>&#xA0;</mo>
+                            <mo>&#xA0;</mo>
+                            <mn>0</mn>
+                            <mo>&#x2264;</mo>
+                            <mi>n</mi>
+                            <mo>&#x2264;</mo>
+                            <mi>N</mi>
+                            <mo>-</mo>
+                            <mn>1</mn>
+                        </math>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tg-baqh">Hamminga</td>
+                    <td class="tg-baqh">
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                            <mi>w</mi>
+                            <mo stretchy="false">(</mo>
+                            <mi>n</mi>
+                            <mo stretchy="false">)</mo>
+                            <mo>=</mo>
+                            <mn>0</mn>
+                            <mo>,</mo>
+                            <mn>54</mn>
+                            <mo>-</mo>
+                            <mn>0</mn>
+                            <mo>,</mo>
+                            <mn>46</mn>
+                            <mo>&#xB7;</mo>
+                            <mi>cos</mi>
+                            <mo>(</mo>
+                            <mfrac>
+                                <mrow>
+                                    <mn>2</mn>
+                                    <mi>&#x3C0;</mi>
+                                    <mi>n</mi>
+                                </mrow>
+                                <mrow>
+                                    <mi>N</mi>
+                                    <mo>-</mo>
+                                    <mn>1</mn>
+                                </mrow>
+                            </mfrac>
+                            <mo>)</mo>
+                            <mo>,</mo>
+                            <mo>&#xA0;</mo>
+                            <mo>&#xA0;</mo>
+                            <mo>&#xA0;</mo>
+                            <mo>&#xA0;</mo>
+                            <mn>0</mn>
+                            <mo>&#xA0;</mo>
+                            <mo>&#x2264;</mo>
+                            <mi>n</mi>
+                            <mo>&#xA0;</mo>
+                            <mo>&#x2264;</mo>
+                            <mo>&#xA0;</mo>
+                            <mi>N</mi>
+                            <mo>-</mo>
+                            <mn>1</mn>
+                        </math>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tg-baqh">Blackmanna</td>
+                    <td class="tg-baqh">
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                            <mi>w</mi>
+                            <mo stretchy="false">(</mo>
+                            <mi>n</mi>
+                            <mo stretchy="false">)</mo>
+                            <mo>=</mo>
+                            <mn>0</mn>
+                            <mo>,</mo>
+                            <mn>42</mn>
+                            <mo>-</mo>
+                            <mn>0</mn>
+                            <mo>,</mo>
+                            <mn>5</mn>
+                            <mo>&#xB7;</mo>
+                            <mi>cos</mi>
+                            <mo>(</mo>
+                            <mfrac>
+                                <mrow>
+                                    <mn>2</mn>
+                                    <mi>&#x3C0;</mi>
+                                    <mi>n</mi>
+                                </mrow>
+                                <mrow>
+                                    <mi>N</mi>
+                                    <mo>-</mo>
+                                    <mn>1</mn>
+                                </mrow>
+                            </mfrac>
+                            <mo>)</mo>
+                            <mo>+</mo>
+                            <mn>0</mn>
+                            <mo>,</mo>
+                            <mn>08</mn>
+                            <mo>&#xB7;</mo>
+                            <mi>cos</mi>
+                            <mo>(</mo>
+                            <mfrac>
+                                <mrow>
+                                    <mn>4</mn>
+                                    <mi>&#x3C0;</mi>
+                                    <mi>n</mi>
+                                </mrow>
+                                <mrow>
+                                    <mi>N</mi>
+                                    <mo>-</mo>
+                                    <mn>1</mn>
+                                </mrow>
+                            </mfrac>
+                            <mo>)</mo>
+                        </math>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </center>
+        <br/>
+        Aby zacząć projektować filtr okienkowy, nalezy najpierw zdefiniować parametry: częstotliwość odcięcia, która
+        jest ułamkiem częstotliwości próbkowania długość odpowiedzi impulsowej filtru M, której zadaniem jest ustalenie
+        opadania charakterystyki w paśmie przejściowym. oraz wybranie okna. Kolejnym krokiem jest obliczenie odpowiedzi
+        impulsowej filtru, który polega na wymnożeniu funkcji sinc z wybranym oknem.<br/>
+        <br/></div>
+
 {% endblock %}
 
 

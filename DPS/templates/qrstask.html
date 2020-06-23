@@ -1,0 +1,321 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+    <H1> {{ Title }} </H1>
+
+    <h3 style="text-align: justify;">
+        <b>Zadanie 1.</b></h3>
+    <div style="text-align: justify;">
+        Dokonaj detekcji zespołu QRS wykorzystując algorytm Pan-Tompkins.
+    </div>
+    <div style="text-align: justify;">
+        <br/></div>
+    <h3 style="text-align: justify;">
+        <b>Rozwiązanie</b></h3>
+    <h5 style="text-align: justify;">
+        <b>A) Filtracja pasmowo-przepustowa</b></h5>
+    <div style="text-align: justify;">
+        Sygnał należy poddać filtracji pasmowo-przepustowej 5-15 Hz w celu usunięcia zakłóceń sygnału.
+    </div>
+    <div style="text-align: justify;">
+        Sugestia: możesz wykorzystać algorytm napisany w poprzednim module. Możesz również stworzyć nową funkcję w
+        oparciu o pakiet scipy.signal.
+    </div>
+    <div style="text-align: justify;">
+        <br/></div>
+
+    <div class="panel-group" id="A">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#A" href="#collapseA">
+                        Kod źródłowy w Pythonie
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseA" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div>
+                            <textarea id="taskA" name="taskA">
+    import scipy
+    from scipy import signal
+    import numpy as np
+    from math import sin, pi
+    import matplotlib.pyplot as plt
+    M = 21
+    window = 'hamming'
+    fs = 360
+    h = scipy.signal.firwin(M, [5, 15], window=window, pass_zero=False, fs=fs)
+    signal = scipy.signal.convolve(ECG, h, mode='same', method='auto')
+                            </textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="text-align: justify;">
+        <h5><b>B) Różniczkowanie sygnału</b></h5></div>
+    <div style="text-align: justify;">
+        Sygnał poddaje się różniczkowaniu w celu tłumienia załamków P i T. Różniczkowanie można zapisać wzorem:
+    </div>
+    <div style="text-align: justify;">
+         <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mi>y</mi>
+            <mo stretchy="false">[</mo>
+            <mi>n</mi>
+            <mo stretchy="false">]</mo>
+            <mo>=</mo>
+            <mfrac>
+                <mn>1</mn>
+                <mn>8</mn>
+            </mfrac>
+            <mo>(</mo>
+            <mo>-</mo>
+            <mi>x</mi>
+            <mo stretchy="false">[</mo>
+            <mi>n</mi>
+            <mo>-</mo>
+            <mn>2</mn>
+            <mo stretchy="false">]</mo>
+            <mo>-</mo>
+            <mn>2</mn>
+            <mi>x</mi>
+            <mo stretchy="false">[</mo>
+            <mi>n</mi>
+            <mo>-</mo>
+            <mn>1</mn>
+            <mo stretchy="false">]</mo>
+            <mo>+</mo>
+            <mn>2</mn>
+            <mi>x</mi>
+            <mo stretchy="false">[</mo>
+            <mi>n</mi>
+            <mo>+</mo>
+            <mn>1</mn>
+            <mo stretchy="false">]</mo>
+            <mo>+</mo>
+            <mi>x</mi>
+            <mo stretchy="false">[</mo>
+            <mi>n</mi>
+            <mo>+</mo>
+            <mn>2</mn>
+            <mo stretchy="false">]</mo>
+            <mo>)</mo>
+            <mo>.</mo>
+        </math>
+    </div>
+    <div class="panel-group" id="B">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#B" href="#collapseB">
+                        Kod źródłowy w Pythonie
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseB" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div>
+                            <textarea id="taskB" name="taskB">
+    y = np.zeros(len(x)-2)
+
+    for i in range(2, len(x)-2):
+        y[i] = 1/8*(-x[i-1]-2*x[i-1]+2*x[i+1]+x[i+2])
+                            </textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h5 style="text-align: justify;">
+        <b>C) Potęgowanie sygnału</b></h5>
+    <div style="text-align: justify;">
+        Potęgowanie sygnału wzmacnia próbki sygnału zawierające załamki QRS. Wzór na potęgowanie wyraża się następująco:
+    </div>
+    <div style="text-align: justify;">
+         <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mi>y</mi>
+            <mo stretchy="false">[</mo>
+            <mi>n</mi>
+            <mo stretchy="false">]</mo>
+            <mo>=</mo>
+            <msup>
+                <mi>x</mi>
+                <mn>2</mn>
+            </msup>
+            <mo stretchy="false">[</mo>
+            <mi>n</mi>
+            <mo stretchy="false">]</mo>
+            <mo>.</mo>
+        </math>
+    </div>
+    <div class="panel-group" id="C">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#C" href="#collapseC">
+                        Kod źródłowy w Pythonie
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseC" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div>
+                            <textarea id="taskC" name="taskC">
+     y = [X**2 for X in x]
+                            </textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h5 style="text-align: justify;">
+        <b>D) Całkowanie sygnału</b></h5>
+    <div style="text-align: justify;">
+        Całkowanie sygnału&nbsp; ma za zadania uzyskać pojedynczą ,,falę" dla każdego z zespołu QRS. Wzór jest
+        następujący:
+    </div>
+    <div style="text-align: justify;">
+         <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mi>y</mi>
+            <mo stretchy="false">[</mo>
+            <mi>n</mi>
+            <mo stretchy="false">]</mo>
+            <mo>=</mo>
+            <mfrac>
+                <mn>1</mn>
+                <mi>N</mi>
+            </mfrac>
+            <mo>(</mo>
+            <mi>x</mi>
+            <mo stretchy="false">[</mo>
+            <mi>n</mi>
+            <mo>-</mo>
+            <mo stretchy=false>(</mo>
+            <mi>N</mi>
+            <mo>-</mo>
+            <mn>1</mn>
+            <mo stretchy="false">)</mo>
+            <mo stretchy="false">]</mo>
+            <mo>+</mo>
+            <mi>x</mi>
+            <mo stretchy="false">[</mo>
+            <mi>n</mi>
+            <mo>-</mo>
+            <mo stretchy="false">(</mo>
+            <mi>N</mi>
+            <mo>-</mo>
+            <mn>2</mn>
+            <mo stretchy="false">)</mo>
+            <mo stretchy="false">]</mo>
+            <mo>+</mo>
+            <mo>⋯</mo>
+            <mo>+</mo>
+            <mi>x</mi>
+            <mo stretchy="false">[</mo>
+            <mi>n</mi>
+            <mo stretchy="false">]</mo>
+            <mo>)</mo>
+            <mo>.</mo>
+        </math>
+    </div>
+    <div style="text-align: justify;">
+        Wartość
+         <math xmlns="http://www.w3.org/1998/Math/MathML" >
+            <mi>N</mi>
+        </math>
+        należy dobrać eksperymentalnie.
+    </div>
+    <div class="panel-group" id="D">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#D" href="#collapseD">
+                        Kod źródłowy w Pythonie
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseD" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div>
+                            <textarea id="taskD" name="taskD">
+    y = np.zeros(len(x))
+
+    for i in range(len(x)):
+        suma = 0
+        for j in range(N):
+            if i-j >= 0:
+                suma = suma + x[i-j]
+        y[i] = suma
+
+    y = [x/N for x in y]
+
+                            </textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h5 style="text-align: justify;">
+        <b>E) Progowanie i wyznaczanie załamków R</b></h5>
+    <div style="text-align: justify;">
+        Punkt ten można rozwiązać na wiele sposobów. Poszukaj rozwiązania wykorzystując źródła naukowe i spróbuj
+        zaimplementować sam.&nbsp;
+    </div>
+
+    <script>
+        var editor = new CodeMirror.fromTextArea(document.getElementById("taskA"), {
+            mode: {
+                name: "python",
+                version: 3,
+                singleLineStringErrors: false
+            },
+            lineNumbers: true,
+            indentUnit: 4,
+            matchBrackets: true,
+            lineWrapping: false,
+        });
+        var editor = new CodeMirror.fromTextArea(document.getElementById("taskB"), {
+            mode: {
+                name: "python",
+                version: 3,
+                singleLineStringErrors: false
+            },
+            lineNumbers: true,
+            indentUnit: 4,
+            matchBrackets: true,
+            lineWrapping: false,
+        });
+        var editor = new CodeMirror.fromTextArea(document.getElementById("taskC"), {
+            mode: {
+                name: "python",
+                version: 3,
+                singleLineStringErrors: false
+            },
+            lineNumbers: true,
+            indentUnit: 4,
+            matchBrackets: true,
+            lineWrapping: false,
+        });
+        var editor = new CodeMirror.fromTextArea(document.getElementById("taskD"), {
+            mode: {
+                name: "python",
+                version: 3,
+                singleLineStringErrors: false
+            },
+            lineNumbers: true,
+            indentUnit: 4,
+            matchBrackets: true,
+            lineWrapping: false,
+        });
+
+    </script>
+
+{% endblock %}
+
+

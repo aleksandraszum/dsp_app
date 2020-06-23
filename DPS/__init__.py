@@ -29,7 +29,7 @@ def create_app(test_config=None):
     # a simple page that says hello
     @app.route('/')
     def homepage():
-        return render_template('homepage.html', Title="Powitanie")
+        return render_template('homepage.html', Title="Strona główna")
 
     @app.route('/sygnal')
     def signal():
@@ -117,9 +117,17 @@ def create_app(test_config=None):
     def filtertask():
         return render_template('filtertask.html', Title="Filtry cyfrowe - zadania w Pythonie")
 
-    @app.route('/iir')
+    @app.route('/filtry-quiz')
     def filterquiz():
         return render_template('filterquiz.html', Title="Filtry cyfrowe - quiz")
+
+    @app.route('/qrs')
+    def qrs():
+        return render_template('qrs.html', Title="Detekcja zespołu QRS")
+
+    @app.route('/qrs-python')
+    def qrstask():
+        return render_template('qrstask.html', Title="Detekcja zespołu QRS - zadanie w Pythonie")
     return app
 
 # C:\Users\X\PycharmProjects\DSP_webapp\DPS\templates

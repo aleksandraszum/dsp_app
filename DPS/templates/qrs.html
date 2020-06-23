@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+    <H1> {{ Title }} </H1>
+
+    <div style="text-align: justify;">
+        Sygnał EKG dostarcza informacje dotyczące elektrycznej czynności serca. Na uzyskanym sygnale można zaobserwować
+        trzy części, które odpowiadają całemu cyklowi pracy serca, takie jak:<br/>
+        <br/>
+        <ul>
+            <li>napłynięcie krwi do przedsionków</li>
+            <li>skurcz przedsionków i komór</li>
+            <li>wypompowanie krwi z serca</li>
+        </ul>
+        <div>
+            Na sygnale uzyskanym podczas badania elektrokardiograficznego analizuje się: odcinki, załamki, odstępy.
+            Największy zespół załamków nazywany jest zespołem QRS. Zespół ten opisuje depolaryzację mięśni komór serca i
+            składa się z załamków: Q, R oraz S.&nbsp;
+        </div>
+        <div>
+            <br/></div>
+        <div>
+            Detekcja zespołu QRS
+        </div>
+        <div>
+            Algorytm do detekcji zespołu QRS ma za zadania zlokalizować miejsca, w których znajdują się zespoły
+            skurczowe serca. W zastosowaniu praktycznym algorytm wyznacza kolejne numery próbek sygnału, gdzie znajdują
+            się załamki R.&nbsp;
+        </div>
+        <div>
+            <br/></div>
+        <div>
+            Algorytm do detekcji zespołu QRS powinien spełniać&nbsp; następujące założenia:
+        </div>
+        <div>
+            <ul>
+                <li>oznacza tylko zespoły QRS</li>
+                <li>każdy zespół QRS jest oznaczany dokładnie 1 raz</li>
+                <li>próbka zlokalizowana przez algorytm musi znajdować się w obrębie zespołu QRS</li>
+            </ul>
+            <div>
+                <br/></div>
+        </div>
+        <div>
+            Jednym z najpopularniejszych algorytmów do detekcji zespołu QRS jest algorytm Pan-Tompkins, który polega na
+            następujących przekształceniach sygnału w dziedzinie czasu:
+        </div>
+        <div>
+            <ol>
+                <li>filtracja pasmowoprzepustowa</li>
+                <li>różniczkowanie sygnału</li>
+                <li>potęgowanie sygnału</li>
+                <li>całkowanie sygnału</li>
+                <li>progowanie i wyznaczanie załamków R</li>
+            </ol>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+
