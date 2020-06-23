@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Google App Engine SDK" type="python">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/venv" />
+      <root url="file://$PROJECT_DIR$/venv/Lib/site-packages" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

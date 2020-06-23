@@ -1,0 +1,13 @@
+CREATE TABLE question (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  question TEXT UNIQUE NOT NULL,
+  topic_id INTEGER NOT NULL
+);
+
+CREATE TABLE answer (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  question_id INTEGER NOT NULL,
+  answer TEXT NOT NULL,
+  is_true INTEGER NOT NULL,
+  FOREIGN KEY (question_id) REFERENCES question (id)
+);

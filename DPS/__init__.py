@@ -1,12 +1,13 @@
 import os
-
 from flask import Flask, render_template
+#from flask_sqlalchemy import SQLAlchemy
 from .graphsgenerated import kronecker_graphs, step_graphs, rectangle_graphs, triangle_graphs, exp_graphs, \
     sinusoidal_graphs, aliasing_graphs
 
 
 def create_app(test_config=None):
     # create and configure the app
+
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY='dev',
@@ -26,7 +27,10 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    # a simple page that says hello
+    from . import db
+    db.init_app(app)
+
+
     @app.route('/')
     def homepage():
         return render_template('homepage.html', Title="Strona główna")

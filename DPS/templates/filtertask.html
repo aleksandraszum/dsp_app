@@ -1,0 +1,434 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+    <H1> {{ Title }} </H1>
+
+    <div style="text-align: justify;">
+        <h3>
+            <b>Zadanie 1.</b></h3>
+    </div>
+    <div style="text-align: justify;">
+        Utwórz filtr typu FIR. Zdefiniuj okna: Bartletta, Hamminga i Blackmanna. Wywołaj funkcję z następującymi
+        parametrami: częstotliwość odcięcia
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <msub>
+                <mi>f</mi>
+                <mi>c</mi>
+            </msub>
+            <mo>=</mo>
+            <mn>30</mn>
+            <mi>Hz</mi>
+        </math>
+        , częstotliwość próbkowania
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <msub>
+                <mi>f</mi>
+                <mi>s</mi>
+            </msub>
+            <mo>=</mo>
+            <mn>100</mn>
+            <mi>Hz</mi>
+        </math>
+        , znormalizowana częstotliwość odcięcia
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mfrac>
+                <mfrac>
+                    <msub>
+                        <mi>f</mi>
+                        <mi>c</mi>
+                    </msub>
+                    <msub>
+                        <mi>f</mi>
+                        <mi>s</mi>
+                    </msub>
+                </mfrac>
+                <mn>2</mn>
+            </mfrac>
+        </math>
+        , długość odpowiedzi impulsowej
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>M</mi>
+            <mo>=</mo>
+            <mn>20</mn>
+        </math>
+        dla wszystkich zdefiniowanych okien. Na jednym wykresie wyświetl idealną odpowiedź impulsową filtra oraz
+        uzyskany wynik w wyniku filtracji.
+    </div>
+    <div style="text-align: justify;">
+        <br/></div>
+    <div style="text-align: justify;">
+        <h3>
+            <b>Rozwiązanie</b></h3>
+    </div>
+
+    <div class="panel-group" id="filter">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#filter" href="#collapseOne">
+                        A) Wygenerowanie funkcji tworzącej idealną odpowiedź impulsową filtru
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div style="text-align: justify;">
+                        Sugestia: Utworzenie funkcji, która na wejście przyjmuje typ filtru (dolno- lub
+                        górnoprzepustowy), znormalizowaną częstotliwość odcięcia oraz długość odpowiedzi impulsowej M.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#filter" href="#collapseTwo">
+                        Kod źródłowy w Pythonie
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div>
+                        <textarea id="taskA" name="taskA">
+    def ideal_filter(typ, f, M):
+        """
+        Utworzenie idealnej odpowiedzi impulsowej
+        Dane wejściowe:
+        Typ - rodzaj filtru
+        fc_norm - znormalizowana częstotliwość odcięcia
+        M - długość odpowiedzi impulsowej
+        Dane wyjściowe:
+        h - odpowiedź impulsowa
+        """
+        if typ == 1:
+            m1 = np.linspace(-M, -1, M)
+            x1 = np.zeros(len(m1))
+            for i in range(len(m1)):
+                x1[i] = sin(2*pi*f*m1[i])/(pi*m1[i])
+
+            m2 = 0
+            x2 = 2*f
+
+            m3 = np.linspace(1, M, M)
+            x3 = np.zeros(len(m3))
+            for i in range(len(m3)):
+                x3[i] = sin(2*pi*f*m3[i])/(pi*m3[i])
+
+
+        else:
+            m1 = np.linspace(-M, -1, M)
+            x1 = np.zeros(len(m1))
+            for i in range(len(m1)):
+                x1[i] = -sin(2*pi*f*m1[i])/(pi*m1[i])
+
+            m2 = 0
+            x2 = -2*f
+
+            m3 = np.linspace(1, M, M)
+            x3 = np.zeros(len(m3))
+            for i in range(len(m3)):
+                x3[i] = -sin(2*pi*f*m3[i])/(pi*m3[i])
+
+        time = np.hstack((m1, m2, m3))
+        h = np.hstack((x1, x2, x3))
+        return time, h
+                        </textarea>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#filter" href="#collapseThree">
+                        B) Przemnożenie odpowiedzi impulsowej przez okno
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div style="text-align: justify;">
+                        Sugestia: Utworzenie funkcji, która na wejście przyjmuje odpowiedź impulsową filtru oraz wybór
+                        okna, a na wyjściu generuje wymnożoną odpowiedź impulsową z oknem.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#filter" href="#collapseFour">
+                        Kod źródłowy w Pythonie
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div>
+                        <textarea id="taskB" name="taskB">
+    def conv_filter_window(M, h, window):
+        """
+        Przemnożenie odpowiedzi impulsowej przez okno
+        Dane wejściowe:
+        M - długość odpowiedzi impulsowej
+        h - odpowiedź impulsowa
+        window - okno
+        Dane wyjściowe:
+        hw = przemnożona długość z oknem
+        """
+        N = 2*M + 1
+        hw = np.zeros(len(h))
+
+        if window == 'barlett':
+            w  = scipy.signal.bartlett(N)
+
+            for i in range(len(w)):
+                hw[i] = w[i] * h[i]
+
+
+        elif window == 'hamming':
+            w  = scipy.signal.hamming(N)
+
+            for i in range(len(w)):
+                hw[i] = w[i] * h[i]
+
+
+        else:
+            w  = scipy.signal.blackman(N)
+
+            for i in range(len(w)):
+                hw[i] = w[i] * h[i]
+
+        return hw
+                        </textarea>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#filter" href="#collapseFive">
+                        C) Utworzenie funkcji do generowania idealnej odpowiedzi impulsowej.
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseFive" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div style="text-align: justify;">
+                        Sugestia: Implementacja w części A.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#filter" href="#collapseSix">
+                        Kod źródłowy w Pythonie
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseSix" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div>
+                        <textarea id="taskC" name="taskC">
+    def impulse_responde(typ, f, M):
+        time = np.linspace(-M, M, 10000)
+        y = np.zeros(len(time))
+
+        if typ == 1:
+            for i in range(len(time)):
+                f = (30/100)/2
+                if time[i] == 0:
+                    y[i] = 2*f
+
+                else:
+                    y[i] = sin(2*pi*f*time[i])/(pi*time[i])
+        else:
+            for i in range(len(time)):
+                f = (30/100)/2
+                if time[i] == 0:
+                    y[i] = 1- 2*f
+
+                else:
+                    y[i] = -sin(2*pi*f*time[i])/(pi*time[i])
+
+        return time, y
+                        </textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#filter" href="#collapseSeven">
+                        D) Wygenerowanie funkcji filtrującej sygnał
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseSeven" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div style="text-align: justify;">
+Sugestia: Utworzenie funkcji filtrującej sygnał z wykorzystaniem wcześniej napisanych funkcji.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#filter" href="#collapseEight">
+                        Kod źródłowy w Pythonie
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseEight" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div>
+                        <textarea id="taskD" name="taskD">
+    def my_filter(typ, fs, fc, M, window):
+        """
+        Filtr typu FIR
+        Dane wejściowe:
+        typ - typ filtru
+        fs - częstotliwość próbkowania
+        fc - częstotliwość odcięcia
+        M - długość odpowiedzi częstotliwościowej
+        window - okno
+        Dane wyjściowe:
+        time - wektor czasu
+        h - idealna odpowiedź impulsowa
+        hw - przefiltrowany sygnał
+        """
+        f = (fc/fs)/2
+        N = 2*M+1
+
+        time, h = ideal_filter(typ, f, M)
+        hw = conv_filter_window(M, h, window)
+
+        time_ideal, y = impulse_responde(typ, f, M)
+
+        return time, hw, time_ideal, y
+                        </textarea>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#filter" href="#collapseNine">
+                        E) Wywołanie funkcji
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseNine" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div style="text-align: justify;">
+                        Sugestia: Wywołaj program trzy razy - dla każdego okna.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#filter" href="#collapseTen">
+                        Kod źródłowy w Pythonie
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseTen" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div>
+                        <textarea id="taskE" name="taskE">
+    fc = 30
+    fs = 100
+    M = 20
+
+    time, h, t_ideal, h_ideal = my_filter(1, fs, fc, M, 'barlett')
+    time2, h2, t_ideal, h_ideal = my_filter(1, fs, fc, M, 'hamming')
+    time3, h3, t_ideal, h_ideal = my_filter(1, fs, fc, M, 'blackmann')
+
+    plt.plot(t_ideal, h_ideal, time, h, 'o', time2, h2, '*', time3, h3, '^')
+                        </textarea>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var editor = new CodeMirror.fromTextArea(document.getElementById("taskA"), {
+            mode: {
+                name: "python",
+                version: 3,
+                singleLineStringErrors: false
+            },
+            lineNumbers: true,
+            indentUnit: 4,
+            matchBrackets: true,
+            lineWrapping: false,
+        });
+                var editor = new CodeMirror.fromTextArea(document.getElementById("taskB"), {
+            mode: {
+                name: "python",
+                version: 3,
+                singleLineStringErrors: false
+            },
+            lineNumbers: true,
+            indentUnit: 4,
+            matchBrackets: true,
+            lineWrapping: false,
+        });
+        var editor = new CodeMirror.fromTextArea(document.getElementById("taskC"), {
+            mode: {
+                name: "python",
+                version: 3,
+                singleLineStringErrors: false
+            },
+            lineNumbers: true,
+            indentUnit: 4,
+            matchBrackets: true,
+            lineWrapping: false,
+        });
+        var editor = new CodeMirror.fromTextArea(document.getElementById("taskD"), {
+            mode: {
+                name: "python",
+                version: 3,
+                singleLineStringErrors: false
+            },
+            lineNumbers: true,
+            indentUnit: 4,
+            matchBrackets: true,
+            lineWrapping: false,
+        });
+        var editor = new CodeMirror.fromTextArea(document.getElementById("taskE"), {
+            mode: {
+                name: "python",
+                version: 3,
+                singleLineStringErrors: false
+            },
+            lineNumbers: true,
+            indentUnit: 4,
+            matchBrackets: true,
+            lineWrapping: false,
+        });
+
+    </script>
+{% endblock %}
+
+
