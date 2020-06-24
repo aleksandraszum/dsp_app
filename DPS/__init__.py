@@ -1,13 +1,13 @@
 import os
-from flask import Flask, render_template
-#from flask_sqlalchemy import SQLAlchemy
+
+from flask import Flask, render_template, request, flash, redirect, url_for
 from .graphsgenerated import kronecker_graphs, step_graphs, rectangle_graphs, triangle_graphs, exp_graphs, \
     sinusoidal_graphs, aliasing_graphs
+from .question import question_section1, question_section2, question_section3
 
 
 def create_app(test_config=None):
     # create and configure the app
-
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY='dev',
@@ -27,10 +27,7 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    from . import db
-    db.init_app(app)
-
-
+    # a simple page that says hello
     @app.route('/')
     def homepage():
         return render_template('homepage.html', Title="Strona główna")
@@ -73,9 +70,18 @@ def create_app(test_config=None):
     def signalTasks():
         return render_template('signaltasks.html', Title="Sygnały - zadania w Pythonie")
 
-    @app.route('/sygnal-quiz')
+    @app.route('/sygnal-quiz', methods=['GET', 'POST'])
     def signalquiz():
-        return render_template('signalquiz.html', Title="Sygnały - quiz")
+        if request.method == 'POST':
+            points = 0
+            reply = request.form
+            for pnr, reply_u in reply.items():
+                if reply_u == question_section1[int(pnr)]['true_answer']:
+                    points += 1
+            flash(u'Liczba poprawnych odpowiedzi, to: {0}'.format(points))
+            return redirect(url_for('signalquiz'))
+
+        return render_template('quiz.html', Title="Sygnały - quiz", questions=question_section1)
 
     @app.route('/szereg-fouriera')
     def fourier():
@@ -97,9 +103,18 @@ def create_app(test_config=None):
     def spectrumtasks():
         return render_template('spectrumtasks.html', Title="Analiza częstotliwościowa - zadania w Pythonie")
 
-    @app.route('/analiza-czestotliwosciowa-quiz')
+    @app.route('/analiza-czestotliwosciowa-quiz', methods=['GET', 'POST'])
     def spectrumquiz():
-        return render_template('spectrumquiz.html', Title="Analiza częstotliwościowa - quiz")
+        if request.method == 'POST':
+            points = 0
+            reply = request.form
+            for pnr, reply_u in reply.items():
+                if reply_u == question_section2[int(pnr)]['true_answer']:
+                    points += 1
+            flash(u'Liczba poprawnych odpowiedzi, to: {0}'.format(points))
+            return redirect(url_for('spectrumquiz'))
+
+        return render_template('quiz.html', Title="Analiza częstotliwościowa - quiz", questions=question_section2)
 
     @app.route('/przeksztalcenie-z')
     def ztransform():
@@ -121,9 +136,18 @@ def create_app(test_config=None):
     def filtertask():
         return render_template('filtertask.html', Title="Filtry cyfrowe - zadania w Pythonie")
 
-    @app.route('/filtry-quiz')
+    @app.route('/filtry-quiz', methods=['GET', 'POST'])
     def filterquiz():
-        return render_template('filterquiz.html', Title="Filtry cyfrowe - quiz")
+        if request.method == 'POST':
+            points = 0
+            reply = request.form
+            for pnr, reply_u in reply.items():
+                if reply_u == question_section3[int(pnr)]['true_answer']:
+                    points += 1
+            flash(u'Liczba poprawnych odpowiedzi, to: {0}'.format(points))
+            return redirect(url_for('filterquiz'))
+
+        return render_template('quiz.html', Title="Filtry cyfrowe - quiz", questions=question_section3)
 
     @app.route('/qrs')
     def qrs():

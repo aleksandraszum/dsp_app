@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+<H1> {{ Title }} </H1>
+<p>
+    {% for message in get_flashed_messages() %}
+    <strong class="success">{{ message }}</strong>
+    {% endfor %}
+</p>
+
+<form method="POST">
+    {% for q in questions %}
+    <p>
+        <h5><b>{{ q.question }}</b></h5>
+        <br>
+        {% set pnr = loop.index0 %}
+        {% for a in q.answer %}
+        <label>
+            <input type="radio" value="{{ a }}" name="{{ pnr }}">
+            {{ a }}
+        </label>
+        <br>
+        {% endfor %}
+    </p>
+    {% endfor %}
+
+    <button type="submit">Sprawdź odpowiedzi</button>
+</form>
+
+
+{% endblock %}
