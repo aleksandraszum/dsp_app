@@ -4,56 +4,145 @@
 {% endblock %}
 
 {% block content %}
-    <H1> {{ Title }} </H1>
+<H1> {{ Title }} </H1>
 
-    <div style="text-align: justify;">
-        Ze względu na odmienny charakter sygnałów ciągłych i dyskretnych, przekształcenia Fouriera będą definiowane w
-        inny sposób dla sygnałów dyskretnych.
-    </div>
-    <div style="text-align: justify;">
-        <br/></div>
-    <h4 style="text-align: justify;">
-        <b>Dyskretne przekształcenie Fouriera</b></h4>
-    <div style="text-align: justify;">
-        Przekształcenie Fouriera dla sygnału
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div style="text-align: justify;">
+    Ze względu na odmienny charakter sygnałów ciągłych i dyskretnych, przekształcenia Fouriera będą definiowane w
+    inny sposób dla sygnałów dyskretnych.
+</div>
+<div style="text-align: justify;">
+    <br/></div>
+<h4 style="text-align: justify;">
+    <b>Dyskretne przekształcenie Fouriera</b></h4>
+<div style="text-align: justify;">
+    Przekształcenie Fouriera dla sygnału
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>s</mi>
+        <mo stretchy="false">[</mo>
+        <mi>k</mi>
+        <mo stretchy="false">]</mo>
+        <mo>=</mo>
+        <mi>s</mi>
+        <mo stretchy="false">[</mo>
+        <mn>0</mn>
+        <mo stretchy="false">]</mo>
+        <mo>,</mo>
+        <mi>s</mi>
+        <mo stretchy="false">[</mo>
+        <mn>1</mn>
+        <mo stretchy="false">]</mo>
+        <mo>,</mo>
+        <mo>…</mo>
+        <mo>,</mo>
+        <mi>s</mi>
+        <mo stretchy="false">[</mo>
+        <mi>N</mi>
+        <mo>-</mo>
+        <mn>1</mn>
+        <mo stretchy="false">]</mo>
+    </math>
+    definiuje się następująco:
+</div>
+<div style="text-align: center;">
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+        <mi>S</mi>
+        <mo stretchy="false">[</mo>
+        <mi>N</mi>
+        <mo stretchy="false">]</mo>
+        <mo>=</mo>
+        <munderover>
+            <mo>∑</mo>
+            <mrow>
+                <mi>k</mi>
+                <mo>=</mo>
+                <mn>0</mn>
+            </mrow>
+            <mrow>
+                <mi>N</mi>
+                <mo>-</mo>
+                <mn>1</mn>
+            </mrow>
+        </munderover>
+        <mi>s</mi>
+        <mo stretchy="false">[</mo>
+        <mi>k</mi>
+        <mo stretchy="false">]</mo>
+        <msup>
+            <mi>e</mi>
+            <mrow>
+                <mo>-</mo>
+                <mi>j</mi>
+                <mn>2</mn>
+                <mi>π</mi>
+                <mi>n</mi>
+                <mi>k</mi>
+                <mo>/</mo>
+                <mi>N</mi>
+            </mrow>
+        </msup>
+        <mo>,</mo>
+    </math>
+</div>
+<div style="text-align: justify;">
+    gdzie
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>n</mi>
+        <mo>∈</mo>
+        <mo stretchy="false">&lt;</mo>
+        <mn>0</mn>
+        <mo>;</mo>
+        <mi>N</mi>
+        <mo>-</mo>
+        <mn>1</mn>
+        <mo stretchy="false">&gt;</mo>
+    </math>
+    .
+</div>
+<div style="text-align: justify;">
+    Funkcję
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>S</mi>
+        <mo stretchy="false">[</mo>
+        <mi>N</mi>
+        <mo stretchy="false">]</mo>
+    </math>
+    nosi nazwę widma sygnału dyskretnego
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>s</mi>
+        <mo stretchy="false">[</mo>
+        <mi>k</mi>
+        <mo stretchy="false">]</mo>
+    </math>
+    .<br/>
+    <br/>
+    Widmo sygnału dyskretnego&nbsp;<math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mi>S</mi>
+    <mo stretchy="false">[</mo>
+    <mi>N</mi>
+    <mo stretchy="false">]</mo>
+</math>
+    posiada tę własność, że jest okresowe. Okres widma jest równy częstotliwości próbkowania sygnału.<br/>
+    <br/>
+    <h3>
+        <b>Odwrotne dyskretne przekształcenie Fouriera</b></h3>
+    Odwrotne przekształcenie Fouriera umożliwia przekształcenie dyskretnego sygnału zdefiniowanego w dziedzinie
+    częstotliwości na dyskretny sygnał zdefiniowany w dziedzinie czasu. Przekształcenie to można zdefiniować
+    następująco:<br/>
+    <div style="text-align: center;">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
             <mi>s</mi>
             <mo stretchy="false">[</mo>
             <mi>k</mi>
             <mo stretchy="false">]</mo>
             <mo>=</mo>
-            <mi>s</mi>
-            <mo stretchy="false">[</mo>
-            <mn>0</mn>
-            <mo stretchy="false">]</mo>
-            <mo>,</mo>
-            <mi>s</mi>
-            <mo stretchy="false">[</mo>
-            <mn>1</mn>
-            <mo stretchy="false">]</mo>
-            <mo>,</mo>
-            <mo>…</mo>
-            <mo>,</mo>
-            <mi>s</mi>
-            <mo stretchy="false">[</mo>
-            <mi>N</mi>
-            <mo>-</mo>
-            <mn>1</mn>
-            <mo stretchy="false">]</mo>
-        </math>
-        definiuje się następująco:
-    </div>
-    <div style="text-align: center;">
-        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-            <mi>S</mi>
-            <mo stretchy="false">[</mo>
-            <mi>N</mi>
-            <mo stretchy="false">]</mo>
-            <mo>=</mo>
+            <mfrac>
+                <mn>1</mn>
+                <mi>N</mi>
+            </mfrac>
             <munderover>
                 <mo>∑</mo>
                 <mrow>
-                    <mi>k</mi>
+                    <mi>n</mi>
                     <mo>=</mo>
                     <mn>0</mn>
                 </mrow>
@@ -63,19 +152,18 @@
                     <mn>1</mn>
                 </mrow>
             </munderover>
-            <mi>s</mi>
+            <mi>S</mi>
             <mo stretchy="false">[</mo>
-            <mi>k</mi>
+            <mi>n</mi>
             <mo stretchy="false">]</mo>
             <msup>
                 <mi>e</mi>
                 <mrow>
-                    <mo>-</mo>
                     <mi>j</mi>
                     <mn>2</mn>
                     <mi>π</mi>
-                    <mi>n</mi>
                     <mi>k</mi>
+                    <mi>n</mi>
                     <mo>/</mo>
                     <mi>N</mi>
                 </mrow>
@@ -86,203 +174,126 @@
     <div style="text-align: justify;">
         gdzie
         <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <mi>n</mi>
+            <mi>k</mi>
             <mo>∈</mo>
-            <mo stretchy="false">&lt;</mo>
+            <mo>&lt;</mo>
             <mn>0</mn>
-            <mo>;</mo>
+            <mo>,</mo>
             <mi>N</mi>
             <mo>-</mo>
             <mn>1</mn>
-            <mo stretchy="false">&gt;</mo>
+            <mo>&gt;</mo>
         </math>
-        .
-    </div>
-    <div style="text-align: justify;">
-        Funkcję
+        .<br/>
+        <br/>
+        <h3>
+            <b>Właściwości dyskretnego przekształcenia Fouriera</b></h3>
+        Założenia:
         <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <mi>S</mi>
+            <mi>x</mi>
             <mo stretchy="false">[</mo>
-            <mi>N</mi>
+            <mi>k</mi>
+            <mo stretchy="false">]</mo>
+            <mo>,</mo>
+            <mi>y</mi>
+            <mo stretchy="false">[</mo>
+            <mi>k</mi>
             <mo stretchy="false">]</mo>
         </math>
-        nosi nazwę widma sygnału dyskretnego
+        są sygnałami zespolonymi, natomiast
         <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <mi>s</mi>
+            <mi>X</mi>
+            <mo>(</mo>
+            <mi>n</mi>
+            <mo>)</mo>
+            <mo>,</mo>
+            <mi>Y</mi>
+            <mo>(</mo>
+            <mi>n</mi>
+            <mo>)</mo>
+        </math>
+        są transformatami sygnałów
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>x</mi>
+            <mo stretchy="false">[</mo>
+            <mi>k</mi>
+            <mo stretchy="false">]</mo>
+            <mo>,</mo>
+            <mi>y</mi>
             <mo stretchy="false">[</mo>
             <mi>k</mi>
             <mo stretchy="false">]</mo>
         </math>
         .<br/>
-        <br/>
-        Widmo sygnału dyskretnego&nbsp;<math xmlns="http://www.w3.org/1998/Math/MathML">
-        <mi>S</mi>
-        <mo stretchy="false">[</mo>
-        <mi>N</mi>
-        <mo stretchy="false">]</mo>
-    </math>
-        posiada tę własność, że jest okresowe. Okres widma jest równy częstotliwości próbkowania sygnału.<br/>
-        <br/>
-        <h3>
-            <b>Odwrotne dyskretne przekształcenie Fouriera</b></h3>
-        Odwrotne przekształcenie Fouriera umożliwia przekształcenie dyskretnego sygnału zdefiniowanego w dziedzinie
-        częstotliwości na dyskretny sygnał zdefiniowany w dziedzinie czasu. Przekształcenie to można zdefiniować
-        następująco:<br/>
-        <div style="text-align: center;">
-            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-                <mi>s</mi>
-                <mo stretchy="false">[</mo>
-                <mi>k</mi>
-                <mo stretchy="false">]</mo>
-                <mo>=</mo>
-                <mfrac>
-                    <mn>1</mn>
-                    <mi>N</mi>
-                </mfrac>
-                <munderover>
-                    <mo>∑</mo>
-                    <mrow>
-                        <mi>n</mi>
-                        <mo>=</mo>
+        <ul>
+            <li>liniowość:
+                <math xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mi>a</mi>
+                    <mi>x</mi>
+                    <mo stretchy="false">[</mo>
+                    <mi>k</mi>
+                    <mo stretchy="false">]</mo>
+                    <mo>+</mo>
+                    <mi>b</mi>
+                    <mi>y</mi>
+                    <mo stretchy="false">[</mo>
+                    <mi>k</mi>
+                    <mo stretchy="false">]</mo>
+                    <mo>↔</mo>
+                    <mi>a</mi>
+                    <mi>X</mi>
+                    <mo>(</mo>
+                    <mi>n</mi>
+                    <mo>)</mo>
+                    <mo>+</mo>
+                    <mi>b</mi>
+                    <mi>Y</mi>
+                    <mo>(</mo>
+                    <mi>n</mi>
+                    <mo>)</mo>
+                </math>
+            </li>
+            <li>przesunięcie w czasie:
+                <math xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mi>x</mi>
+                    <mo stretchy="false">[</mo>
+                    <mi>k</mi>
+                    <mo>-</mo>
+                    <msub>
+                        <mi>k</mi>
                         <mn>0</mn>
-                    </mrow>
-                    <mrow>
-                        <mi>N</mi>
-                        <mo>-</mo>
-                        <mn>1</mn>
-                    </mrow>
-                </munderover>
-                <mi>S</mi>
-                <mo stretchy="false">[</mo>
-                <mi>n</mi>
-                <mo stretchy="false">]</mo>
-                <msup>
-                    <mi>e</mi>
-                    <mrow>
-                        <mi>j</mi>
-                        <mn>2</mn>
-                        <mi>π</mi>
-                        <mi>k</mi>
-                        <mi>n</mi>
-                        <mo>/</mo>
-                        <mi>N</mi>
-                    </mrow>
-                </msup>
-                <mo>,</mo>
-            </math>
+                    </msub>
+                    <mo stretchy="false">]</mo>
+                    <mo>↔</mo>
+                    <mi>X</mi>
+                    <mo>(</mo>
+                    <mi>n</mi>
+                    <mo>)</mo>
+                    <msup>
+                        <mi>e</mi>
+                        <mrow>
+                            <mo>-</mo>
+                            <msub>
+                                <mi>k</mi>
+                                <mn>0</mn>
+                            </msub>
+                        </mrow>
+                    </msup>
+                </math>
+            </li>
+            <li>przesunięcie w dziedzinie częstotliwości.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <b><a href="{{link1}}"> Poprzednia lekcja</a></b>
         </div>
-        <div style="text-align: justify;">
-            gdzie
-            <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <mi>k</mi>
-                <mo>∈</mo>
-                <mo>&lt;</mo>
-                <mn>0</mn>
-                <mo>,</mo>
-                <mi>N</mi>
-                <mo>-</mo>
-                <mn>1</mn>
-                <mo>&gt;</mo>
-            </math>
-            .<br/>
-            <br/>
-            <h3>
-                <b>Właściwości dyskretnego przekształcenia Fouriera</b></h3>
-            Założenia:
-            <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <mi>x</mi>
-                <mo stretchy="false">[</mo>
-                <mi>k</mi>
-                <mo stretchy="false">]</mo>
-                <mo>,</mo>
-                <mi>y</mi>
-                <mo stretchy="false">[</mo>
-                <mi>k</mi>
-                <mo stretchy="false">]</mo>
-            </math>
-            są sygnałami zespolonymi, natomiast
-            <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <mi>X</mi>
-                <mo>(</mo>
-                <mi>n</mi>
-                <mo>)</mo>
-                <mo>,</mo>
-                <mi>Y</mi>
-                <mo>(</mo>
-                <mi>n</mi>
-                <mo>)</mo>
-            </math>
-            są transformatami sygnałów
-            <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <mi>x</mi>
-                <mo stretchy="false">[</mo>
-                <mi>k</mi>
-                <mo stretchy="false">]</mo>
-                <mo>,</mo>
-                <mi>y</mi>
-                <mo stretchy="false">[</mo>
-                <mi>k</mi>
-                <mo stretchy="false">]</mo>
-            </math>
-            .<br/>
-            <ul>
-                <li>liniowość:
-                    <math xmlns="http://www.w3.org/1998/Math/MathML">
-                        <mi>a</mi>
-                        <mi>x</mi>
-                        <mo stretchy="false">[</mo>
-                        <mi>k</mi>
-                        <mo stretchy="false">]</mo>
-                        <mo>+</mo>
-                        <mi>b</mi>
-                        <mi>y</mi>
-                        <mo stretchy="false">[</mo>
-                        <mi>k</mi>
-                        <mo stretchy="false">]</mo>
-                        <mo>↔</mo>
-                        <mi>a</mi>
-                        <mi>X</mi>
-                        <mo>(</mo>
-                        <mi>n</mi>
-                        <mo>)</mo>
-                        <mo>+</mo>
-                        <mi>b</mi>
-                        <mi>Y</mi>
-                        <mo>(</mo>
-                        <mi>n</mi>
-                        <mo>)</mo>
-                    </math>
-                </li>
-                <li>przesunięcie w czasie:
-                    <math xmlns="http://www.w3.org/1998/Math/MathML">
-                        <mi>x</mi>
-                        <mo stretchy="false">[</mo>
-                        <mi>k</mi>
-                        <mo>-</mo>
-                        <msub>
-                            <mi>k</mi>
-                            <mn>0</mn>
-                        </msub>
-                        <mo stretchy="false">]</mo>
-                        <mo>↔</mo>
-                        <mi>X</mi>
-                        <mo>(</mo>
-                        <mi>n</mi>
-                        <mo>)</mo>
-                        <msup>
-                            <mi>e</mi>
-                            <mrow>
-                                <mo>-</mo>
-                                <msub>
-                                    <mi>k</mi>
-                                    <mn>0</mn>
-                                </msub>
-                            </mrow>
-                        </msup>
-                    </math>
-                </li>
-                <li>przesunięcie w dziedzinie częstotliwości.</li>
-            </ul>
+        <div class="col text-right">
+            <b><a href="{{link2}}"> Następna lekcja</a></b>
         </div>
     </div>
+</div>
 {% endblock %}

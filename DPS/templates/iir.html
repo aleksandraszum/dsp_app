@@ -4,90 +4,100 @@
 {% endblock %}
 
 {% block content %}
-    <H1> {{ Title }} </H1>
+<H1> {{ Title }} </H1>
 
-    <div style="text-align: justify;">
-        Mianem filtrów IIR nazywa się takie filtry, które charakteryzują się nieskończoną odpowiedzią impulsową.
-        Nieskończona odpowiedź impulsowa jest związana ze sprzężeniem zwrotnym, które powodują linię opóźniającą na
-        wyjściu. Wskutek tego, w transmitancji filtra występuje wielomian mianownika.<br/>
-        <br/>
-        Transmutację filtru można zapisać jako:<br/>
-        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-            <mi>H</mi>
-            <mo stretchy="false">(</mo>
-            <mi>z</mi>
-            <mo stretchy="false">)</mo>
-            <mo>=</mo>
-            <mfrac>
-                <mrow>
-                    <mstyle displaystyle="true">
-                        <munderover>
-                            <mo>&#x2211;</mo>
-                            <mrow>
-                                <mi>k</mi>
-                                <mo>=</mo>
-                                <mn>0</mn>
-                            </mrow>
-                            <mi>M</mi>
-                        </munderover>
-                    </mstyle>
-                    <msub>
-                        <mi>b</mi>
-                        <mi>k</mi>
-                    </msub>
-                    <msup>
-                        <mi>z</mi>
+<div style="text-align: justify;">
+    Mianem filtrów IIR nazywa się takie filtry, które charakteryzują się nieskończoną odpowiedzią impulsową.
+    Nieskończona odpowiedź impulsowa jest związana ze sprzężeniem zwrotnym, które powodują linię opóźniającą na
+    wyjściu. Wskutek tego, w transmitancji filtra występuje wielomian mianownika.<br/>
+    <br/>
+    Transmutację filtru można zapisać jako:<br/>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+        <mi>H</mi>
+        <mo stretchy="false">(</mo>
+        <mi>z</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mfrac>
+            <mrow>
+                <mstyle displaystyle="true">
+                    <munderover>
+                        <mo>&#x2211;</mo>
                         <mrow>
-                            <mo>-</mo>
                             <mi>k</mi>
+                            <mo>=</mo>
+                            <mn>0</mn>
                         </mrow>
-                    </msup>
-                </mrow>
-                <mrow>
-                    <mn>1</mn>
-                    <mo>-</mo>
-                    <mstyle displaystyle="true">
-                        <munderover>
-                            <mo>&#x2211;</mo>
-                            <mrow>
-                                <mi>k</mi>
-                                <mo>=</mo>
-                                <mn>1</mn>
-                            </mrow>
-                            <mi>N</mi>
-                        </munderover>
-                    </mstyle>
-                    <msub>
-                        <mi>a</mi>
+                        <mi>M</mi>
+                    </munderover>
+                </mstyle>
+                <msub>
+                    <mi>b</mi>
+                    <mi>k</mi>
+                </msub>
+                <msup>
+                    <mi>z</mi>
+                    <mrow>
+                        <mo>-</mo>
                         <mi>k</mi>
-                    </msub>
-                    <msup>
-                        <mi>z</mi>
+                    </mrow>
+                </msup>
+            </mrow>
+            <mrow>
+                <mn>1</mn>
+                <mo>-</mo>
+                <mstyle displaystyle="true">
+                    <munderover>
+                        <mo>&#x2211;</mo>
                         <mrow>
-                            <mo>-</mo>
                             <mi>k</mi>
+                            <mo>=</mo>
+                            <mn>1</mn>
                         </mrow>
-                    </msup>
-                </mrow>
-            </mfrac>
-        </math>
-        Zaletą filtrów o nieskończonej odpowiedzi impulsowej jest możliwość uzyskania bardzo stromych charakterystyk
-        amplitudowo-częstotliwościowych przy stosunkowo małej liczbie współczynników wagowych, niska złożoność
-        obliczeniowa oraz niewielkie zapotrzebowanie na pamięć operacyjną.<br/>
-        <br/>
-        Wadami filtrów IIR są nieliniowość charakterystyk fazowo-częstotliwościowych, które powodują różny czas
-        opóźnienia poszczególnych częstotliwości na wyjściu filtru, czego skutkiem jest zmiana kształtu sygnału oraz
-        fakt, że sprzężenie zwrotne może powodować niestabilność filtru.<br/>
-        <br/>
-        Filtry o nieskończonej odpowiedzi impulsowej często projektuje się poprzez przekształcenie prototypu filtru
-        analogowego na filtr cyfrowy. Wykorzystywane są przy tym dwie metody:<br/>
-        <br/>
-        <ul>
-            <li>metoda niezmienności odpowiedzi impulsowej</li>
-            <li>transformacja dwuliniowa&nbsp;</li>
-        </ul>
+                        <mi>N</mi>
+                    </munderover>
+                </mstyle>
+                <msub>
+                    <mi>a</mi>
+                    <mi>k</mi>
+                </msub>
+                <msup>
+                    <mi>z</mi>
+                    <mrow>
+                        <mo>-</mo>
+                        <mi>k</mi>
+                    </mrow>
+                </msup>
+            </mrow>
+        </mfrac>
+    </math>
+    Zaletą filtrów o nieskończonej odpowiedzi impulsowej jest możliwość uzyskania bardzo stromych charakterystyk
+    amplitudowo-częstotliwościowych przy stosunkowo małej liczbie współczynników wagowych, niska złożoność
+    obliczeniowa oraz niewielkie zapotrzebowanie na pamięć operacyjną.<br/>
+    <br/>
+    Wadami filtrów IIR są nieliniowość charakterystyk fazowo-częstotliwościowych, które powodują różny czas
+    opóźnienia poszczególnych częstotliwości na wyjściu filtru, czego skutkiem jest zmiana kształtu sygnału oraz
+    fakt, że sprzężenie zwrotne może powodować niestabilność filtru.<br/>
+    <br/>
+    Filtry o nieskończonej odpowiedzi impulsowej często projektuje się poprzez przekształcenie prototypu filtru
+    analogowego na filtr cyfrowy. Wykorzystywane są przy tym dwie metody:<br/>
+    <br/>
+    <ul>
+        <li>metoda niezmienności odpowiedzi impulsowej</li>
+        <li>transformacja dwuliniowa&nbsp;</li>
+    </ul>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <b><a href="{{link1}}"> Poprzednia lekcja</a></b>
+        </div>
+        <div class="col text-right">
+            <b><a href="{{link2}}"> Następna lekcja</a></b>
+        </div>
     </div>
-
-{% endblock %}
+</div>
+    {% endblock %}
 
 

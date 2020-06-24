@@ -4,80 +4,42 @@
 {% endblock %}
 
 {% block content %}
-    <H1> {{ Title }} </H1>
+<H1> {{ Title }} </H1>
 
-    <div style="text-align: justify;">
-        Sygnały można badać przeprowadzając analizy w dziedzinie czasu bądź w dziedzinie częstotliwości.<br/>
-        <br/>
-        W dziedzinie czasu analizowane są wartości sygnału w czasie. Dynamika zmian jest różna, co powoduje, że niektóre
-        zmiany występują częściej, inne rzadziej bądź nie występują w ogóle. Przenosząc sygnał z dziedziny czasu do
-        dziedziny częstotliwości można przeanalizować strukturę oraz intensywność zmian wartości sygnału. Wskutek zmiany
-        dziedziny z czasu na częstotliwość, uzyskuje się widmo sygnału.
-    </div>
-    <div style="text-align: justify;">
-        <br/>
-        W wielu przypadkach łatwiej jest opisać podstawowe cechy sygnału analizując jego widmo. Analiza
-        częstotliwościowa sygnału daje większą wygodę w rozpatrywaniu oraz interpretacji operacji przetwarzania
-        sygnałów, jak przykładowo operacje filtracji. Metody częstotliwościowe sygnału ciągłego oparte są na
-        matematycznych przekształceniach całkowych Fouriera. Przekształcenia te dają możliwość przekształcenia sygnału z
-        dziedziny czasu do dziedziny częstotliwości i odwrotnie.&nbsp;
-    </div>
-    <div style="text-align: justify;">
-        <h4>
-            <b>Całkowe przekształcenie Fouriera</b></h4>
-        Całkowe przekształcenie Fouriera
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <mo mathvariant="script">F</mo>
-        </math>
-        jest zdefiniowane następującą całką:<br/>
-        <div style="text-align: center;">
-            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-                <mover>
-                    <mi>s</mi>
-                    <mo>^</mo>
-                </mover>
-                <mo stretchy="false">(</mo>
-                <mi>f</mi>
-                <mo stretchy="false">)</mo>
-                <mo>=</mo>
-                <mo mathvariant="script">F</mo>
-                <mo stretchy="false">{</mo>
+<div style="text-align: justify;">
+    Sygnały można badać przeprowadzając analizy w dziedzinie czasu bądź w dziedzinie częstotliwości.<br/>
+    <br/>
+    W dziedzinie czasu analizowane są wartości sygnału w czasie. Dynamika zmian jest różna, co powoduje, że niektóre
+    zmiany występują częściej, inne rzadziej bądź nie występują w ogóle. Przenosząc sygnał z dziedziny czasu do
+    dziedziny częstotliwości można przeanalizować strukturę oraz intensywność zmian wartości sygnału. Wskutek zmiany
+    dziedziny z czasu na częstotliwość, uzyskuje się widmo sygnału.
+</div>
+<div style="text-align: justify;">
+    <br/>
+    W wielu przypadkach łatwiej jest opisać podstawowe cechy sygnału analizując jego widmo. Analiza
+    częstotliwościowa sygnału daje większą wygodę w rozpatrywaniu oraz interpretacji operacji przetwarzania
+    sygnałów, jak przykładowo operacje filtracji. Metody częstotliwościowe sygnału ciągłego oparte są na
+    matematycznych przekształceniach całkowych Fouriera. Przekształcenia te dają możliwość przekształcenia sygnału z
+    dziedziny czasu do dziedziny częstotliwości i odwrotnie.&nbsp;
+</div>
+<div style="text-align: justify;">
+    <h4>
+        <b>Całkowe przekształcenie Fouriera</b></h4>
+    Całkowe przekształcenie Fouriera
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mo mathvariant="script">F</mo>
+    </math>
+    jest zdefiniowane następującą całką:<br/>
+    <div style="text-align: center;">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mover>
                 <mi>s</mi>
-                <mo stretchy="false">(</mo>
-                <mi>t</mi>
-                <mo stretchy="false">)</mo>
-                <mo stretchy="false">}</mo>
-                <mo>=</mo>
-                <msubsup>
-                    <mo>∫</mo>
-                    <mrow>
-                        <mo>-</mo>
-                        <mo>∞</mo>
-                    </mrow>
-                    <mo>∞</mo>
-                </msubsup>
-                <mi>s</mi>
-                <mo stretchy="false">(</mo>
-                <mi>t</mi>
-                <mo stretchy="false">)</mo>
-                <msup>
-                    <mi>e</mi>
-                    <mrow>
-                        <mo>-</mo>
-                        <mi>j</mi>
-                        <mn>2</mn>
-                        <mi>π</mi>
-                        <mi>f</mi>
-                        <mi>t</mi>
-                    </mrow>
-                </msup>
-                <mi mathvariant="normal">d</mi>
-                <mi>t</mi>
-                <mo>,</mo>
-            </math>
-        </div>
-        gdzie
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <mo>^</mo>
+            </mover>
+            <mo stretchy="false">(</mo>
+            <mi>f</mi>
+            <mo stretchy="false">)</mo>
+            <mo>=</mo>
             <mo mathvariant="script">F</mo>
             <mo stretchy="false">{</mo>
             <mi>s</mi>
@@ -85,74 +47,129 @@
             <mi>t</mi>
             <mo stretchy="false">)</mo>
             <mo stretchy="false">}</mo>
-        </math>
-        symbolizuje transformatę Fouriera, natomiast
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <msup>
-                <mi>e</mi>
-                <mrow>
-                    <mo>-</mo>
-                    <mi>j</mi>
-                    <mn>2</mn>
-                    <mi>π</mi>
-                    <mi>f</mi>
-                    <mi>t</mi>
-                </mrow>
-            </msup>
-        </math>
-        można przedstawić jako:
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <msup>
-                <mi>e</mi>
-                <mrow>
-                    <mo>-</mo>
-                    <mi>j</mi>
-                    <mn>2</mn>
-                    <mi>π</mi>
-                    <mi>f</mi>
-                    <mi>t</mi>
-                </mrow>
-            </msup>
             <mo>=</mo>
-            <mi>cos</mi>
-            <mn>2</mn>
-            <mi>π</mi>
-            <mi>f</mi>
-            <mi>t</mi>
-            <mo>+</mo>
-            <mi>j</mi>
-            <mi>sin</mi>
-            <mn>2</mn>
-            <mi>π</mi>
-            <mi>f</mi>
-            <mi>t</mi>
-        </math>
-        .<br/>
-        <br/>
-        Wzór mówi o tym, że wyznaczając całkę dla poszczególnych wartości częstotliwości, uzyskuje się wartości
-        zespolone. Innymi słowy, całka przyporządkowuje sygnałowi
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <msubsup>
+                <mo>∫</mo>
+                <mrow>
+                    <mo>-</mo>
+                    <mo>∞</mo>
+                </mrow>
+                <mo>∞</mo>
+            </msubsup>
             <mi>s</mi>
             <mo stretchy="false">(</mo>
             <mi>t</mi>
             <mo stretchy="false">)</mo>
+            <msup>
+                <mi>e</mi>
+                <mrow>
+                    <mo>-</mo>
+                    <mi>j</mi>
+                    <mn>2</mn>
+                    <mi>π</mi>
+                    <mi>f</mi>
+                    <mi>t</mi>
+                </mrow>
+            </msup>
+            <mi mathvariant="normal">d</mi>
+            <mi>t</mi>
+            <mo>,</mo>
         </math>
-        funkcję zespoloną
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <mover>
-                <mi>s</mi>
-                <mo>^</mo>
-            </mover>
+    </div>
+    gdzie
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mo mathvariant="script">F</mo>
+        <mo stretchy="false">{</mo>
+        <mi>s</mi>
+        <mo stretchy="false">(</mo>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">}</mo>
+    </math>
+    symbolizuje transformatę Fouriera, natomiast
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <msup>
+            <mi>e</mi>
+            <mrow>
+                <mo>-</mo>
+                <mi>j</mi>
+                <mn>2</mn>
+                <mi>π</mi>
+                <mi>f</mi>
+                <mi>t</mi>
+            </mrow>
+        </msup>
+    </math>
+    można przedstawić jako:
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <msup>
+            <mi>e</mi>
+            <mrow>
+                <mo>-</mo>
+                <mi>j</mi>
+                <mn>2</mn>
+                <mi>π</mi>
+                <mi>f</mi>
+                <mi>t</mi>
+            </mrow>
+        </msup>
+        <mo>=</mo>
+        <mi>cos</mi>
+        <mn>2</mn>
+        <mi>π</mi>
+        <mi>f</mi>
+        <mi>t</mi>
+        <mo>+</mo>
+        <mi>j</mi>
+        <mi>sin</mi>
+        <mn>2</mn>
+        <mi>π</mi>
+        <mi>f</mi>
+        <mi>t</mi>
+    </math>
+    .<br/>
+    <br/>
+    Wzór mówi o tym, że wyznaczając całkę dla poszczególnych wartości częstotliwości, uzyskuje się wartości
+    zespolone. Innymi słowy, całka przyporządkowuje sygnałowi
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>s</mi>
+        <mo stretchy="false">(</mo>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
+    </math>
+    funkcję zespoloną
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mover>
+            <mi>s</mi>
+            <mo>^</mo>
+        </mover>
+        <mo stretchy="false">(</mo>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
+    </math>
+    .<br/>
+    <br/>
+    <h4>
+        <b>Całkowe odwrotne przekształcenie Fouriera</b></h4>
+    Całkowe odwrotne przekształcenie Fouriera
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <msup>
+            <mo mathvariant="script">F</mo>
+            <mrow>
+                <mo>-</mo>
+                <mn>1</mn>
+            </mrow>
+        </msup>
+    </math>
+    przekształca sygnał zdefiniowany w dziedzinie częstotliwości na sygnał zdefiniowany w dziedzinie czasu.
+    Przekształcenie to zdefiniowane jest całką:<br/>
+    <div style="text-align: center;">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mi>s</mi>
             <mo stretchy="false">(</mo>
             <mi>t</mi>
             <mo stretchy="false">)</mo>
-        </math>
-        .<br/>
-        <br/>
-        <h4>
-            <b>Całkowe odwrotne przekształcenie Fouriera</b></h4>
-        Całkowe odwrotne przekształcenie Fouriera
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mo>=</mo>
             <msup>
                 <mo mathvariant="script">F</mo>
                 <mrow>
@@ -160,73 +177,67 @@
                     <mn>1</mn>
                 </mrow>
             </msup>
-        </math>
-        przekształca sygnał zdefiniowany w dziedzinie częstotliwości na sygnał zdefiniowany w dziedzinie czasu.
-        Przekształcenie to zdefiniowane jest całką:<br/>
-        <div style="text-align: center;">
-            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mo stretchy="false">{</mo>
+            <mover>
                 <mi>s</mi>
-                <mo stretchy="false">(</mo>
-                <mi>t</mi>
-                <mo stretchy="false">)</mo>
-                <mo>=</mo>
-                <msup>
-                    <mo mathvariant="script">F</mo>
-                    <mrow>
-                        <mo>-</mo>
-                        <mn>1</mn>
-                    </mrow>
-                </msup>
-                <mo stretchy="false">{</mo>
-                <mover>
-                    <mi>s</mi>
-                    <mo>^</mo>
-                </mover>
-                <mo stretchy="false">(</mo>
-                <mi>t</mi>
-                <mo stretchy="false">)</mo>
-                <mo stretchy="false">}</mo>
-                <mo>=</mo>
-                <msubsup>
-                    <mo>∫</mo>
-                    <mrow>
-                        <mo>-</mo>
-                        <mo>∞</mo>
-                    </mrow>
+                <mo>^</mo>
+            </mover>
+            <mo stretchy="false">(</mo>
+            <mi>t</mi>
+            <mo stretchy="false">)</mo>
+            <mo stretchy="false">}</mo>
+            <mo>=</mo>
+            <msubsup>
+                <mo>∫</mo>
+                <mrow>
+                    <mo>-</mo>
                     <mo>∞</mo>
-                </msubsup>
-                <mover>
-                    <mi>s</mi>
-                    <mo>^</mo>
-                </mover>
-                <mo stretchy="false">(</mo>
-                <mi>f</mi>
-                <mo stretchy="false">)</mo>
-                <msup>
-                    <mi>e</mi>
-                    <mrow>
-                        <mi>j</mi>
-                        <mn>2</mn>
-                        <mi>π</mi>
-                        <mi>t</mi>
-                        <mi>f</mi>
-                    </mrow>
-                </msup>
-                <mi mathvariant="normal">d</mi>
-                <mi>f</mi>
-            </math>
-        </div>
-        <br/>
-        <h3>
-            <b>Własności przekształcenia Fouriera</b>:</h3>
-        <ul>
-            <li>liniowość</li>
-            <li>przesunięcie w czasie</li>
-            <li>przesunięcie w częstotliwości</li>
-            <li>różniczkowanie i całkowanie oryginału</li>
-            <li>skalowanie w czasie i częstotliwości</li>
-            <li>splot</li>
-        </ul>
+                </mrow>
+                <mo>∞</mo>
+            </msubsup>
+            <mover>
+                <mi>s</mi>
+                <mo>^</mo>
+            </mover>
+            <mo stretchy="false">(</mo>
+            <mi>f</mi>
+            <mo stretchy="false">)</mo>
+            <msup>
+                <mi>e</mi>
+                <mrow>
+                    <mi>j</mi>
+                    <mn>2</mn>
+                    <mi>π</mi>
+                    <mi>t</mi>
+                    <mi>f</mi>
+                </mrow>
+            </msup>
+            <mi mathvariant="normal">d</mi>
+            <mi>f</mi>
+        </math>
     </div>
+    <br/>
+    <h3>
+        <b>Własności przekształcenia Fouriera</b>:</h3>
+    <ul>
+        <li>liniowość</li>
+        <li>przesunięcie w czasie</li>
+        <li>przesunięcie w częstotliwości</li>
+        <li>różniczkowanie i całkowanie oryginału</li>
+        <li>skalowanie w czasie i częstotliwości</li>
+        <li>splot</li>
+    </ul>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <b><a href="{{link1}}"> Poprzednia lekcja</a></b>
+        </div>
+        <div class="col text-right">
+            <b><a href="{{link2}}"> Następna lekcja</a></b>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

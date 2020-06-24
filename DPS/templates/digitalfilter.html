@@ -4,50 +4,60 @@
 {% endblock %}
 
 {% block content %}
-    <H1> {{ Title }} </H1>
+<H1> {{ Title }} </H1>
 
-    <div style="height: 0px;">
-    </div>
-    <div style="text-align: justify;">
-        <span style="font-weight: normal;">Filtry </span><span style="font-weight: 400;">cyfrowe</span><span
-            style="font-weight: normal;">&nbsp;są układami dyskretnymi, które wykorzystywane są do zmiany charakterystyk częstotliwościowych sygnałów dyskretnych.</span>
-    </div>
-    <span style="font-weight: normal;"></span><br/>
-    <div style="text-align: justify;">
+<div style="height: 0px;">
+</div>
+<div style="text-align: justify;">
+    <span style="font-weight: normal;">Filtry </span><span style="font-weight: 400;">cyfrowe</span><span
+        style="font-weight: normal;">&nbsp;są układami dyskretnymi, które wykorzystywane są do zmiany charakterystyk częstotliwościowych sygnałów dyskretnych.</span>
+</div>
+<span style="font-weight: normal;"></span><br/>
+<div style="text-align: justify;">
         <span style="font-weight: normal;"><span
                 style="font-weight: normal;">Filtry cyfrowe posiadają dwa zastosowania: </span><i>rozdzielanie </i><span
                 style="font-weight: normal;">oraz </span><i>odtwarzanie </i><span style="font-weight: normal;">sygnałów.&nbsp;Filtry rozdzielające sygnałów wykorzystywane są wówczas, gdy sygnał został zniekształcony zakłóceniami, szumem czy innymi sygnałami (przykład: badanie kardiotograficzne. Zmierzony sygnał podczas badania jest sumą czynności serca dziecka oraz matki. Filtracja umożliwia rozdzielenie dwóch sygnałów). Filtry odtwarzające&nbsp;sygnały stosuje się w przypadku sygnałów zniekształconych, kiedy zależy na uzyskaniu czystego sygnału.&nbsp;</span></span>
-    </div>
-    <span style="font-weight: normal;">
+</div>
+<span style="font-weight: normal;">
 </span><span style="font-weight: normal;"></span>
-    <div style="text-align: justify;">
-        <span style="font-weight: normal;">Filtry można podzielić:</span></div>
-    <span style="font-weight: normal;">
+<div style="text-align: justify;">
+    <span style="font-weight: normal;">Filtry można podzielić:</span></div>
+<span style="font-weight: normal;">
 </span><br/>
-    <ul>
-        <li style="text-align: justify;"><span
-                style="font-weight: normal;">ze względu na sposób realizacji:&nbsp;</span></li>
-    </ul>
-    <div style="text-align: justify;">
-            <div>
-                <span style="font-weight: 400;">- przez splot - filtry typu FIR&nbsp;</span></div>
-            <div>
-                <span style="font-weight: 400;">- przez rekursję - filtry typu IIR (filtry o nieskończonej odpowiedzi impulsowej).</span>
-            </div>
-            <div>
-            </div>
-    </div></br>
-    <ul>
-        <li style="text-align: justify;"><span style="font-weight: normal;">ze względu na pasmo przenoszonych częstotliwości:</span>
-        </li>
-    </ul>
-    <div style="text-align: justify;">
-        - dolnoprzepustowe<br/>
-        - górnoprzepustowe<br/>
-        - pasmowoprzepustowe<br/>
-        - pasmowozaporowe
+<ul>
+    <li style="text-align: justify;"><span
+            style="font-weight: normal;">ze względu na sposób realizacji:&nbsp;</span></li>
+</ul>
+<div style="text-align: justify;">
+    <div>
+        <span style="font-weight: 400;">- przez splot - filtry typu FIR&nbsp;</span></div>
+    <div>
+        <span style="font-weight: 400;">- przez rekursję - filtry typu IIR (filtry o nieskończonej odpowiedzi impulsowej).</span>
     </div>
+    <div>
+    </div>
+</div></br>
+<ul>
+    <li style="text-align: justify;"><span style="font-weight: normal;">ze względu na pasmo przenoszonych częstotliwości:</span>
+    </li>
+</ul>
+<div style="text-align: justify;">
+    - dolnoprzepustowe<br/>
+    - górnoprzepustowe<br/>
+    - pasmowoprzepustowe<br/>
+    - pasmowozaporowe
+</div>
 
-{% endblock %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <b><a href="{{link1}}"> Poprzednia lekcja</a></b>
+        </div>
+        <div class="col text-right">
+            <b><a href="{{link2}}"> Następna lekcja</a></b>
+        </div>
+    </div>
+</div>
+    {% endblock %}
 
 

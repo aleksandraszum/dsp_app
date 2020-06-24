@@ -4,219 +4,219 @@
 {% endblock %}
 
 {% block content %}
-    <H1> {{ Title }} </H1>
+<H1> {{ Title }} </H1>
 
-    <h3 style="text-align: justify;">
-        Zadanie 1.</h3>
-    <div style="text-align: justify;">
-        Rozwiń sygnał:
-        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-            <mi>s</mi>
-            <mo stretchy="false">(</mo>
-            <mi>t</mi>
-            <mo stretchy="false">)</mo>
-            <mo>=</mo>
-            <mfenced close="" open="{">
-                <mtable columnalign="left">
-                    <mtr>
-                        <mtd>
-                            <mn>2</mn>
-                            <mo>&nbsp;</mo>
-                            <mi>dla</mi>
-                            <mo>&nbsp;</mo>
-                            <mi>T</mi>
-                            <mo>&nbsp;</mo>
-                            <mo>∈</mo>
-                            <mo>&nbsp;</mo>
-                            <mo>&lt;</mo>
-                            <mn>0</mn>
-                            <mo>,</mo>
-                            <mo>&nbsp;</mo>
-                            <mi>T</mi>
-                            <mo>)</mo>
-                        </mtd>
-                    </mtr>
-                    <mtr>
-                        <mtd>
-                            <mn>0</mn>
-                            <mo>&nbsp;</mo>
-                            <mi>dla</mi>
-                            <mo>&nbsp;</mo>
-                            <mi>T</mi>
-                            <mo>&nbsp;</mo>
-                            <mo>∈</mo>
-                            <mo>&lt;</mo>
-                            <mo>-</mo>
-                            <mi>T</mi>
-                            <mo>,</mo>
-                            <mo>&nbsp;</mo>
-                            <mn>0</mn>
-                            <mo>)</mo>
-                        </mtd>
-                    </mtr>
-                </mtable>
-            </mfenced>
-        </math>
-        w szereg Fouriera. Wygeneruj oryginalny sygnał zdefiniowany na osi czasu&nbsp;<math
-            xmlns="http://www.w3.org/1998/Math/MathML">
-        <mi>x</mi>
+<h3 style="text-align: justify;">
+    Zadanie 1.</h3>
+<div style="text-align: justify;">
+    Rozwiń sygnał:
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+        <mi>s</mi>
+        <mo stretchy="false">(</mo>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
         <mo>=</mo>
-        <mo>[</mo>
-        <mo>-</mo>
-        <mn>10</mn>
-        <mo>;</mo>
-        <mn>10</mn>
-        <mo>]</mo>
+        <mfenced close="" open="{">
+            <mtable columnalign="left">
+                <mtr>
+                    <mtd>
+                        <mn>2</mn>
+                        <mo>&nbsp;</mo>
+                        <mi>dla</mi>
+                        <mo>&nbsp;</mo>
+                        <mi>T</mi>
+                        <mo>&nbsp;</mo>
+                        <mo>∈</mo>
+                        <mo>&nbsp;</mo>
+                        <mo>&lt;</mo>
+                        <mn>0</mn>
+                        <mo>,</mo>
+                        <mo>&nbsp;</mo>
+                        <mi>T</mi>
+                        <mo>)</mo>
+                    </mtd>
+                </mtr>
+                <mtr>
+                    <mtd>
+                        <mn>0</mn>
+                        <mo>&nbsp;</mo>
+                        <mi>dla</mi>
+                        <mo>&nbsp;</mo>
+                        <mi>T</mi>
+                        <mo>&nbsp;</mo>
+                        <mo>∈</mo>
+                        <mo>&lt;</mo>
+                        <mo>-</mo>
+                        <mi>T</mi>
+                        <mo>,</mo>
+                        <mo>&nbsp;</mo>
+                        <mn>0</mn>
+                        <mo>)</mo>
+                    </mtd>
+                </mtr>
+            </mtable>
+        </mfenced>
     </math>
-        oraz sygnał uzyskany po rozwinięciu w szereg Fouriera.</br>
-    </div>
-    <div>
-        <h4>
-            </br> <b>Rozwiązanie</b></h4></div>
-    <div class="panel-group" id=task1a>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h5 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#task1a" href="#Collapsetask1a">
-                        Omówienie problemu
-                    </a>
-                </h5>
-            </div>
-            <div id="Collapsetask1a" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <div style="text-align: justify;">
-                        W pierwszym kroku należy wyznaczyć wzór na szereg Fouriera korzystając ze wzorów podanych w
-                        części: <i><a href="http://127.0.0.1:5000/szereg-fouriera" target="_blank">rozwinięcie w
-                        szereg Fouriera</a></i>.<br/>
-                        <br/></div>
+    w szereg Fouriera. Wygeneruj oryginalny sygnał zdefiniowany na osi czasu&nbsp;<math
+        xmlns="http://www.w3.org/1998/Math/MathML">
+    <mi>x</mi>
+    <mo>=</mo>
+    <mo>[</mo>
+    <mo>-</mo>
+    <mn>10</mn>
+    <mo>;</mo>
+    <mn>10</mn>
+    <mo>]</mo>
+</math>
+    oraz sygnał uzyskany po rozwinięciu w szereg Fouriera.</br>
+</div>
+<div>
+    <h4>
+        </br> <b>Rozwiązanie</b></h4></div>
+<div class="panel-group" id=task1a>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#task1a" href="#Collapsetask1a">
+                    Omówienie problemu
+                </a>
+            </h5>
+        </div>
+        <div id="Collapsetask1a" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div style="text-align: justify;">
+                    W pierwszym kroku należy wyznaczyć wzór na szereg Fouriera korzystając ze wzorów podanych w
+                    części: <i><a href="http://127.0.0.1:5000/szereg-fouriera" target="_blank">rozwinięcie w
+                    szereg Fouriera</a></i>.<br/>
+                    <br/></div>
 
-                    <div class="panel-group" id="formula1">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h5 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#formula1" href="#Collapseformula1">
-                                        Rozwinięcie w szereg Fouriera - wzór
-                                    </a>
-                                </h5>
-                            </div>
-                            <div id="Collapseformula1" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <div style="text-align: justify;">
-                                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-                                            <mi>f</mi>
-                                            <mo stretchy="false">(</mo>
-                                            <mi>t</mi>
-                                            <mo stretchy="false">)</mo>
-                                            <mo>&#xA0;</mo>
-                                            <mo>&#x2248;</mo>
-                                            <mo>&#xA0;</mo>
-                                            <mn>1</mn>
-                                            <mo>&#xA0;</mo>
-                                            <mo>+</mo>
-                                            <mfrac>
-                                                <mn>2</mn>
+                <div class="panel-group" id="formula1">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h5 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#formula1" href="#Collapseformula1">
+                                    Rozwinięcie w szereg Fouriera - wzór
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="Collapseformula1" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <div style="text-align: justify;">
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                        <mi>f</mi>
+                                        <mo stretchy="false">(</mo>
+                                        <mi>t</mi>
+                                        <mo stretchy="false">)</mo>
+                                        <mo>&#xA0;</mo>
+                                        <mo>&#x2248;</mo>
+                                        <mo>&#xA0;</mo>
+                                        <mn>1</mn>
+                                        <mo>&#xA0;</mo>
+                                        <mo>+</mo>
+                                        <mfrac>
+                                            <mn>2</mn>
+                                            <mi>&#x3C0;</mi>
+                                        </mfrac>
+                                        <munderover>
+                                            <mo>&#x2211;</mo>
+                                            <mrow>
+                                                <mi>k</mi>
+                                                <mo>=</mo>
+                                                <mn>1</mn>
+                                            </mrow>
+                                            <mi>K</mi>
+                                        </munderover>
+                                        <mo>(</mo>
+                                        <mfrac>
+                                            <mrow>
+                                                <mi>s</mi>
+                                                <mi>i</mi>
+                                                <mi>n</mi>
+                                                <mo>(</mo>
+                                                <mi>k</mi>
                                                 <mi>&#x3C0;</mi>
-                                            </mfrac>
-                                            <munderover>
-                                                <mo>&#x2211;</mo>
-                                                <mrow>
-                                                    <mi>k</mi>
-                                                    <mo>=</mo>
-                                                    <mn>1</mn>
-                                                </mrow>
-                                                <mi>K</mi>
-                                            </munderover>
-                                            <mo>(</mo>
-                                            <mfrac>
-                                                <mrow>
-                                                    <mi>s</mi>
-                                                    <mi>i</mi>
-                                                    <mi>n</mi>
-                                                    <mo>(</mo>
-                                                    <mi>k</mi>
-                                                    <mi>&#x3C0;</mi>
-                                                    <mo>)</mo>
-                                                </mrow>
+                                                <mo>)</mo>
+                                            </mrow>
+                                            <mi>k</mi>
+                                        </mfrac>
+                                        <mi>cos</mi>
+                                        <mo>(</mo>
+                                        <mfrac>
+                                            <mrow>
                                                 <mi>k</mi>
-                                            </mfrac>
-                                            <mi>cos</mi>
-                                            <mo>(</mo>
-                                            <mfrac>
-                                                <mrow>
-                                                    <mi>k</mi>
-                                                    <mi>&#x3C0;</mi>
-                                                    <mi>t</mi>
-                                                </mrow>
-                                                <mi>T</mi>
-                                            </mfrac>
-                                            <mo>)</mo>
-                                            <mo>+</mo>
-                                            <mo>(</mo>
-                                            <mfrac>
-                                                <mrow>
-                                                    <mn>1</mn>
-                                                    <mo>-</mo>
-                                                    <mi>c</mi>
-                                                    <mi>o</mi>
-                                                    <mi>s</mi>
-                                                    <mo>(</mo>
-                                                    <mi>k</mi>
-                                                    <mi>&#x3C0;</mi>
-                                                    <mo>)</mo>
-                                                </mrow>
+                                                <mi>&#x3C0;</mi>
+                                                <mi>t</mi>
+                                            </mrow>
+                                            <mi>T</mi>
+                                        </mfrac>
+                                        <mo>)</mo>
+                                        <mo>+</mo>
+                                        <mo>(</mo>
+                                        <mfrac>
+                                            <mrow>
+                                                <mn>1</mn>
+                                                <mo>-</mo>
+                                                <mi>c</mi>
+                                                <mi>o</mi>
+                                                <mi>s</mi>
+                                                <mo>(</mo>
                                                 <mi>k</mi>
-                                            </mfrac>
-                                            <mo>)</mo>
-                                            <mi>sin</mi>
-                                            <mo>(</mo>
-                                            <mfrac>
-                                                <mrow>
-                                                    <mi>k</mi>
-                                                    <mi>&#x3C0;</mi>
-                                                    <mi>t</mi>
-                                                </mrow>
-                                                <mi>T</mi>
-                                            </mfrac>
-                                            <mo>)</mo>
-                                            <mo>)</mo>
-                                            <mo>.</mo>
-                                        </math>
-                                    </div>
+                                                <mi>&#x3C0;</mi>
+                                                <mo>)</mo>
+                                            </mrow>
+                                            <mi>k</mi>
+                                        </mfrac>
+                                        <mo>)</mo>
+                                        <mi>sin</mi>
+                                        <mo>(</mo>
+                                        <mfrac>
+                                            <mrow>
+                                                <mi>k</mi>
+                                                <mi>&#x3C0;</mi>
+                                                <mi>t</mi>
+                                            </mrow>
+                                            <mi>T</mi>
+                                        </mfrac>
+                                        <mo>)</mo>
+                                        <mo>)</mo>
+                                        <mo>.</mo>
+                                    </math>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
-                    <div style="text-align: justify;">
-                        Aby wygenerować oryginalny sygnał, należy utworzyć wektor osi czasu oraz korzystając z
-                        funkcji square znajdującej się w pakiecie scipy.signal utworzyć wektor próbek sygnału. Należy
-                        zdefiniować wartość
-                        parametru T. <br/>
-                        <br/></div>
-                    <div style="text-align: justify;">
-                        Mając wzór na rozwinięcie w szereg Fouriera należy obliczyć sumę dla każdego argumentu.
-                        Pierwszym krokiem jest zdefiniowanie zmiennej K. Następnie sugeruję utworzenie funkcji
-                        fourier_series, której celem będzie utworzenie wektora, który zawierać w sobie będzie
-                        wartości rozwinięcia Fouriera. Wewnątrz funkcji wykorzystując dwie pętle for, należy
-                        wyliczyć rozwinięcie&nbsp; funkcji w szereg Fouriera. Wykorzystując&nbsp; pakiet
-                        matplotlib.pyplot należy narysować sygnał oraz rozwinięcie sygnału w szereg Fouriera.</br>
-                    </div>
-
                 </div>
+
+
+                <div style="text-align: justify;">
+                    Aby wygenerować oryginalny sygnał, należy utworzyć wektor osi czasu oraz korzystając z
+                    funkcji square znajdującej się w pakiecie scipy.signal utworzyć wektor próbek sygnału. Należy
+                    zdefiniować wartość
+                    parametru T. <br/>
+                    <br/></div>
+                <div style="text-align: justify;">
+                    Mając wzór na rozwinięcie w szereg Fouriera należy obliczyć sumę dla każdego argumentu.
+                    Pierwszym krokiem jest zdefiniowanie zmiennej K. Następnie sugeruję utworzenie funkcji
+                    fourier_series, której celem będzie utworzenie wektora, który zawierać w sobie będzie
+                    wartości rozwinięcia Fouriera. Wewnątrz funkcji wykorzystując dwie pętle for, należy
+                    wyliczyć rozwinięcie&nbsp; funkcji w szereg Fouriera. Wykorzystując&nbsp; pakiet
+                    matplotlib.pyplot należy narysować sygnał oraz rozwinięcie sygnału w szereg Fouriera.</br>
+                </div>
+
             </div>
         </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h5 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#task1a" href="#Collapsetask1b">
-                        Kod źródłowy w Pythonie
-                    </a>
-                </h5>
-            </div>
-            <div id="Collapsetask1b" class="panel-collapse collapse in">
-                <div class="panel-body">
-                    <div style="text-align: justify;">
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#task1a" href="#Collapsetask1b">
+                    Kod źródłowy w Pythonie
+                </a>
+            </h5>
+        </div>
+        <div id="Collapsetask1b" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div style="text-align: justify;">
                         <textarea id="fourierseries" name="fourierseries">
     # importowanie potrzebnych bibliotek
     import numpy as np
@@ -256,52 +256,52 @@
     # wygenerowanie wykresu:
     plt.plot(t, suma, t, y)
                         </textarea>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <h3>
-        <b>Zadanie 2.</b></h3>
-    <div style="text-align: justify;">
-        Napisz funkcję <i>dft(signal)</i> oraz <i>idft(signal)</i>, które będą odpowiednio dokonywały dyskretnej
-        transformaty Fouriera oraz odwrotnej, dyskretnej transformaty Fouriera. Jedynym argumentem funkcji jest
-        sygnał.<br/>
-        <br/>
-        <h4>
-            <b>Rozwiązanie</b></h4></div>
+<h3>
+    <b>Zadanie 2.</b></h3>
+<div style="text-align: justify;">
+    Napisz funkcję <i>dft(signal)</i> oraz <i>idft(signal)</i>, które będą odpowiednio dokonywały dyskretnej
+    transformaty Fouriera oraz odwrotnej, dyskretnej transformaty Fouriera. Jedynym argumentem funkcji jest
+    sygnał.<br/>
+    <br/>
+    <h4>
+        <b>Rozwiązanie</b></h4></div>
 
-    <div class="panel-group" id="task2">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h5 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#task2" href="#collapseTask2a">
-                        Omówienie problemu
-                    </a>
-                </h5>
-            </div>
-            <div id="collapseTask2a" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <div style="text-align: justify;">
-                        Wewnątrz funkcji należy wykorzystać wzory podane w części: <i><a
-                            href="http://127.0.0.1:5000/dft" target="_blank">dyskretne przekształcenie Fouriera</a></i>.&nbsp;
+<div class="panel-group" id="task2">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#task2" href="#collapseTask2a">
+                    Omówienie problemu
+                </a>
+            </h5>
+        </div>
+        <div id="collapseTask2a" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div style="text-align: justify;">
+                    Wewnątrz funkcji należy wykorzystać wzory podane w części: <i><a
+                        href="http://127.0.0.1:5000/dft" target="_blank">dyskretne przekształcenie Fouriera</a></i>.&nbsp;
 
-                    </div>
                 </div>
             </div>
         </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h5 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#task2" href="#collapseTask2b">
-                        Kod źródłowy w Pythonie
-                    </a>
-                </h5>
-            </div>
-            <div id="collapseTask2b" class="panel-collapse collapse in">
-                <div class="panel-body">
-                    <div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#task2" href="#collapseTask2b">
+                    Kod źródłowy w Pythonie
+                </a>
+            </h5>
+        </div>
+        <div id="collapseTask2b" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div>
                         <textarea id="dft" name="dft">
     from cmath import exp, pi
 
@@ -331,113 +331,113 @@
 
         return Signal
                         </textarea>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <h3 style="text-align: justify;">
-        <b>Zadanie 3.</b></h3>
-    <div style="text-align: justify;">
-        Wykorzystując napisane funkcje <i>dft </i>oraz <i>idft</i>, dokonaj transformaty Fouriera sygnału
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <mi>cos</mi>
-            <mo>(</mo>
-            <mn>2</mn>
-            <mi>π</mi>
-            <mi>f</mi>
+<h3 style="text-align: justify;">
+    <b>Zadanie 3.</b></h3>
+<div style="text-align: justify;">
+    Wykorzystując napisane funkcje <i>dft </i>oraz <i>idft</i>, dokonaj transformaty Fouriera sygnału
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>cos</mi>
+        <mo>(</mo>
+        <mn>2</mn>
+        <mi>π</mi>
+        <mi>f</mi>
+        <mi>t</mi>
+        <mo>+</mo>
+        <mi>ϕ</mi>
+        <mo>)</mo>
+    </math>
+    , gdzie
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <msub>
             <mi>t</mi>
-            <mo>+</mo>
-            <mi>ϕ</mi>
-            <mo>)</mo>
-        </math>
-        , gdzie
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <msub>
-                <mi>t</mi>
-                <mi>p</mi>
-            </msub>
-            <mo>=</mo>
-            <mn>0</mn>
-            <mo>,</mo>
-            <msub>
-                <mi>t</mi>
-                <mi>k</mi>
-            </msub>
-            <mo>=</mo>
-            <mi>&#x3C0;</mi>
-            <mo>,</mo>
-            <mo>&#xA0;</mo>
+            <mi>p</mi>
+        </msub>
+        <mo>=</mo>
+        <mn>0</mn>
+        <mo>,</mo>
+        <msub>
+            <mi>t</mi>
+            <mi>k</mi>
+        </msub>
+        <mo>=</mo>
+        <mi>&#x3C0;</mi>
+        <mo>,</mo>
+        <mo>&#xA0;</mo>
+        <mi>f</mi>
+        <mo>=</mo>
+        <mn>2</mn>
+        <mi>Hz</mi>
+        <mo>,</mo>
+    </math>
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <msub>
             <mi>f</mi>
-            <mo>=</mo>
-            <mn>2</mn>
-            <mi>Hz</mi>
-            <mo>,</mo>
-        </math>
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <msub>
-                <mi>f</mi>
-                <mi>p</mi>
-            </msub>
-            <mo>=</mo>
-            <mn>256</mn>
-            <mo>,</mo>
-            <mi>&#x3D5;</mi>
-            <mo>=</mo>
-            <mn>0</mn>
-            <mo>.</mo>
-        </math>
-        Podpowiedź: skorzystaj z funkcji <i>cosinus </i>napisanej w module: <a
-            href="http://127.0.0.1:5000/sygnal-zadania" target="_blank"><i>sygnał zadania</i></a>. Wyznacz amplitudę i
-        fazę sygnału. Dokonaj odwrotnej transformaty Fouriera. Na jednym wykresie narysuj: sygnał oryginalny oraz sygnał
-        po odwrotnej
-        transformacie Fouriera (jaką zależność tu widzisz?), natomiast na drugim wykresie narysuj sygnał po
-        transformacie Fouriera.<br/>
-        <br/>
-        <h4>
-            <b>Rozwiązanie&nbsp;</b></h4>
-    </div>
+            <mi>p</mi>
+        </msub>
+        <mo>=</mo>
+        <mn>256</mn>
+        <mo>,</mo>
+        <mi>&#x3D5;</mi>
+        <mo>=</mo>
+        <mn>0</mn>
+        <mo>.</mo>
+    </math>
+    Podpowiedź: skorzystaj z funkcji <i>cosinus </i>napisanej w module: <a
+        href="http://127.0.0.1:5000/sygnal-zadania" target="_blank"><i>sygnał zadania</i></a>. Wyznacz amplitudę i
+    fazę sygnału. Dokonaj odwrotnej transformaty Fouriera. Na jednym wykresie narysuj: sygnał oryginalny oraz sygnał
+    po odwrotnej
+    transformacie Fouriera (jaką zależność tu widzisz?), natomiast na drugim wykresie narysuj sygnał po
+    transformacie Fouriera.<br/>
+    <br/>
+    <h4>
+        <b>Rozwiązanie&nbsp;</b></h4>
+</div>
 
-    <div class="panel-group" id="task3">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h5 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#task3" href="#collapseTask3a">
-                        Omówienie problemu
-                    </a>
-                </h5>
-            </div>
-            <div id="collapseTask3a" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <div style="text-align: justify;">
-                        Najpierw należy utworzyć sygnał wywołując funkcję cosinus. Następnie wykorzystując funkcję dft
-                        należy dokonać przekształcenia Fouriera. Kolejnym krokiem jest wyznaczenie amplitudy i fazy
-                        sygnału wykorzystując wzory poznane w części: widmo sygnału. Ostatnim krokiem jest dokonanie
-                        odwrotnej transformaty Fouriera.
-                    </div>
-                    <div style="text-align: justify;">
-                        Czy zauważyłeś coś ciekawego na wykresie, na ktorym znajduje się sygnał oryginalny oraz sygnał
-                        poddany przekształceniu Fouriera i odwrotnym przekształceniu Fouriera? Jedna krzywa powinna
-                        przykryć drugą. Jeżeli zauważasz dwie różne krzywe, oznacza to, że napisane przez Ciebie funkcje
-                        mają błędy.
-                    </div>
-
+<div class="panel-group" id="task3">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#task3" href="#collapseTask3a">
+                    Omówienie problemu
+                </a>
+            </h5>
+        </div>
+        <div id="collapseTask3a" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div style="text-align: justify;">
+                    Najpierw należy utworzyć sygnał wywołując funkcję cosinus. Następnie wykorzystując funkcję dft
+                    należy dokonać przekształcenia Fouriera. Kolejnym krokiem jest wyznaczenie amplitudy i fazy
+                    sygnału wykorzystując wzory poznane w części: widmo sygnału. Ostatnim krokiem jest dokonanie
+                    odwrotnej transformaty Fouriera.
                 </div>
+                <div style="text-align: justify;">
+                    Czy zauważyłeś coś ciekawego na wykresie, na ktorym znajduje się sygnał oryginalny oraz sygnał
+                    poddany przekształceniu Fouriera i odwrotnym przekształceniu Fouriera? Jedna krzywa powinna
+                    przykryć drugą. Jeżeli zauważasz dwie różne krzywe, oznacza to, że napisane przez Ciebie funkcje
+                    mają błędy.
+                </div>
+
             </div>
         </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h5 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#task3" href="#collapseTask3b">
-                        Kod źródłowy w Pythonie
-                    </a>
-                </h5>
-            </div>
-            <div id="collapseTask3b" class="panel-collapse collapse in">
-                <div class="panel-body">
-                    <div style="text-align: justify;">
-                        <div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#task3" href="#collapseTask3b">
+                    Kod źródłowy w Pythonie
+                </a>
+            </h5>
+        </div>
+        <div id="collapseTask3b" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div style="text-align: justify;">
+                    <div>
                             <textarea id="cosdft" name="cosdft">
     from cmath import sqrt, atan
     x, y = cosinus(1, 2, 0, pi, 256, 0)
@@ -462,51 +462,61 @@
     for i in range(len(y_dft)):
         faza[i] = atan(s_re[i]/s_im[i]**2)
                             </textarea>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <b><a href="{{link1}}"> Poprzednia lekcja</a></b>
+        </div>
+        <div class="col text-right">
+            <b><a href="{{link2}}"> Przejdź do quizu</a></b>
+        </div>
+    </div>
+</div>
 
 
+<script>
+    var editor = new CodeMirror.fromTextArea(document.getElementById("fourierseries"), {
+        mode: {
+            name: "python",
+            version: 3,
+            singleLineStringErrors: false
+        },
+        lineNumbers: true,
+        indentUnit: 4,
+        matchBrackets: true,
+        lineWrapping: false,
+    });
 
-    <script>
-        var editor = new CodeMirror.fromTextArea(document.getElementById("fourierseries"), {
-            mode: {
-                name: "python",
-                version: 3,
-                singleLineStringErrors: false
-            },
-            lineNumbers: true,
-            indentUnit: 4,
-            matchBrackets: true,
-            lineWrapping: false,
-        });
+    var editor2 = new CodeMirror.fromTextArea(document.getElementById("dft"), {
+        mode: {
+            name: "python",
+            version: 3,
+            singleLineStringErrors: false
+        },
+        lineNumbers: true,
+        indentUnit: 4,
+        matchBrackets: true,
+        lineWrapping: false,
+    });
 
-        var editor2 = new CodeMirror.fromTextArea(document.getElementById("dft"), {
-            mode: {
-                name: "python",
-                version: 3,
-                singleLineStringErrors: false
-            },
-            lineNumbers: true,
-            indentUnit: 4,
-            matchBrackets: true,
-            lineWrapping: false,
-        });
+    var editor3 = new CodeMirror.fromTextArea(document.getElementById("cosdft"), {
+        mode: {
+            name: "python",
+            version: 3,
+            singleLineStringErrors: false
+        },
+        lineNumbers: true,
+        indentUnit: 4,
+        matchBrackets: true,
+        lineWrapping: false,
+    });
 
-        var editor3 = new CodeMirror.fromTextArea(document.getElementById("cosdft"), {
-            mode: {
-                name: "python",
-                version: 3,
-                singleLineStringErrors: false
-            },
-            lineNumbers: true,
-            indentUnit: 4,
-            matchBrackets: true,
-            lineWrapping: false,
-        });
-
-    </script>
+</script>
 {% endblock %}

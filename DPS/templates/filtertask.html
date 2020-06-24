@@ -4,95 +4,95 @@
 {% endblock %}
 
 {% block content %}
-    <H1> {{ Title }} </H1>
+<H1> {{ Title }} </H1>
 
-    <div style="text-align: justify;">
-        <h3>
-            <b>Zadanie 1.</b></h3>
-    </div>
-    <div style="text-align: justify;">
-        Utwórz filtr typu FIR. Zdefiniuj okna: Bartletta, Hamminga i Blackmanna. Wywołaj funkcję z następującymi
-        parametrami: częstotliwość odcięcia
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <msub>
-                <mi>f</mi>
-                <mi>c</mi>
-            </msub>
-            <mo>=</mo>
-            <mn>30</mn>
-            <mi>Hz</mi>
-        </math>
-        , częstotliwość próbkowania
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <msub>
-                <mi>f</mi>
-                <mi>s</mi>
-            </msub>
-            <mo>=</mo>
-            <mn>100</mn>
-            <mi>Hz</mi>
-        </math>
-        , znormalizowana częstotliwość odcięcia
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div style="text-align: justify;">
+    <h3>
+        <b>Zadanie 1.</b></h3>
+</div>
+<div style="text-align: justify;">
+    Utwórz filtr typu FIR. Zdefiniuj okna: Bartletta, Hamminga i Blackmanna. Wywołaj funkcję z następującymi
+    parametrami: częstotliwość odcięcia
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <msub>
+            <mi>f</mi>
+            <mi>c</mi>
+        </msub>
+        <mo>=</mo>
+        <mn>30</mn>
+        <mi>Hz</mi>
+    </math>
+    , częstotliwość próbkowania
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <msub>
+            <mi>f</mi>
+            <mi>s</mi>
+        </msub>
+        <mo>=</mo>
+        <mn>100</mn>
+        <mi>Hz</mi>
+    </math>
+    , znormalizowana częstotliwość odcięcia
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mfrac>
             <mfrac>
-                <mfrac>
-                    <msub>
-                        <mi>f</mi>
-                        <mi>c</mi>
-                    </msub>
-                    <msub>
-                        <mi>f</mi>
-                        <mi>s</mi>
-                    </msub>
-                </mfrac>
-                <mn>2</mn>
+                <msub>
+                    <mi>f</mi>
+                    <mi>c</mi>
+                </msub>
+                <msub>
+                    <mi>f</mi>
+                    <mi>s</mi>
+                </msub>
             </mfrac>
-        </math>
-        , długość odpowiedzi impulsowej
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <mi>M</mi>
-            <mo>=</mo>
-            <mn>20</mn>
-        </math>
-        dla wszystkich zdefiniowanych okien. Na jednym wykresie wyświetl idealną odpowiedź impulsową filtra oraz
-        uzyskany wynik w wyniku filtracji.
-    </div>
-    <div style="text-align: justify;">
-        <br/></div>
-    <div style="text-align: justify;">
-        <h3>
-            <b>Rozwiązanie</b></h3>
-    </div>
+            <mn>2</mn>
+        </mfrac>
+    </math>
+    , długość odpowiedzi impulsowej
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>M</mi>
+        <mo>=</mo>
+        <mn>20</mn>
+    </math>
+    dla wszystkich zdefiniowanych okien. Na jednym wykresie wyświetl idealną odpowiedź impulsową filtra oraz
+    uzyskany wynik w wyniku filtracji.
+</div>
+<div style="text-align: justify;">
+    <br/></div>
+<div style="text-align: justify;">
+    <h3>
+        <b>Rozwiązanie</b></h3>
+</div>
 
-    <div class="panel-group" id="filter">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h5 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#filter" href="#collapseOne">
-                        A) Wygenerowanie funkcji tworzącej idealną odpowiedź impulsową filtru
-                    </a>
-                </h5>
-            </div>
-            <div id="collapseOne" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <div style="text-align: justify;">
-                        Sugestia: Utworzenie funkcji, która na wejście przyjmuje typ filtru (dolno- lub
-                        górnoprzepustowy), znormalizowaną częstotliwość odcięcia oraz długość odpowiedzi impulsowej M.
-                    </div>
+<div class="panel-group" id="filter">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#filter" href="#collapseOne">
+                    A) Wygenerowanie funkcji tworzącej idealną odpowiedź impulsową filtru
+                </a>
+            </h5>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div style="text-align: justify;">
+                    Sugestia: Utworzenie funkcji, która na wejście przyjmuje typ filtru (dolno- lub
+                    górnoprzepustowy), znormalizowaną częstotliwość odcięcia oraz długość odpowiedzi impulsowej M.
                 </div>
             </div>
         </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h5 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#filter" href="#collapseTwo">
-                        Kod źródłowy w Pythonie
-                    </a>
-                </h5>
-            </div>
-            <div id="collapseTwo" class="panel-collapse collapse in">
-                <div class="panel-body">
-                    <div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#filter" href="#collapseTwo">
+                    Kod źródłowy w Pythonie
+                </a>
+            </h5>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div>
                         <textarea id="taskA" name="taskA">
     def ideal_filter(typ, f, M):
         """
@@ -137,41 +137,41 @@
         h = np.hstack((x1, x2, x3))
         return time, h
                         </textarea>
-                    </div>
+                </div>
 
+            </div>
+        </div>
+    </div>
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#filter" href="#collapseThree">
+                    B) Przemnożenie odpowiedzi impulsowej przez okno
+                </a>
+            </h5>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div style="text-align: justify;">
+                    Sugestia: Utworzenie funkcji, która na wejście przyjmuje odpowiedź impulsową filtru oraz wybór
+                    okna, a na wyjściu generuje wymnożoną odpowiedź impulsową z oknem.
                 </div>
             </div>
         </div>
-
-
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h5 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#filter" href="#collapseThree">
-                        B) Przemnożenie odpowiedzi impulsowej przez okno
-                    </a>
-                </h5>
-            </div>
-            <div id="collapseThree" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <div style="text-align: justify;">
-                        Sugestia: Utworzenie funkcji, która na wejście przyjmuje odpowiedź impulsową filtru oraz wybór
-                        okna, a na wyjściu generuje wymnożoną odpowiedź impulsową z oknem.
-                    </div>
-                </div>
-            </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#filter" href="#collapseFour">
+                    Kod źródłowy w Pythonie
+                </a>
+            </h5>
         </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h5 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#filter" href="#collapseFour">
-                        Kod źródłowy w Pythonie
-                    </a>
-                </h5>
-            </div>
-            <div id="collapseFour" class="panel-collapse collapse in">
-                <div class="panel-body">
-                    <div>
+        <div id="collapseFour" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div>
                         <textarea id="taskB" name="taskB">
     def conv_filter_window(M, h, window):
         """
@@ -208,39 +208,39 @@
 
         return hw
                         </textarea>
-                    </div>
+                </div>
 
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#filter" href="#collapseFive">
+                    C) Utworzenie funkcji do generowania idealnej odpowiedzi impulsowej.
+                </a>
+            </h5>
+        </div>
+        <div id="collapseFive" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div style="text-align: justify;">
+                    Sugestia: Implementacja w części A.
                 </div>
             </div>
         </div>
-
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h5 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#filter" href="#collapseFive">
-                        C) Utworzenie funkcji do generowania idealnej odpowiedzi impulsowej.
-                    </a>
-                </h5>
-            </div>
-            <div id="collapseFive" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <div style="text-align: justify;">
-                        Sugestia: Implementacja w części A.
-                    </div>
-                </div>
-            </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#filter" href="#collapseSix">
+                    Kod źródłowy w Pythonie
+                </a>
+            </h5>
         </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h5 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#filter" href="#collapseSix">
-                        Kod źródłowy w Pythonie
-                    </a>
-                </h5>
-            </div>
-            <div id="collapseSix" class="panel-collapse collapse in">
-                <div class="panel-body">
-                    <div>
+        <div id="collapseSix" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div>
                         <textarea id="taskC" name="taskC">
     def impulse_responde(typ, f, M):
         time = np.linspace(-M, M, 10000)
@@ -265,38 +265,38 @@
 
         return time, y
                         </textarea>
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h5 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#filter" href="#collapseSeven">
-                        D) Wygenerowanie funkcji filtrującej sygnał
-                    </a>
-                </h5>
-            </div>
-            <div id="collapseSeven" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <div style="text-align: justify;">
-Sugestia: Utworzenie funkcji filtrującej sygnał z wykorzystaniem wcześniej napisanych funkcji.
-                    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#filter" href="#collapseSeven">
+                    D) Wygenerowanie funkcji filtrującej sygnał
+                </a>
+            </h5>
+        </div>
+        <div id="collapseSeven" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div style="text-align: justify;">
+                    Sugestia: Utworzenie funkcji filtrującej sygnał z wykorzystaniem wcześniej napisanych funkcji.
                 </div>
             </div>
         </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h5 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#filter" href="#collapseEight">
-                        Kod źródłowy w Pythonie
-                    </a>
-                </h5>
-            </div>
-            <div id="collapseEight" class="panel-collapse collapse in">
-                <div class="panel-body">
-                    <div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#filter" href="#collapseEight">
+                    Kod źródłowy w Pythonie
+                </a>
+            </h5>
+        </div>
+        <div id="collapseEight" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div>
                         <textarea id="taskD" name="taskD">
     def my_filter(typ, fs, fc, M, window):
         """
@@ -322,38 +322,38 @@ Sugestia: Utworzenie funkcji filtrującej sygnał z wykorzystaniem wcześniej na
 
         return time, hw, time_ideal, y
                         </textarea>
-                    </div>
+                </div>
 
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#filter" href="#collapseNine">
+                    E) Wywołanie funkcji
+                </a>
+            </h5>
+        </div>
+        <div id="collapseNine" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div style="text-align: justify;">
+                    Sugestia: Wywołaj program trzy razy - dla każdego okna.
                 </div>
             </div>
         </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h5 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#filter" href="#collapseNine">
-                        E) Wywołanie funkcji
-                    </a>
-                </h5>
-            </div>
-            <div id="collapseNine" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <div style="text-align: justify;">
-                        Sugestia: Wywołaj program trzy razy - dla każdego okna.
-                    </div>
-                </div>
-            </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#filter" href="#collapseTen">
+                    Kod źródłowy w Pythonie
+                </a>
+            </h5>
         </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h5 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#filter" href="#collapseTen">
-                        Kod źródłowy w Pythonie
-                    </a>
-                </h5>
-            </div>
-            <div id="collapseTen" class="panel-collapse collapse in">
-                <div class="panel-body">
-                    <div>
+        <div id="collapseTen" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div>
                         <textarea id="taskE" name="taskE">
     fc = 30
     fs = 100
@@ -365,12 +365,23 @@ Sugestia: Utworzenie funkcji filtrującej sygnał z wykorzystaniem wcześniej na
 
     plt.plot(t_ideal, h_ideal, time, h, 'o', time2, h2, '*', time3, h3, '^')
                         </textarea>
-                    </div>
-
                 </div>
+
             </div>
         </div>
     </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <b><a href="{{link1}}"> Poprzednia lekcja</a></b>
+        </div>
+        <div class="col text-right">
+            <b><a href="{{link2}}"> Przejdź do quizu</a></b>
+        </div>
+    </div>
+</div>
     <script>
         var editor = new CodeMirror.fromTextArea(document.getElementById("taskA"), {
             mode: {
@@ -383,7 +394,7 @@ Sugestia: Utworzenie funkcji filtrującej sygnał z wykorzystaniem wcześniej na
             matchBrackets: true,
             lineWrapping: false,
         });
-                var editor = new CodeMirror.fromTextArea(document.getElementById("taskB"), {
+        var editor = new CodeMirror.fromTextArea(document.getElementById("taskB"), {
             mode: {
                 name: "python",
                 version: 3,
@@ -429,6 +440,6 @@ Sugestia: Utworzenie funkcji filtrującej sygnał z wykorzystaniem wcześniej na
         });
 
     </script>
-{% endblock %}
+    {% endblock %}
 
 

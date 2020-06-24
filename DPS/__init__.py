@@ -34,7 +34,7 @@ def create_app(test_config=None):
 
     @app.route('/sygnal')
     def signal():
-        return render_template('basic.html', Title="Sygnał ")
+        return render_template('basic.html', Title="Sygnał ", link2 = 'sygnaly-zespolone')
 
     @app.route('/sygnaly-podstawowe')
     def basic():
@@ -50,25 +50,29 @@ def create_app(test_config=None):
                                step_d=step_graphs_d, rectangle_c=rectangle_graphs_c, rectangle_d=rectangle_graphs_d,
                                triangle_c=triangle_graphs_c, triangle_d=triangle_graphs_d,
                                exp_c=exp_graphs_c, exp_d=exp_graphs_d,
-                               sinusoidal_c=sinusoidal_graphs_c, sinusoidal_d=sinusoidal_graphs_d
+                               sinusoidal_c=sinusoidal_graphs_c, sinusoidal_d=sinusoidal_graphs_d,
+                               link1='sygnaly-zespolone' , link2='parametry-sygnalow'
                                )
 
     @app.route('/sygnaly-zespolone')
     def complexsignal():
-        return render_template('complexsignal.html', Title="Sygnały zespolone")
+        return render_template('complexsignal.html', Title="Sygnały zespolone", link1='sygnal' , link2='sygnaly-podstawowe')
 
     @app.route('/parametry-sygnalow')
     def signalparametric():
-        return render_template('signalparameters.html', Title="Parametry sygnału")
+        return render_template('signalparameters.html', Title="Parametry sygnału", link1='sygnaly-podstawowe',
+                               link2='probkowanie-aliasing')
 
     @app.route('/probkowanie-aliasing')
     def sampled():
         aliasing_svg = aliasing_graphs()
-        return render_template('sampled.html', Title="Próbkowanie i aliasing", aliasing_svg=aliasing_svg)
+        return render_template('sampled.html', Title="Próbkowanie i aliasing", aliasing_svg=aliasing_svg,
+                               link1='parametry-sygnalow', link2='sygnal-zadania')
 
     @app.route('/sygnal-zadania')
     def signalTasks():
-        return render_template('signaltasks.html', Title="Sygnały - zadania w Pythonie")
+        return render_template('signaltasks.html', Title="Sygnały - zadania w Pythonie",
+                               link1='parametry-sygnalow', link2='sygnal-quiz')
 
     @app.route('/sygnal-quiz', methods=['GET', 'POST'])
     def signalquiz():
@@ -81,27 +85,30 @@ def create_app(test_config=None):
             flash(u'Liczba poprawnych odpowiedzi, to: {0}'.format(points))
             return redirect(url_for('signalquiz'))
 
-        return render_template('quiz.html', Title="Sygnały - quiz", questions=question_section1)
+        return render_template('quiz.html', Title="Sygnały - quiz", questions=question_section1,
+                               link1='sygnal-zadania', link2='szereg-fouriera')
 
     @app.route('/szereg-fouriera')
     def fourier():
-        return render_template('fourier.html', Title="Rozwinięcie sygnału w szereg Fouriera")
+        return render_template('fourier.html', Title="Rozwinięcie sygnału w szereg Fouriera", link2='cft')
 
     @app.route('/cft')
     def cft():
-        return render_template('cft.html', Title="Całkowe przekształcenie Fouriera")
+        return render_template('cft.html', Title="Całkowe przekształcenie Fouriera", link1='szereg-fouriera',
+                               link2='dft')
 
     @app.route('/dft')
     def dft():
-        return render_template('dft.html', Title="Dyskretne przekształcenie Fouriera")
+        return render_template('dft.html', Title="Dyskretne przekształcenie Fouriera", link1='cft', link2='widmo')
 
     @app.route('/widmo')
     def spectrum():
-        return render_template('spectrum.html', Title="Widmo sygnału")
+        return render_template('spectrum.html', Title="Widmo sygnału", link1='dft', link2='analiza-czestotliwosciowa-zadania')
 
     @app.route('/analiza-czestotliwosciowa-zadania')
     def spectrumtasks():
-        return render_template('spectrumtasks.html', Title="Analiza częstotliwościowa - zadania w Pythonie")
+        return render_template('spectrumtasks.html', Title="Analiza częstotliwościowa - zadania w Pythonie",
+                               link1='widmo', link2='analiza-czestotliwosciowa-quiz')
 
     @app.route('/analiza-czestotliwosciowa-quiz', methods=['GET', 'POST'])
     def spectrumquiz():
@@ -114,27 +121,31 @@ def create_app(test_config=None):
             flash(u'Liczba poprawnych odpowiedzi, to: {0}'.format(points))
             return redirect(url_for('spectrumquiz'))
 
-        return render_template('quiz.html', Title="Analiza częstotliwościowa - quiz", questions=question_section2)
+        return render_template('quiz.html', Title="Analiza częstotliwościowa - quiz", questions=question_section2,
+                               link1='analiza-czestotliwosciowa-zadania', link2='przeksztalcenie-z')
 
     @app.route('/przeksztalcenie-z')
     def ztransform():
-        return render_template('ztransform.html', Title="Transformata Z")
+        return render_template('ztransform.html', Title="Transformata Z", link2='filtry-cyfrowe')
 
     @app.route('/filtry-cyfrowe')
     def digitalfilter():
-        return render_template('digitalfilter.html', Title="Filtry cyfrowe")
+        return render_template('digitalfilter.html', Title="Filtry cyfrowe", link1='przeksztalcenie-z', link2='fir')
 
     @app.route('/fir')
     def fir():
-        return render_template('fir.html', Title="Filtr o skończonej odpowiedzi impulsowej")
+        return render_template('fir.html', Title="Filtr o skończonej odpowiedzi impulsowej",
+                               link1='filtry-cyfrowe', link2='iir')
 
     @app.route('/iir')
     def iir():
-        return render_template('iir.html', Title="Filtr o nieskończonej odpowiedzi impulsowej")
+        return render_template('iir.html', Title="Filtr o nieskończonej odpowiedzi impulsowej",
+                               link1='fir', link2='filtry-zadania')
 
     @app.route('/filtry-zadania')
     def filtertask():
-        return render_template('filtertask.html', Title="Filtry cyfrowe - zadania w Pythonie")
+        return render_template('filtertask.html', Title="Filtry cyfrowe - zadania w Pythonie",
+                               link1='iir', link2='filtry-quiz')
 
     @app.route('/filtry-quiz', methods=['GET', 'POST'])
     def filterquiz():
@@ -147,15 +158,19 @@ def create_app(test_config=None):
             flash(u'Liczba poprawnych odpowiedzi, to: {0}'.format(points))
             return redirect(url_for('filterquiz'))
 
-        return render_template('quiz.html', Title="Filtry cyfrowe - quiz", questions=question_section3)
+        return render_template('quiz.html', Title="Filtry cyfrowe - quiz", questions=question_section3,
+                               link1='filtry-zadania', link2='qrs')
 
     @app.route('/qrs')
     def qrs():
-        return render_template('qrs.html', Title="Detekcja zespołu QRS")
+        return render_template('qrs.html', Title="Detekcja zespołu QRS", link2='qrs-python')
 
     @app.route('/qrs-python')
     def qrstask():
-        return render_template('qrstask.html', Title="Detekcja zespołu QRS - zadanie w Pythonie")
+        return render_template('qrstask.html', Title="Detekcja zespołu QRS - zadanie w Pythonie", link1='qrs')
+
+    @app.errorhandler(404)
+    def not_found(error):
+        return render_template('404.html')
     return app
 
-# C:\Users\X\PycharmProjects\DSP_webapp\DPS\templates
