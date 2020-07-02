@@ -2,8 +2,7 @@ import os
 
 import matplotlib.pyplot as plt
 import numpy as np
-from math import sin
-from .algorithms import kronecker, step, rectangle, triangle, exp_signal, sinus, aliasing
+from DPS.Algorithms import kronecker, step, rectangle, triangle, exp_signal, sinus, aliasing
 
 
 def kronecker_graphs():
@@ -79,6 +78,7 @@ def aliasing_graphs():
     plt.savefig(os.path.join(os.path.dirname(__file__), 'static', aliasing_svg))
     plt.close()
     return aliasing_svg
+
 
 def save_fig(typ, x, y, name):
     if typ == 1:
