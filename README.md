@@ -23,4 +23,6 @@ DSP App is a web application for learning Digital Signal Processing. Language: P
 To run this project:
 - clone this repository
 - open project in PyCharm
-- to run the application, use the key combination: Shift + Ctrl + F10
+- create a virtual environment
+- install requirements
+- now you can run this app
