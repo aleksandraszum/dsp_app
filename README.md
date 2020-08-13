@@ -13,14 +13,14 @@ DSP App is a web application for learning Digital Signal Processing. Language: P
 
 ## Technologies
 - Python 3.7
-- Flask
-- Scipy (Numpy, Matplotlib)
+- Flask 1.1.2
+- Scipy 1.4.1 (Numpy 1.18.5, Matplotlib 3.2.1)
 - CodeMirror
-- HTML, CSS (Bootstrap 4)
+- HTML5, CSS3 (Bootstrap 4)
 - JavaScript
 
 ## Setup
 To run this project:
-- clone this repositorium
+- clone this repository
 - open project in PyCharm
 - to run the application, use the key combination: Shift + Ctrl + F10
