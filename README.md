@@ -8,7 +8,8 @@
 * [WWW](#www)
 
 
-## Author: Aleksandra Szum
+## Author
+Aleksandra Szum
 
 ## General info
 DSP App is a web application for learning Digital Signal Processing. Language: Polish.
