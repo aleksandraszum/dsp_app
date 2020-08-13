@@ -5,6 +5,8 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
+* [WWW](#www)
+
 
 ## Author: Aleksandra Szum
 
@@ -26,3 +28,6 @@ To run this project:
 - create a virtual environment
 - install requirements
 - now you can run this app
+
+### WWW
+Available at: http://sygnalycyfrowe.pythonanywhere.com/
